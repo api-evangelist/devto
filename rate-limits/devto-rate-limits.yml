@@ -1,0 +1,51 @@
+name: DEV.to API Rate Limits
+description: Rate limiting policies for the DEV Community (Forem) REST API
+url: https://developers.forem.com/api
+updated: 2026-06-13
+
+global:
+  unauthenticated:
+    requests: 10
+    period: 30 seconds
+    description: Unauthenticated requests are limited to 10 per 30-second window
+  authenticated:
+    requests: 30
+    period: 30 seconds
+    description: Authenticated requests (with api-key header) are limited to 30 per 30-second window
+
+endpoints:
+  - path: /articles
+    method: POST
+    limit: 10 requests per 30 seconds
+    description: Article creation rate limit
+
+  - path: /articles/{id}
+    method: PUT
+    limit: 30 requests per 30 seconds
+    description: Article update rate limit
+
+pagination:
+  default_page_size: 30
+  max_page_size: 1000
+  note: Videos endpoint defaults to 24 items per page
+
+headers:
+  - name: api-key
+    description: API key for authenticated requests; generated via DEV.to user settings page
+    required: false
+    note: Required for write operations and some read endpoints
+  - name: Accept
+    description: Set to application/vnd.forem.api-v1+json for API v1
+    required: true
+  - name: user-agent
+    description: All requests must include a user-agent header
+    required: true
+
+errors:
+  - code: 429
+    description: Too Many Requests — rate limit exceeded; retry after the window resets
+
+notes:
+  - Rate limits are enforced per IP address for unauthenticated requests
+  - Rate limits are enforced per API key for authenticated requests
+  - The Forem platform is hosted on Heroku with Fastly CDN; most traffic routes through Fastly

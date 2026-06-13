@@ -1,0 +1,40 @@
+name: DEV.to Plans and Pricing
+description: Pricing plans and features available on the DEV Community platform
+url: https://dev.to/pricing
+plans:
+
+  - name: Free
+    description: Free access to the DEV Community platform for all developers
+    price: 0
+    currency: USD
+    period: month
+    features:
+      - Publish articles and posts
+      - Participate in discussions and comments
+      - Follow tags and users
+      - Build a developer profile
+      - Access to all published content
+      - Basic API access with api-key authentication
+      - Organization account creation
+      - Reading list
+      - Podcast episode access
+      - Community badges and reactions
+
+  - name: DEV++
+    description: Membership program offering partner deals and perks for active community members
+    price: 8
+    currency: USD
+    period: month
+    features:
+      - All Free plan features
+      - Partner deals and discounts from DEV sponsors
+      - Early access to new features
+      - Premium member badge
+      - Support DEV Community development
+
+notes:
+  - The DEV API is free to use with an API key generated from user settings
+  - Listings (classified ads) require credits for creation and bumping operations
+  - A 402 Payment Required response indicates insufficient credits for listings
+  - API rate limits apply equally across all plan tiers
+  - DEV++ early bird pricing was USD 8/month; pricing may change for new subscribers

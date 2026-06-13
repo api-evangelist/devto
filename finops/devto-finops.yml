@@ -1,0 +1,48 @@
+name: DEV.to FinOps
+description: Financial operations and cost management considerations for consuming the DEV Community API
+url: https://dev.to/pricing
+updated: 2026-06-13
+
+cost_model:
+  type: free
+  description: The DEV Community REST API is free to use with an API key; no per-request charges apply
+
+api_access:
+  - tier: Free
+    cost: 0
+    currency: USD
+    included:
+      - Full read access to all public content (articles, comments, users, tags, organizations)
+      - Write access to create and update your own articles
+      - API key generation via user settings
+      - Up to 30 authenticated requests per 30 seconds
+      - Up to 10 unauthenticated requests per 30 seconds
+
+credits:
+  description: DEV Community uses a credits system for Listings (classified ads)
+  usage:
+    - Creating a new listing requires credits
+    - Bumping an existing listing to the top requires credits
+    - Insufficient credits result in HTTP 402 Payment Required response
+  note: Credit pricing and purchase details available through the DEV Community platform
+
+membership:
+  - plan: DEV++
+    cost: 8
+    currency: USD
+    period: month
+    description: Optional membership program providing partner deals and perks; does not affect API access or rate limits
+
+cost_optimization:
+  - Use pagination efficiently — default page size is 30, maximum is 1000 per request
+  - Cache public content responses to reduce repeated API calls within rate limit windows
+  - Unauthenticated requests count against a lower rate limit (10/30s vs 30/30s); use API keys for higher throughput
+  - Batch data retrieval using per_page=1000 where possible to minimize total request count
+  - Monitor 429 responses and implement exponential backoff to avoid wasted retry attempts
+
+infrastructure:
+  hosting: Heroku
+  cdn: Fastly
+  storage: AWS S3 (us-east-2)
+  email: SendGrid SMTP
+  note: Infrastructure costs are borne entirely by DEV Community; no infrastructure charges passed to API consumers
