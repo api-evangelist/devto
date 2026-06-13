@@ -1,0 +1,22 @@
+{
+  "operationId": "getOrganization",
+  "method": "GET",
+  "path": "/api/organizations/{username}",
+  "status": "200",
+  "response": {
+    "type_of": "organization",
+    "id": 568,
+    "username": "org12",
+    "name": "Bartoletti-Dicki",
+    "summary": "Tattooed gastropub cleanse tofu small batch franzen farm-to-table retro. Flannel whatever mustache hella pug shabby chic master.",
+    "twitter_username": "org4787",
+    "github_username": "org1607",
+    "url": "http://torp.test/zack_sauer",
+    "location": null,
+    "tech_stack": null,
+    "tag_line": null,
+    "story": null,
+    "joined_at": "2026-05-28T18:45:24Z",
+    "profile_image": "/uploads/organization/profile_image/568/37584a82-a0bf-41f8-9807-871b71df211c.png"
+  }
+}

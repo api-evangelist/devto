@@ -1,0 +1,26 @@
+{
+  "operationId": "post_api_pages",
+  "method": "POST",
+  "path": "/api/pages",
+  "status": "200",
+  "response": {
+    "id": 49,
+    "title": "Example Page",
+    "slug": "example1",
+    "description": "a new page",
+    "is_top_level_path": false,
+    "landing_page": false,
+    "body_html": null,
+    "body_json": null,
+    "body_markdown": "# Hi, this is a New Page\nYep, it's an a new page",
+    "processed_html": "<h1>\n  <a name=\"hi-this-is-a-new-page\" href=\"#hi-this-is-a-new-page\">\n  </a>\n  Hi, this is a New Page\n</h1>\n\n<p>Yep, it's an a new page</p>\n\n",
+    "social_image": {
+      "url": null
+    },
+    "template": "contained",
+    "subforem_id": null,
+    "page_template_id": null,
+    "template_data": {},
+    "redirect_to_url": null
+  }
+}

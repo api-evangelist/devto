@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Billboard",
+  "description": "Billboard, aka Widget, ex. Display Ad",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The ID of the Billboard"
+    },
+    "name": {
+      "type": "string",
+      "description": "For internal use, helps distinguish ads from one another"
+    },
+    "body_markdown": {
+      "type": "string",
+      "description": "The text (in markdown) of the ad (required)"
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "Ad must be both published and approved to be in rotation"
+    },
+    "published": {
+      "type": "boolean",
+      "description": "Ad must be both published and approved to be in rotation"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "description": "Timestamp when the billboard expires. After this time, the billboard will automatically be marked as not approved."
+    },
+    "organization_id": {
+      "type": "integer",
+      "description": "Identifies the organization to which the ad belongs",
+      "nullable": true
+    },
+    "creator_id": {
+      "type": "integer",
+      "description": "Identifies the user who created the ad.",
+      "nullable": true
+    },
+    "placement_area": {
+      "type": "string",
+      "enum": [
+        "sidebar_left",
+        "sidebar_left_2",
+        "sidebar_right",
+        "sidebar_right_second",
+        "sidebar_right_third",
+        "feed_first",
+        "feed_second",
+        "feed_third",
+        "home_hero",
+        "footer",
+        "page_fixed_bottom",
+        "post_fixed_bottom",
+        "post_body_bottom",
+        "post_sidebar",
+        "post_comments",
+        "post_comments_mid",
+        "digest_first",
+        "digest_second"
+      ],
+      "description": "Identifies which area of site layout the ad can appear in"
+    },
+    "tag_list": {
+      "type": "string",
+      "description": "Tags on which this ad can be displayed (blank is all/any tags)"
+    },
+    "exclude_article_ids": {
+      "type": "string",
+      "nullable": true,
+      "description": "Articles this ad should *not* appear on (blank means no articles are disallowed, and this ad can appear next to any/all articles). Comma-separated list of integer Article IDs"
+    },
+    "audience_segment_id": {
+      "type": "integer",
+      "description": "Specifies a specific audience segment who will see this billboard"
+    },
+    "audience_segment_type": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "trusted",
+        "posted",
+        "no_posts_yet",
+        "dark_theme",
+        "light_theme",
+        "no_experience",
+        "experience1",
+        "experience2",
+        "experience3",
+        "experience4",
+        "experience5"
+      ],
+      "description": "Specifies a group of users who will see this billboard (must match audience_segment_id if both provided)"
+    },
+    "target_geolocations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Locations to show this billboard in (blank means it will be shown in all locations). Specified as a comma-separated list or array of ISO 3166-2 country and optionally region codes)"
+    },
+    "display_to": {
+      "type": "string",
+      "enum": [
+        "all",
+        "logged_in",
+        "logged_out"
+      ],
+      "default": "all",
+      "description": "Potentially limits visitors to whom the ad is visible"
+    },
+    "type_of": {
+      "type": "string",
+      "enum": [
+        "in_house",
+        "community",
+        "external"
+      ],
+      "default": "in_house",
+      "description": "Types of the billboards:\nin_house (created by admins),\ncommunity (created by an entity, appears on entity's content),\nexternal ( created by an entity, or a non-entity, can appear everywhere)\n"
+    }
+  },
+  "required": [
+    "name",
+    "body_markdown",
+    "placement_area"
+  ]
+}

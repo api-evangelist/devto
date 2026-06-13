@@ -1,0 +1,10 @@
+{
+  "operationId": "getFollowedTags",
+  "method": "GET",
+  "path": "/api/follows/tags",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

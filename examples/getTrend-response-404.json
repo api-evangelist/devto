@@ -1,0 +1,10 @@
+{
+  "operationId": "getTrend",
+  "method": "GET",
+  "path": "/api/trends/{id_or_slug}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

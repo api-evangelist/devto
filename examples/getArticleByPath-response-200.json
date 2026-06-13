@@ -1,0 +1,53 @@
+{
+  "operationId": "getArticleByPath",
+  "method": "GET",
+  "path": "/api/articles/{username}/{slug}",
+  "status": "200",
+  "response": {
+    "type_of": "article",
+    "id": 2244,
+    "title": "Of Human Bondage12",
+    "description": "Vinegar bespoke mumblecore polaroid. Portland 3 wolf moon yolo austin scenester meditation artisan...",
+    "readable_publish_date": "May 28",
+    "slug": "of-human-bondage12-4bfh",
+    "path": "/username21/of-human-bondage12-4bfh",
+    "url": "http://forem.test/username21/of-human-bondage12-4bfh",
+    "comments_count": 0,
+    "public_reactions_count": 0,
+    "collection_id": null,
+    "published_timestamp": "2026-05-28T18:45:17Z",
+    "language": null,
+    "subforem_id": null,
+    "positive_reactions_count": 0,
+    "cover_image": "http://forem.test/assets/20-92231c1d2ddb3b707b8c1b5cb711ef17632ff2a64495970a58518ce33c3a4f76.png",
+    "social_image": "http://forem.test/assets/20-92231c1d2ddb3b707b8c1b5cb711ef17632ff2a64495970a58518ce33c3a4f76.png",
+    "canonical_url": "http://forem.test/username21/of-human-bondage12-4bfh",
+    "created_at": "2026-05-28T18:45:17Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2026-05-28T18:45:17Z",
+    "last_comment_at": "2026-05-28T18:45:17Z",
+    "reading_time_minutes": 1,
+    "tag_list": "discuss",
+    "tags": [
+      "discuss"
+    ],
+    "body_html": "<p>Vinegar bespoke mumblecore polaroid. Portland 3 wolf moon yolo austin scenester meditation artisan pbrb.</p>\n\n<p>Meggings master yolo cliche. Pop-up put a bird on it poutine single-origin coffee brunch.</p>\n\n",
+    "body_markdown": "---\ntitle: Of Human Bondage12\npublished: true\ntags: discuss\ndate: \nseries: \ncanonical_url: \n\n---\n\nVinegar bespoke mumblecore polaroid. Portland 3 wolf moon yolo austin scenester meditation artisan pbrb.\n\n\nMeggings master yolo cliche. Pop-up put a bird on it poutine single-origin coffee brunch.\n\n",
+    "user": {
+      "name": "Joaquin \"Tayna\" \\:/ Veum",
+      "username": "username21",
+      "twitter_username": "twitter21",
+      "github_username": "github21",
+      "user_id": 4069,
+      "website_url": null,
+      "profile_image": "/uploads/user/profile_image/4069/cd9be7fb-4277-4e90-9351-de7a241d1856.jpeg",
+      "profile_image_90": "/uploads/user/profile_image/4069/cd9be7fb-4277-4e90-9351-de7a241d1856.jpeg"
+    },
+    "flare_tag": {
+      "name": "discuss",
+      "bg_color_hex": "#000000",
+      "text_color_hex": "#ffffff"
+    }
+  }
+}

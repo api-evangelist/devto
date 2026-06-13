@@ -1,0 +1,16 @@
+{
+  "operationId": "createAgentSession",
+  "method": "POST",
+  "path": "/api/agent_sessions",
+  "status": "201",
+  "response": {
+    "id": 41,
+    "slug": "my-claude-session-jg1xld",
+    "title": "My Claude Session",
+    "tool_name": "claude_code",
+    "total_messages": 2,
+    "published": false,
+    "created_at": "2026-05-28T12:45:15-06:00",
+    "url": "http://forem.test/agent_sessions/my-claude-session-jg1xld"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "delete_api_organizations_{id}",
+  "method": "DELETE",
+  "path": "/api/organizations/{id}",
+  "status": "200",
+  "response": {
+    "message": "deletion scheduled for organization with ID 584",
+    "status": 200
+  }
+}

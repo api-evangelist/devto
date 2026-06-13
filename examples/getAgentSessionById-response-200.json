@@ -1,0 +1,45 @@
+{
+  "operationId": "getAgentSessionById",
+  "method": "GET",
+  "path": "/api/agent_sessions/{id}",
+  "status": "200",
+  "response": {
+    "id": 42,
+    "slug": "my-session-15rjsb",
+    "title": "My Session",
+    "tool_name": "claude_code",
+    "total_messages": 2,
+    "curated_count": 2,
+    "published": false,
+    "metadata": {
+      "tool_name": "claude_code",
+      "total_messages": 2
+    },
+    "messages": [
+      {
+        "role": "user",
+        "index": 0,
+        "content": [
+          {
+            "text": "Hello",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "index": 1,
+        "content": [
+          {
+            "text": "Hi there",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "slices": [],
+    "created_at": "2026-05-28T12:45:15-06:00",
+    "updated_at": "2026-05-28T12:45:15-06:00",
+    "url": "http://forem.test/agent_sessions/my-session-15rjsb"
+  }
+}

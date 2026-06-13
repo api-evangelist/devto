@@ -1,0 +1,26 @@
+{
+  "operationId": "put_api_pages_{id}",
+  "method": "PUT",
+  "path": "/api/pages/{id}",
+  "status": "422",
+  "response": {
+    "id": 55,
+    "title": "Eyeless in Gaza",
+    "slug": "confuse-thirsty",
+    "description": "Dolore iure magnam ea.",
+    "is_top_level_path": false,
+    "landing_page": false,
+    "body_html": null,
+    "body_json": null,
+    "body_markdown": "Corporis magnam enim dolorem.",
+    "processed_html": "<p>Consequuntur pariatur delectus similique.</p>\n\n",
+    "social_image": {
+      "url": null
+    },
+    "template": "moon",
+    "subforem_id": null,
+    "page_template_id": null,
+    "template_data": {},
+    "redirect_to_url": null
+  }
+}

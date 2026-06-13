@@ -1,0 +1,29 @@
+{
+  "operationId": "getTags",
+  "method": "GET",
+  "path": "/api/tags",
+  "status": "200",
+  "response": [
+    {
+      "id": 2353,
+      "name": "tag5",
+      "bg_color_hex": null,
+      "text_color_hex": null,
+      "short_summary": null
+    },
+    {
+      "id": 2354,
+      "name": "tag6",
+      "bg_color_hex": null,
+      "text_color_hex": null,
+      "short_summary": null
+    },
+    {
+      "id": 2355,
+      "name": "tag7",
+      "bg_color_hex": null,
+      "text_color_hex": null,
+      "short_summary": null
+    }
+  ]
+}

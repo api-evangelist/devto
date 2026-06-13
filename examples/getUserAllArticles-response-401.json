@@ -1,0 +1,10 @@
+{
+  "operationId": "getUserAllArticles",
+  "method": "GET",
+  "path": "/api/articles/me/all",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

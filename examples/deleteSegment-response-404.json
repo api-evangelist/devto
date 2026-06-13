@@ -1,0 +1,10 @@
+{
+  "operationId": "deleteSegment",
+  "method": "DELETE",
+  "path": "/api/segments/{id}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

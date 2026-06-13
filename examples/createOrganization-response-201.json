@@ -1,0 +1,15 @@
+{
+  "operationId": "createOrganization",
+  "method": "POST",
+  "path": "/api/organizations",
+  "status": "201",
+  "response": {
+    "id": 579,
+    "name": "New Test Org",
+    "profile_image": "uploads/organization/profile_image/1/400x400.jpg",
+    "slug": "org10001",
+    "summary": "a newly created test org",
+    "tag_line": "a test org's tagline",
+    "url": "https://testorg.io"
+  }
+}

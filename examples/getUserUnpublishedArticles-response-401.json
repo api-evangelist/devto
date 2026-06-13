@@ -1,0 +1,10 @@
+{
+  "operationId": "getUserUnpublishedArticles",
+  "method": "GET",
+  "path": "/api/articles/me/unpublished",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

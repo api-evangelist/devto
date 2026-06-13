@@ -1,0 +1,14 @@
+{
+  "operationId": "removeUsersFromSegment",
+  "method": "PUT",
+  "path": "/api/segments/{id}/remove_users",
+  "status": "200",
+  "response": {
+    "succeeded": [
+      4136,
+      4137,
+      4138
+    ],
+    "failed": []
+  }
+}

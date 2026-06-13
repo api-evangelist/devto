@@ -1,0 +1,10 @@
+{
+  "operationId": "post_api_reactions_toggle",
+  "method": "POST",
+  "path": "/api/reactions/toggle",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

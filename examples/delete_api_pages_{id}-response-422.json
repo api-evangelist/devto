@@ -1,0 +1,15 @@
+{
+  "operationId": "delete_api_pages_{id}",
+  "method": "DELETE",
+  "path": "/api/pages/{id}",
+  "status": "422",
+  "response": {
+    "doubled_module": {
+      "const_name": "Page",
+      "object": "Page"
+    },
+    "__expired": false,
+    "name": null,
+    "__sending_message": null
+  }
+}

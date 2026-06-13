@@ -1,0 +1,28 @@
+{
+  "operationId": "get_api_pages",
+  "method": "GET",
+  "path": "/api/pages",
+  "status": "200",
+  "response": [
+    {
+      "id": 47,
+      "title": "Death Be Not Proud",
+      "slug": "satisfaction-design",
+      "description": "Quasi nesciunt dicta molestiae.",
+      "is_top_level_path": false,
+      "landing_page": false,
+      "body_html": null,
+      "body_json": null,
+      "body_markdown": "Quaerat dolorem velit qui.",
+      "processed_html": "<p>Quaerat dolorem velit qui.</p>\n\n",
+      "social_image": {
+        "url": null
+      },
+      "template": "contained",
+      "subforem_id": null,
+      "page_template_id": null,
+      "template_data": {},
+      "redirect_to_url": null
+    }
+  ]
+}

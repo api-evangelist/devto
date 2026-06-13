@@ -1,0 +1,47 @@
+{
+  "operationId": "getUsersInSegment",
+  "method": "GET",
+  "path": "/api/segments/{id}/users",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "user",
+      "id": 4109,
+      "username": "username61",
+      "name": "Erminia \"Pedro\" \\:/ Turcotte",
+      "twitter_username": "twitter61",
+      "github_username": "github61",
+      "summary": null,
+      "location": null,
+      "website_url": null,
+      "joined_at": "May 28, 2026",
+      "profile_image": "/uploads/user/profile_image/4109/6812d241-6f58-4837-885e-56a5c1a1cac7.jpeg"
+    },
+    {
+      "type_of": "user",
+      "id": 4110,
+      "username": "username62",
+      "name": "Perry \"Jazmin\" \\:/ Harvey",
+      "twitter_username": "twitter62",
+      "github_username": "github62",
+      "summary": null,
+      "location": null,
+      "website_url": null,
+      "joined_at": "May 28, 2026",
+      "profile_image": "/uploads/user/profile_image/4110/66331066-af5b-44d8-bf8c-5a3787ecbfa2.jpeg"
+    },
+    {
+      "type_of": "user",
+      "id": 4111,
+      "username": "username63",
+      "name": "Kristofer \"Ruth\" \\:/ Graham",
+      "twitter_username": "twitter63",
+      "github_username": "github63",
+      "summary": null,
+      "location": null,
+      "website_url": null,
+      "joined_at": "May 28, 2026",
+      "profile_image": "/uploads/user/profile_image/4111/1536d24e-ea86-4abf-bbac-d0eef3b4ebbd.jpeg"
+    }
+  ]
+}

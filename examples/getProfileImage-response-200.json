@@ -1,0 +1,12 @@
+{
+  "operationId": "getProfileImage",
+  "method": "GET",
+  "path": "/api/profile_images/{username}",
+  "status": "200",
+  "response": {
+    "type_of": "profile_image",
+    "image_of": "user",
+    "profile_image": "/uploads/user/profile_image/4234/0984d355-dddc-4f79-9950-1702fa47ee3e.jpeg",
+    "profile_image_90": "/uploads/user/profile_image/4234/0984d355-dddc-4f79-9950-1702fa47ee3e.jpeg"
+  }
+}

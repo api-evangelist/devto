@@ -47,7 +47,7 @@ apis:
       - type: Documentation
         url: https://developers.forem.com/api/v1
       - type: OpenAPI
-        url: https://developers.forem.com/api/v1
+        url: openapi/openapi.json
 common:
   - type: Website
     url: https://dev.to

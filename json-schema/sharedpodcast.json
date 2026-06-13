@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SharedPodcast",
+  "description": "The podcast that the resource belongs to",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "image_url": {
+      "description": "Podcast image url",
+      "type": "string",
+      "format": "url"
+    }
+  }
+}

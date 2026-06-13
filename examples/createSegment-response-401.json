@@ -1,0 +1,10 @@
+{
+  "operationId": "createSegment",
+  "method": "POST",
+  "path": "/api/segments",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

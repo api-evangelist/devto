@@ -1,0 +1,34 @@
+{
+  "operationId": "getOrgUsers",
+  "method": "GET",
+  "path": "/api/organizations/{organization_id_or_username}/users",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "user",
+      "id": 4199,
+      "username": "username151",
+      "name": "Maria \"Mario\" \\:/ Pfeffer",
+      "twitter_username": "twitter151",
+      "github_username": "github151",
+      "summary": null,
+      "location": null,
+      "website_url": null,
+      "joined_at": "May 28, 2026",
+      "profile_image": "/uploads/user/profile_image/4199/a36085cc-b1c4-4228-a351-a650ba7f4d44.jpeg"
+    },
+    {
+      "type_of": "user",
+      "id": 4200,
+      "username": "username152",
+      "name": "Tiara \"Ebony\" \\:/ Watsica",
+      "twitter_username": "twitter152",
+      "github_username": "github152",
+      "summary": null,
+      "location": null,
+      "website_url": null,
+      "joined_at": "May 28, 2026",
+      "profile_image": "/uploads/user/profile_image/4200/48796775-4796-4190-ae77-5eb3d3819e6d.jpeg"
+    }
+  ]
+}

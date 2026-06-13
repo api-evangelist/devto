@@ -1,0 +1,10 @@
+{
+  "operationId": "post_api_pages",
+  "method": "POST",
+  "path": "/api/pages",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

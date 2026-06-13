@@ -1,0 +1,10 @@
+{
+  "operationId": "getAgentSessionById",
+  "method": "GET",
+  "path": "/api/agent_sessions/{id}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

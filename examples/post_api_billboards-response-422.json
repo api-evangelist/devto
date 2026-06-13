@@ -1,0 +1,10 @@
+{
+  "operationId": "post_api_billboards",
+  "method": "POST",
+  "path": "/api/billboards",
+  "status": "422",
+  "response": {
+    "error": "Validation failed: Placement area is not included in the list",
+    "status": 422
+  }
+}

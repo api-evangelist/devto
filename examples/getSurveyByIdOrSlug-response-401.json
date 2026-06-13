@@ -1,0 +1,10 @@
+{
+  "operationId": "getSurveyByIdOrSlug",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "operationId": "getOrganizationById",
+  "method": "GET",
+  "path": "/api/organizations/{id}",
+  "status": "200",
+  "response": {
+    "type_of": "organization",
+    "id": 577,
+    "username": "org21",
+    "name": "Emmerich, Schamberger and Hand",
+    "summary": "Keffiyeh tote bag craft beer. Park jean shorts helvetica butcher.",
+    "twitter_username": "org8161",
+    "github_username": "org5019",
+    "url": "http://sanford-hintz.test/jose",
+    "location": null,
+    "tech_stack": null,
+    "tag_line": null,
+    "story": null,
+    "joined_at": "2026-05-28T18:45:26Z",
+    "profile_image": "/uploads/organization/profile_image/577/4516eda0-ba9a-43f5-80d0-bae770795069.png"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "unLimitUser",
+  "method": "DELETE",
+  "path": "/api/users/{id}/limited",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

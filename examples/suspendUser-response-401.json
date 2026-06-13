@@ -1,0 +1,10 @@
+{
+  "operationId": "suspendUser",
+  "method": "PUT",
+  "path": "/api/users/{id}/suspend",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

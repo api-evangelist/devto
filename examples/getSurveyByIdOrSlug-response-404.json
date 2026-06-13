@@ -1,0 +1,10 @@
+{
+  "operationId": "getSurveyByIdOrSlug",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

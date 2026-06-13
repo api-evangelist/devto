@@ -1,0 +1,10 @@
+{
+  "operationId": "delete_api_pages_{id}",
+  "method": "DELETE",
+  "path": "/api/pages/{id}",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

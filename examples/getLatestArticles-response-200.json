@@ -1,0 +1,149 @@
+{
+  "operationId": "getLatestArticles",
+  "method": "GET",
+  "path": "/api/articles/latest",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "article",
+      "id": 2239,
+      "title": "The Mirror Crackd from Side to Side7",
+      "description": "Vhs aesthetic park freegan microdosing polaroid keytar squid. Hammock hella cardigan shoreditch...",
+      "readable_publish_date": "May 28",
+      "slug": "the-mirror-crackd-from-side-to-side7-98n",
+      "path": "/username15/the-mirror-crackd-from-side-to-side7-98n",
+      "url": "http://forem.test/username15/the-mirror-crackd-from-side-to-side7-98n",
+      "comments_count": 0,
+      "public_reactions_count": 0,
+      "collection_id": null,
+      "published_timestamp": "2026-05-28T18:45:17Z",
+      "language": "en",
+      "subforem_id": null,
+      "positive_reactions_count": 0,
+      "cover_image": "http://forem.test/assets/34-d27f3a4a9f6f1f373003c74b31749764691f510b2a18b55039478583864a067e.png",
+      "social_image": "http://forem.test/assets/34-d27f3a4a9f6f1f373003c74b31749764691f510b2a18b55039478583864a067e.png",
+      "canonical_url": "http://forem.test/username15/the-mirror-crackd-from-side-to-side7-98n",
+      "created_at": "2026-05-28T18:45:17Z",
+      "edited_at": null,
+      "crossposted_at": null,
+      "published_at": "2026-05-28T18:45:17Z",
+      "last_comment_at": "2026-05-28T18:45:17Z",
+      "reading_time_minutes": 1,
+      "tag_list": [
+        "javascript",
+        "html",
+        "discuss"
+      ],
+      "tags": "javascript, html, discuss",
+      "user": {
+        "name": "Evelina \"Norman\" \\:/ Moen",
+        "username": "username15",
+        "twitter_username": "twitter15",
+        "github_username": "github15",
+        "user_id": 4063,
+        "website_url": null,
+        "profile_image": "/uploads/user/profile_image/4063/194ffea0-3e45-440a-a97c-7b37da7fbf75.jpeg",
+        "profile_image_90": "/uploads/user/profile_image/4063/194ffea0-3e45-440a-a97c-7b37da7fbf75.jpeg"
+      },
+      "flare_tag": {
+        "name": "discuss",
+        "bg_color_hex": "#000000",
+        "text_color_hex": "#ffffff"
+      }
+    },
+    {
+      "type_of": "article",
+      "id": 2238,
+      "title": "The Green Bay Tree6",
+      "description": "Helvetica yr venmo xoxo direct trade meh. Forage polaroid etsy.  Forage vhs fanny pack. Put a bird on...",
+      "readable_publish_date": "May 28",
+      "slug": "the-green-bay-tree6-4cif",
+      "path": "/username14/the-green-bay-tree6-4cif",
+      "url": "http://forem.test/username14/the-green-bay-tree6-4cif",
+      "comments_count": 0,
+      "public_reactions_count": 0,
+      "collection_id": null,
+      "published_timestamp": "2026-05-28T18:45:16Z",
+      "language": null,
+      "subforem_id": null,
+      "positive_reactions_count": 0,
+      "cover_image": "http://forem.test/assets/22-837b6c737e37b6d229b36d73e95ead7f26e0a346e0aa7dfbca74630ae161fb0d.png",
+      "social_image": "http://forem.test/assets/22-837b6c737e37b6d229b36d73e95ead7f26e0a346e0aa7dfbca74630ae161fb0d.png",
+      "canonical_url": "http://forem.test/username14/the-green-bay-tree6-4cif",
+      "created_at": "2026-05-28T18:45:16Z",
+      "edited_at": null,
+      "crossposted_at": null,
+      "published_at": "2026-05-28T18:45:16Z",
+      "last_comment_at": "2026-05-28T18:45:16Z",
+      "reading_time_minutes": 1,
+      "tag_list": [
+        "javascript",
+        "html",
+        "discuss"
+      ],
+      "tags": "javascript, html, discuss",
+      "user": {
+        "name": "Aletha \"Jordon\" \\:/ Lubowitz",
+        "username": "username14",
+        "twitter_username": "twitter14",
+        "github_username": "github14",
+        "user_id": 4062,
+        "website_url": null,
+        "profile_image": "/uploads/user/profile_image/4062/b1e0cad0-d46f-4386-9e32-28318fc4e6e9.jpeg",
+        "profile_image_90": "/uploads/user/profile_image/4062/b1e0cad0-d46f-4386-9e32-28318fc4e6e9.jpeg"
+      },
+      "flare_tag": {
+        "name": "discuss",
+        "bg_color_hex": "#000000",
+        "text_color_hex": "#ffffff"
+      }
+    },
+    {
+      "type_of": "article",
+      "id": 2237,
+      "title": "His Dark Materials5",
+      "description": "Kitsch pitchfork schlitz 90s. Everyday wes anderson flannel offal muggle magic biodiesel try-hard...",
+      "readable_publish_date": "May 28",
+      "slug": "his-dark-materials5-52pe",
+      "path": "/username13/his-dark-materials5-52pe",
+      "url": "http://forem.test/username13/his-dark-materials5-52pe",
+      "comments_count": 0,
+      "public_reactions_count": 0,
+      "collection_id": null,
+      "published_timestamp": "2026-05-28T18:45:16Z",
+      "language": null,
+      "subforem_id": null,
+      "positive_reactions_count": 0,
+      "cover_image": "http://forem.test/assets/40-57aabe055a9fc60491e0fca9a4dade362141764e7ad214956bbfc9c9e69763b0.png",
+      "social_image": "http://forem.test/assets/40-57aabe055a9fc60491e0fca9a4dade362141764e7ad214956bbfc9c9e69763b0.png",
+      "canonical_url": "http://forem.test/username13/his-dark-materials5-52pe",
+      "created_at": "2026-05-28T18:45:16Z",
+      "edited_at": null,
+      "crossposted_at": null,
+      "published_at": "2026-05-28T18:45:16Z",
+      "last_comment_at": "2026-05-28T18:45:16Z",
+      "reading_time_minutes": 1,
+      "tag_list": [
+        "javascript",
+        "html",
+        "discuss"
+      ],
+      "tags": "javascript, html, discuss",
+      "user": {
+        "name": "Clinton \"Timika\" \\:/ Konopelski",
+        "username": "username13",
+        "twitter_username": "twitter13",
+        "github_username": "github13",
+        "user_id": 4061,
+        "website_url": null,
+        "profile_image": "/uploads/user/profile_image/4061/b1948bf9-f870-463c-a72d-649a017353b4.jpeg",
+        "profile_image_90": "/uploads/user/profile_image/4061/b1948bf9-f870-463c-a72d-649a017353b4.jpeg"
+      },
+      "flare_tag": {
+        "name": "discuss",
+        "bg_color_hex": "#000000",
+        "text_color_hex": "#ffffff"
+      }
+    }
+  ]
+}

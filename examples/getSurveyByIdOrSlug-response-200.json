@@ -1,0 +1,73 @@
+{
+  "operationId": "getSurveyByIdOrSlug",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}",
+  "status": "200",
+  "response": {
+    "type_of": "survey",
+    "id": 45,
+    "title": "Test Survey",
+    "slug": "test-survey-1b83c27b",
+    "active": true,
+    "display_title": true,
+    "allow_resubmission": false,
+    "survey_type_of": "community_pulse",
+    "created_at": "2026-05-28T18:45:29Z",
+    "updated_at": "2026-05-28T18:45:29Z",
+    "polls": [
+      {
+        "type_of": "poll",
+        "id": 51,
+        "prompt_markdown": "What do you think?",
+        "prompt_html": "What do you think?\n",
+        "position": 0,
+        "poll_votes_count": 0,
+        "poll_skips_count": 0,
+        "poll_options_count": 4,
+        "scale_min": null,
+        "scale_max": null,
+        "poll_type_of": "single_choice",
+        "created_at": "2026-05-28T18:45:29Z",
+        "updated_at": "2026-05-28T18:45:29Z",
+        "poll_options": [
+          {
+            "type_of": "poll_option",
+            "id": 178,
+            "markdown": "2",
+            "processed_html": "2\n",
+            "position": 0,
+            "poll_votes_count": 0,
+            "supplementary_text": null
+          },
+          {
+            "type_of": "poll_option",
+            "id": 179,
+            "markdown": "4",
+            "processed_html": "4\n",
+            "position": 1,
+            "poll_votes_count": 0,
+            "supplementary_text": null
+          },
+          {
+            "type_of": "poll_option",
+            "id": 180,
+            "markdown": "2",
+            "processed_html": "2\n",
+            "position": 2,
+            "poll_votes_count": 0,
+            "supplementary_text": null
+          },
+          {
+            "type_of": "poll_option",
+            "id": 181,
+            "markdown": "1",
+            "processed_html": "1\n",
+            "position": 3,
+            "poll_votes_count": 0,
+            "supplementary_text": null
+          }
+        ]
+      }
+    ]
+  }
+}

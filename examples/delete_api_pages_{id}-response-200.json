@@ -1,0 +1,26 @@
+{
+  "operationId": "delete_api_pages_{id}",
+  "method": "DELETE",
+  "path": "/api/pages/{id}",
+  "status": "200",
+  "response": {
+    "id": 56,
+    "title": "No Country for Old Men",
+    "slug": "message_judge",
+    "description": "Et et dolorum mollitia.",
+    "is_top_level_path": false,
+    "landing_page": false,
+    "body_html": null,
+    "body_json": null,
+    "body_markdown": "Libero iste blanditiis et.",
+    "processed_html": "<p>Libero iste blanditiis et.</p>\n\n",
+    "social_image": {
+      "url": null
+    },
+    "template": "contained",
+    "subforem_id": null,
+    "page_template_id": null,
+    "template_data": {},
+    "redirect_to_url": null
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "put_api_billboards_{id}_unpublish",
+  "method": "PUT",
+  "path": "/api/billboards/{id}/unpublish",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "addUsersToSegment",
+  "method": "PUT",
+  "path": "/api/segments/{id}/add_users",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

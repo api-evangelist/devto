@@ -1,0 +1,26 @@
+{
+  "operationId": "put_api_pages_{id}",
+  "method": "PUT",
+  "path": "/api/pages/{id}",
+  "status": "200",
+  "response": {
+    "id": 53,
+    "title": "New Title",
+    "slug": "rung-cutting",
+    "description": "Accusantium harum beatae quia.",
+    "is_top_level_path": false,
+    "landing_page": false,
+    "body_html": null,
+    "body_json": null,
+    "body_markdown": "Nostrum et modi explicabo.",
+    "processed_html": "<p>Nostrum et modi explicabo.</p>\n\n",
+    "social_image": {
+      "url": null
+    },
+    "template": "contained",
+    "subforem_id": null,
+    "page_template_id": null,
+    "template_data": {},
+    "redirect_to_url": null
+  }
+}

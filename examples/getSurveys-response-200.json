@@ -1,0 +1,32 @@
+{
+  "operationId": "getSurveys",
+  "method": "GET",
+  "path": "/api/surveys",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "survey",
+      "id": 43,
+      "title": "dolores",
+      "slug": "dolores-2875c66f",
+      "active": true,
+      "display_title": true,
+      "allow_resubmission": false,
+      "survey_type_of": "community_pulse",
+      "created_at": "2026-05-28T18:45:29Z",
+      "updated_at": "2026-05-28T18:45:29Z"
+    },
+    {
+      "type_of": "survey",
+      "id": 44,
+      "title": "autem",
+      "slug": "autem-1c9b1a12",
+      "active": true,
+      "display_title": true,
+      "allow_resubmission": false,
+      "survey_type_of": "community_pulse",
+      "created_at": "2026-05-28T18:45:29Z",
+      "updated_at": "2026-05-28T18:45:29Z"
+    }
+  ]
+}

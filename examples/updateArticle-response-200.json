@@ -1,0 +1,53 @@
+{
+  "operationId": "updateArticle",
+  "method": "PUT",
+  "path": "/api/articles/{id}",
+  "status": "200",
+  "response": {
+    "type_of": "article",
+    "id": 2241,
+    "title": "The Heart Is a Lonely Hunter9",
+    "description": "Scenester banh mi truffaut. Helvetica keytar chillwave tote bag mixtape forage intelligentsia carry....",
+    "readable_publish_date": "May 28",
+    "slug": "the-heart-is-a-lonely-hunter9-2ip2",
+    "path": "/username17/the-heart-is-a-lonely-hunter9-2ip2",
+    "url": "http://forem.test/username17/the-heart-is-a-lonely-hunter9-2ip2",
+    "comments_count": 0,
+    "public_reactions_count": 0,
+    "collection_id": null,
+    "published_timestamp": "2026-05-28T18:45:17Z",
+    "language": "en",
+    "subforem_id": null,
+    "positive_reactions_count": 0,
+    "cover_image": "http://forem.test/assets/23-33ea5a2b5af3dc15b9ed90de0b850f67e2390eaec3361d6687d3b9750c699f84.png",
+    "social_image": "http://forem.test/assets/23-33ea5a2b5af3dc15b9ed90de0b850f67e2390eaec3361d6687d3b9750c699f84.png",
+    "canonical_url": "http://forem.test/username17/the-heart-is-a-lonely-hunter9-2ip2",
+    "created_at": "2026-05-28T18:45:17Z",
+    "edited_at": "2026-05-28T18:45:17Z",
+    "crossposted_at": null,
+    "published_at": "2026-05-28T18:45:17Z",
+    "last_comment_at": "2026-05-28T18:45:17Z",
+    "reading_time_minutes": 1,
+    "tag_list": "discuss",
+    "tags": [
+      "discuss"
+    ],
+    "body_html": "<p><strong>New</strong> body for the article</p>\n\n",
+    "body_markdown": "**New** body for the article",
+    "user": {
+      "name": "Celsa \"Edwardo\" \\:/ Kirlin",
+      "username": "username17",
+      "twitter_username": "twitter17",
+      "github_username": "github17",
+      "user_id": 4065,
+      "website_url": null,
+      "profile_image": "/uploads/user/profile_image/4065/36a7e5c8-ce49-410d-8fc0-7c2b776c8d4f.jpeg",
+      "profile_image_90": "/uploads/user/profile_image/4065/36a7e5c8-ce49-410d-8fc0-7c2b776c8d4f.jpeg"
+    },
+    "flare_tag": {
+      "name": "discuss",
+      "bg_color_hex": "#000000",
+      "text_color_hex": "#ffffff"
+    }
+  }
+}

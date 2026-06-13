@@ -1,0 +1,10 @@
+{
+  "operationId": "getFollowers",
+  "method": "GET",
+  "path": "/api/followers/users",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

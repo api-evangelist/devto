@@ -1,0 +1,10 @@
+{
+  "operationId": "getArticleByPath",
+  "method": "GET",
+  "path": "/api/articles/{username}/{slug}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "operationId": "getOrgArticles",
+  "method": "GET",
+  "path": "/api/organizations/{organization_id_or_username}/articles",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "article",
+      "id": 2258,
+      "title": "Whats Become of Waring26",
+      "description": "Intelligentsia wes anderson pitchfork. Ramps single-origin coffee park kombucha vhs thundercats....",
+      "readable_publish_date": "May 28",
+      "slug": "whats-become-of-waring26-1010",
+      "path": "/org18/whats-become-of-waring26-1010",
+      "url": "http://forem.test/org18/whats-become-of-waring26-1010",
+      "comments_count": 0,
+      "public_reactions_count": 0,
+      "collection_id": null,
+      "published_timestamp": "2026-05-28T18:45:25Z",
+      "language": "en",
+      "subforem_id": null,
+      "positive_reactions_count": 0,
+      "cover_image": "http://forem.test/assets/38-3b0c46cc0d5367229799d282c99b2c42f33501201cac1ceb5c643f9ee11f06c6.png",
+      "social_image": "http://forem.test/assets/38-3b0c46cc0d5367229799d282c99b2c42f33501201cac1ceb5c643f9ee11f06c6.png",
+      "canonical_url": "http://forem.test/org18/whats-become-of-waring26-1010",
+      "created_at": "2026-05-28T18:45:25Z",
+      "edited_at": null,
+      "crossposted_at": null,
+      "published_at": "2026-05-28T18:45:25Z",
+      "last_comment_at": "2026-05-28T18:45:25Z",
+      "reading_time_minutes": 1,
+      "tag_list": [
+        "javascript",
+        "html",
+        "discuss"
+      ],
+      "tags": "javascript, html, discuss",
+      "user": {
+        "name": "Jeremy \"Arlena\" \\:/ Hintz",
+        "username": "username162",
+        "twitter_username": "twitter162",
+        "github_username": "github162",
+        "user_id": 4210,
+        "website_url": null,
+        "profile_image": "/uploads/user/profile_image/4210/cd03365d-5604-4d37-a2e1-62a537710192.jpeg",
+        "profile_image_90": "/uploads/user/profile_image/4210/cd03365d-5604-4d37-a2e1-62a537710192.jpeg"
+      },
+      "organization": {
+        "name": "Marquardt-Von",
+        "username": "org18",
+        "slug": "org18",
+        "profile_image": "/uploads/organization/profile_image/574/a6c694a7-f32f-45cc-974f-5aa18eca3eac.png",
+        "profile_image_90": "/uploads/organization/profile_image/574/a6c694a7-f32f-45cc-974f-5aa18eca3eac.png"
+      }
+    }
+  ]
+}

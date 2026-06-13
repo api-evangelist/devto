@@ -1,0 +1,25 @@
+{
+  "operationId": "getCommentsByArticleId",
+  "method": "GET",
+  "path": "/api/comments",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "comment",
+      "id_code": "9e",
+      "created_at": "2026-05-28T18:45:23Z",
+      "body_html": "<p>Cronut direct trade thundercats. Sustainable ethical asymmetrical +1 pop-up flexitarian scenester. Pitchfork yuccie cronut kale chips austin health.</p>\n\n",
+      "user": {
+        "name": "Kayleen \"Silvana\" \\:/ Hoppe",
+        "username": "username127",
+        "twitter_username": "twitter127",
+        "github_username": "github127",
+        "user_id": 4175,
+        "website_url": null,
+        "profile_image": "/uploads/user/profile_image/4175/3f3a1ddd-ab70-45f5-8600-f4e42a293990.jpeg",
+        "profile_image_90": "/uploads/user/profile_image/4175/3f3a1ddd-ab70-45f5-8600-f4e42a293990.jpeg"
+      },
+      "children": []
+    }
+  ]
+}

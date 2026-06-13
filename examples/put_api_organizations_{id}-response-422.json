@@ -1,0 +1,10 @@
+{
+  "operationId": "put_api_organizations_{id}",
+  "method": "PUT",
+  "path": "/api/organizations/{id}",
+  "status": "422",
+  "response": {
+    "error": "param is missing or the value is empty: organization",
+    "status": 422
+  }
+}

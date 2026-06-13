@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SurveyWithPolls",
+  "description": "Representation of a survey including its polls and poll options",
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/Survey"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "polls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Poll"
+          },
+          "description": "All polls in the survey, ordered by position"
+        }
+      },
+      "required": [
+        "polls"
+      ]
+    }
+  ]
+}

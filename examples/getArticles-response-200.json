@@ -1,0 +1,60 @@
+{
+  "operationId": "getArticles",
+  "method": "GET",
+  "path": "/api/articles",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "article",
+      "id": 2236,
+      "title": "The Golden Apples of the Sun4",
+      "description": "Banh mi vegan fingerstache. Craft beer wes anderson portland you probably havent heard of them swag....",
+      "readable_publish_date": "May 28",
+      "slug": "the-golden-apples-of-the-sun4-453o",
+      "path": "/username12/the-golden-apples-of-the-sun4-453o",
+      "url": "http://forem.test/username12/the-golden-apples-of-the-sun4-453o",
+      "comments_count": 0,
+      "public_reactions_count": 0,
+      "collection_id": null,
+      "published_timestamp": "2026-05-28T18:45:16Z",
+      "language": "en",
+      "subforem_id": null,
+      "positive_reactions_count": 0,
+      "cover_image": "http://forem.test/assets/30-08b2d52669e0680784f50291966e33f77cbee815907e6abbacf74018fa3f3567.png",
+      "social_image": "http://forem.test/assets/30-08b2d52669e0680784f50291966e33f77cbee815907e6abbacf74018fa3f3567.png",
+      "canonical_url": "http://forem.test/username12/the-golden-apples-of-the-sun4-453o",
+      "created_at": "2026-05-28T18:45:16Z",
+      "edited_at": null,
+      "crossposted_at": null,
+      "published_at": "2026-05-28T18:45:16Z",
+      "last_comment_at": "2026-05-28T18:45:16Z",
+      "reading_time_minutes": 1,
+      "tag_list": [
+        "discuss"
+      ],
+      "tags": "discuss",
+      "user": {
+        "name": "Joan \"Stormy\" \\:/ Nienow",
+        "username": "username12",
+        "twitter_username": "twitter12",
+        "github_username": "github12",
+        "user_id": 4060,
+        "website_url": null,
+        "profile_image": "/uploads/user/profile_image/4060/aaa06fa2-d0f3-40cf-9578-bc53c1ca69e3.jpeg",
+        "profile_image_90": "/uploads/user/profile_image/4060/aaa06fa2-d0f3-40cf-9578-bc53c1ca69e3.jpeg"
+      },
+      "organization": {
+        "name": "Bergnaum Inc",
+        "username": "org4",
+        "slug": "org4",
+        "profile_image": "/uploads/organization/profile_image/560/319c0831-b2a0-4bc1-a40b-bd5fdae4ce68.png",
+        "profile_image_90": "/uploads/organization/profile_image/560/319c0831-b2a0-4bc1-a40b-bd5fdae4ce68.png"
+      },
+      "flare_tag": {
+        "name": "discuss",
+        "bg_color_hex": "#000000",
+        "text_color_hex": "#ffffff"
+      }
+    }
+  ]
+}

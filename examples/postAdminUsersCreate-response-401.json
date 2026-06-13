@@ -1,0 +1,10 @@
+{
+  "operationId": "postAdminUsersCreate",
+  "method": "POST",
+  "path": "/api/admin/users",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

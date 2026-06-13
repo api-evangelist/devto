@@ -1,0 +1,10 @@
+{
+  "operationId": "getSegments",
+  "method": "GET",
+  "path": "/api/segments",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

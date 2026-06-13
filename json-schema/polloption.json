@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PollOption",
+  "description": "A single option within a poll",
+  "type": "object",
+  "properties": {
+    "type_of": {
+      "type": "string",
+      "enum": [
+        "poll_option"
+      ],
+      "description": "Resource discriminator"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "markdown": {
+      "type": "string",
+      "nullable": true,
+      "description": "Option text in markdown"
+    },
+    "processed_html": {
+      "type": "string",
+      "nullable": true,
+      "description": "Option text rendered as HTML"
+    },
+    "position": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Display order within the poll"
+    },
+    "poll_votes_count": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of votes for this option"
+    },
+    "supplementary_text": {
+      "type": "string",
+      "nullable": true,
+      "description": "Additional descriptive text for the option"
+    }
+  },
+  "required": [
+    "type_of",
+    "id",
+    "markdown",
+    "processed_html",
+    "position",
+    "poll_votes_count"
+  ]
+}

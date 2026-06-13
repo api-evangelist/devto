@@ -1,0 +1,10 @@
+{
+  "operationId": "getArticleById",
+  "method": "GET",
+  "path": "/api/articles/{id}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

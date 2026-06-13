@@ -1,0 +1,10 @@
+{
+  "operationId": "getAgentSessionById",
+  "method": "GET",
+  "path": "/api/agent_sessions/{id}",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

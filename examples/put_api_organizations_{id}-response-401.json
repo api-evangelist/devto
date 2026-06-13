@@ -1,0 +1,10 @@
+{
+  "operationId": "put_api_organizations_{id}",
+  "method": "PUT",
+  "path": "/api/organizations/{id}",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

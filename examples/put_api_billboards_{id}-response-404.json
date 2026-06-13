@@ -1,0 +1,10 @@
+{
+  "operationId": "put_api_billboards_{id}",
+  "method": "PUT",
+  "path": "/api/billboards/{id}",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

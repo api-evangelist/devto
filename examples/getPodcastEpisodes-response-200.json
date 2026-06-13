@@ -1,0 +1,21 @@
+{
+  "operationId": "getPodcastEpisodes",
+  "method": "GET",
+  "path": "/api/podcast_episodes",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "podcast_episodes",
+      "class_name": "PodcastEpisode",
+      "id": 42,
+      "path": "/codenewbie/slug-2",
+      "title": "2",
+      "image_url": "/uploads/podcast/image/55/d8d761be-e588-4e8c-90af-5dbbebb3abfa.jpeg",
+      "podcast": {
+        "title": "Hennepin",
+        "slug": "codenewbie",
+        "image_url": "/uploads/podcast/image/55/d8d761be-e588-4e8c-90af-5dbbebb3abfa.jpeg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "limitUser",
+  "method": "PUT",
+  "path": "/api/users/{id}/limited",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

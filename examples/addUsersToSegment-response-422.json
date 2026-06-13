@@ -1,0 +1,10 @@
+{
+  "operationId": "addUsersToSegment",
+  "method": "PUT",
+  "path": "/api/segments/{id}/add_users",
+  "status": "422",
+  "response": {
+    "error": "param is missing or the value is empty: user_ids",
+    "status": 422
+  }
+}

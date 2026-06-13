@@ -1,0 +1,10 @@
+{
+  "operationId": "getSurveyPollVotes",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}/poll_votes",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

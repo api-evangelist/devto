@@ -1,0 +1,10 @@
+{
+  "operationId": "unSpamUser",
+  "method": "DELETE",
+  "path": "/api/users/{id}/spam",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

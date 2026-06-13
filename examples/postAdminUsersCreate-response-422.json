@@ -1,0 +1,10 @@
+{
+  "operationId": "postAdminUsersCreate",
+  "method": "POST",
+  "path": "/api/admin/users",
+  "status": "422",
+  "response": {
+    "error": "param is missing or the value is empty: email",
+    "status": 422
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PollVote",
+  "description": "Representation of a single poll vote cast by a user",
+  "type": "object",
+  "properties": {
+    "type_of": {
+      "type": "string",
+      "enum": [
+        "poll_vote"
+      ],
+      "description": "Resource discriminator"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "poll_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "poll_option_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "user_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "user_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "session_start": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "type_of",
+    "id",
+    "poll_id",
+    "poll_option_id",
+    "user_id",
+    "user_email",
+    "session_start",
+    "created_at"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "operationId": "getSurveyPollVotes",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}/poll_votes",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "poll_vote",
+      "id": 28,
+      "poll_id": 54,
+      "poll_option_id": 190,
+      "user_id": 4252,
+      "session_start": 0,
+      "user_email": "person204@example.com",
+      "created_at": "2026-05-28T18:45:29Z"
+    }
+  ]
+}

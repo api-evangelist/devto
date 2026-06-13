@@ -1,0 +1,14 @@
+{
+  "operationId": "addUsersToSegment",
+  "method": "PUT",
+  "path": "/api/segments/{id}/add_users",
+  "status": "200",
+  "response": {
+    "succeeded": [
+      4117,
+      4118,
+      4119
+    ],
+    "failed": []
+  }
+}

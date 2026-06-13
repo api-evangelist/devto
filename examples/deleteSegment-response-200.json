@@ -1,0 +1,13 @@
+{
+  "operationId": "deleteSegment",
+  "method": "DELETE",
+  "path": "/api/segments/{id}",
+  "status": "200",
+  "response": {
+    "id": 40,
+    "created_at": "2026-05-28T12:45:20.004-06:00",
+    "name": null,
+    "type_of": "manual",
+    "updated_at": "2026-05-28T12:45:20.004-06:00"
+  }
+}

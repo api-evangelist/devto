@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Poll",
+  "description": "A poll (question) belonging to a survey or article",
+  "type": "object",
+  "properties": {
+    "type_of": {
+      "type": "string",
+      "enum": [
+        "poll"
+      ],
+      "description": "Resource discriminator"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "prompt_markdown": {
+      "type": "string",
+      "nullable": true,
+      "description": "Question text in markdown"
+    },
+    "prompt_html": {
+      "type": "string",
+      "nullable": true,
+      "description": "Question text rendered as HTML"
+    },
+    "poll_type_of": {
+      "type": "string",
+      "enum": [
+        "single_choice",
+        "multiple_choice",
+        "scale",
+        "text_input"
+      ],
+      "description": "Poll question type: single_choice, multiple_choice, scale, or text_input"
+    },
+    "position": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Display order within the survey"
+    },
+    "poll_votes_count": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Total number of votes across all options"
+    },
+    "poll_skips_count": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of users who skipped this poll"
+    },
+    "poll_options_count": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of options in this poll"
+    },
+    "scale_min": {
+      "type": "integer",
+      "format": "int32",
+      "nullable": true,
+      "description": "Minimum value for scale polls"
+    },
+    "scale_max": {
+      "type": "integer",
+      "format": "int32",
+      "nullable": true,
+      "description": "Maximum value for scale polls"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "poll_options": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PollOption"
+      },
+      "description": "The available options for this poll"
+    }
+  },
+  "required": [
+    "type_of",
+    "id",
+    "prompt_markdown",
+    "prompt_html",
+    "poll_type_of",
+    "position",
+    "poll_votes_count",
+    "poll_skips_count",
+    "poll_options_count",
+    "created_at",
+    "updated_at",
+    "poll_options"
+  ]
+}

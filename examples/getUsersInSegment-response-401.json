@@ -1,0 +1,10 @@
+{
+  "operationId": "getUsersInSegment",
+  "method": "GET",
+  "path": "/api/segments/{id}/users",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

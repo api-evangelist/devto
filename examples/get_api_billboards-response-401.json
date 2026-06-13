@@ -1,0 +1,10 @@
+{
+  "operationId": "get_api_billboards",
+  "method": "GET",
+  "path": "/api/billboards",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

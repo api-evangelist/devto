@@ -1,0 +1,19 @@
+{
+  "operationId": "getAgentSessions",
+  "method": "GET",
+  "path": "/api/agent_sessions",
+  "status": "200",
+  "response": [
+    {
+      "id": 40,
+      "slug": "session-a-jsq3q8",
+      "title": "Session A",
+      "tool_name": "claude_code",
+      "total_messages": 2,
+      "published": false,
+      "created_at": "2026-05-28T12:45:15-06:00",
+      "updated_at": "2026-05-28T12:45:15-06:00",
+      "url": "http://forem.test/agent_sessions/session-a-jsq3q8"
+    }
+  ]
+}

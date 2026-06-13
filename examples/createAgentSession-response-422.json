@@ -1,0 +1,10 @@
+{
+  "operationId": "createAgentSession",
+  "method": "POST",
+  "path": "/api/agent_sessions",
+  "status": "422",
+  "response": {
+    "error": "Missing session content. Provide 'curated_data' or 's3_key'.",
+    "status": 422
+  }
+}

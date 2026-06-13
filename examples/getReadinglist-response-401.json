@@ -1,0 +1,10 @@
+{
+  "operationId": "getReadinglist",
+  "method": "GET",
+  "path": "/api/readinglist",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

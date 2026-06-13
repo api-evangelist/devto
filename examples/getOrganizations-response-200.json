@@ -1,0 +1,19 @@
+{
+  "operationId": "getOrganizations",
+  "method": "GET",
+  "path": "/api/organizations",
+  "status": "200",
+  "response": [
+    {
+      "id": 576,
+      "name": "Kuphal Inc",
+      "profile_image": {
+        "url": "/uploads/organization/profile_image/576/0c9dc328-e6c9-4dba-af45-700d5196da17.png"
+      },
+      "slug": "org20",
+      "summary": "Keffiyeh synth hashtag cold-pressed stumptown readymade. Microdosing drinking semiotics salvia gluten-free synth slow-carb tousled. Try-hard selvage ha",
+      "tag_line": null,
+      "url": "http://sipes.test/janiece_greenholt"
+    }
+  ]
+}

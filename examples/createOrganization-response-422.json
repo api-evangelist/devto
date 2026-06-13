@@ -1,0 +1,10 @@
+{
+  "operationId": "createOrganization",
+  "method": "POST",
+  "path": "/api/organizations",
+  "status": "422",
+  "response": {
+    "error": "Validation failed: Name can't be blank, Profile image can't be blank, Slug can't be blank",
+    "status": 422
+  }
+}

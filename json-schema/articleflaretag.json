@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArticleFlareTag",
+  "description": "Flare tag of the article",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "bg_color_hex": {
+      "description": "Background color (hexadecimal)",
+      "type": "string",
+      "nullable": true
+    },
+    "text_color_hex": {
+      "description": "Text color (hexadecimal)",
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

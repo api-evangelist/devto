@@ -1,0 +1,22 @@
+{
+  "operationId": "getUserMe",
+  "method": "GET",
+  "path": "/api/users/me",
+  "status": "200",
+  "response": {
+    "type_of": "user",
+    "id": 4306,
+    "username": "username258",
+    "name": "Vania \"Earl\" \\:/ Langworth",
+    "twitter_username": "twitter258",
+    "github_username": "github258",
+    "email": null,
+    "summary": null,
+    "location": null,
+    "website_url": null,
+    "joined_at": "May 28, 2026",
+    "profile_image": "/uploads/user/profile_image/4306/55fabae2-ecb8-4e4c-bafa-c7c9b1ed240a.jpeg",
+    "badge_ids": [],
+    "followers_count": 0
+  }
+}

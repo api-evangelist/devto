@@ -1,0 +1,10 @@
+{
+  "operationId": "unpublishArticle",
+  "method": "PUT",
+  "path": "/api/articles/{id}/unpublish",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

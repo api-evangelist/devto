@@ -1,0 +1,10 @@
+{
+  "operationId": "getOrgArticles",
+  "method": "GET",
+  "path": "/api/organizations/{organization_id_or_username}/articles",
+  "status": "404",
+  "response": {
+    "error": "not found",
+    "status": 404
+  }
+}

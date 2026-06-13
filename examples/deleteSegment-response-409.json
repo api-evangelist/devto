@@ -1,0 +1,9 @@
+{
+  "operationId": "deleteSegment",
+  "method": "DELETE",
+  "path": "/api/segments/{id}",
+  "status": "409",
+  "response": {
+    "error": "Segments cannot be deleted while in use by any billboards"
+  }
+}

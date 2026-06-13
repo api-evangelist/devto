@@ -1,0 +1,13 @@
+{
+  "operationId": "post_api_reactions",
+  "method": "POST",
+  "path": "/api/reactions",
+  "status": "200",
+  "response": {
+    "result": "none",
+    "category": "like",
+    "id": 163,
+    "reactable_id": 2262,
+    "reactable_type": "Article"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "unpublishUser",
+  "method": "PUT",
+  "path": "/api/users/{id}/unpublish",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

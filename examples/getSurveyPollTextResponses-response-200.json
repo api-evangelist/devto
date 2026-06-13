@@ -1,0 +1,18 @@
+{
+  "operationId": "getSurveyPollTextResponses",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}/poll_text_responses",
+  "status": "200",
+  "response": [
+    {
+      "type_of": "poll_text_response",
+      "id": 12,
+      "poll_id": 57,
+      "user_id": 4258,
+      "text_content": "Great survey!",
+      "session_start": 0,
+      "user_email": "person210@example.com",
+      "created_at": "2026-05-28T18:45:30Z"
+    }
+  ]
+}

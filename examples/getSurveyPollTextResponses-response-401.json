@@ -1,0 +1,10 @@
+{
+  "operationId": "getSurveyPollTextResponses",
+  "method": "GET",
+  "path": "/api/surveys/{id_or_slug}/poll_text_responses",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

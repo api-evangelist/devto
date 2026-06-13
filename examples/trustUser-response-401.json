@@ -1,0 +1,10 @@
+{
+  "operationId": "trustUser",
+  "method": "PUT",
+  "path": "/api/users/{id}/trusted",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "operationId": "post_api_reactions_toggle",
+  "method": "POST",
+  "path": "/api/reactions/toggle",
+  "status": "200",
+  "response": {
+    "result": "create",
+    "category": "like",
+    "id": 161,
+    "reactable_id": 2260,
+    "reactable_type": "Article"
+  }
+}

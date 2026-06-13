@@ -1,0 +1,23 @@
+{
+  "operationId": "getCommentById",
+  "method": "GET",
+  "path": "/api/comments/{id}",
+  "status": "200",
+  "response": {
+    "type_of": "comment",
+    "id_code": "9g",
+    "created_at": "2026-05-28T18:45:24Z",
+    "body_html": "<p>Single-origin coffee tofu schlitz typewriter hashtag ennui pork belly. Roof literally gluten-free retro paleo dreamcatcher skateboard twee.</p>\n\n",
+    "user": {
+      "name": "Melodie \"Darla\" \\:/ Rice",
+      "username": "username131",
+      "twitter_username": "twitter131",
+      "github_username": "github131",
+      "user_id": 4179,
+      "website_url": null,
+      "profile_image": "/uploads/user/profile_image/4179/3971613f-4374-4827-981c-82d413278b46.jpeg",
+      "profile_image_90": "/uploads/user/profile_image/4179/3971613f-4374-4827-981c-82d413278b46.jpeg"
+    },
+    "children": []
+  }
+}

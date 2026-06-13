@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SharedOrganization",
+  "description": "The organization the resource belongs to",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "profile_image": {
+      "description": "Profile image (640x640)",
+      "type": "string",
+      "format": "url"
+    },
+    "profile_image_90": {
+      "description": "Profile image (90x90)",
+      "type": "string",
+      "format": "url"
+    }
+  }
+}

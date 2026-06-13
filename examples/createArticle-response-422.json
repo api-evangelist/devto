@@ -1,0 +1,10 @@
+{
+  "operationId": "createArticle",
+  "method": "POST",
+  "path": "/api/articles",
+  "status": "422",
+  "response": {
+    "error": "param is missing or the value is empty: article",
+    "status": 422
+  }
+}

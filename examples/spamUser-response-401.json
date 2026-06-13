@@ -1,0 +1,10 @@
+{
+  "operationId": "spamUser",
+  "method": "PUT",
+  "path": "/api/users/{id}/spam",
+  "status": "401",
+  "response": {
+    "error": "unauthorized",
+    "status": 401
+  }
+}

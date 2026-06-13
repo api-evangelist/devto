@@ -1,0 +1,358 @@
+{
+  "source": "DEV Community API (Forem API V1)",
+  "version": "1.0.0",
+  "terms": [
+    {
+      "term": "agent_sessions",
+      "type": "tag",
+      "description": "API tag grouping for agent_sessions operations",
+      "operations": [
+        "GET /api/agent_sessions",
+        "POST /api/agent_sessions",
+        "GET /api/agent_sessions/{id}"
+      ]
+    },
+    {
+      "term": "articles",
+      "type": "tag",
+      "description": "API tag grouping for articles operations",
+      "operations": [
+        "POST /api/articles",
+        "GET /api/articles",
+        "GET /api/articles/latest",
+        "GET /api/articles/{id}",
+        "PUT /api/articles/{id}",
+        "GET /api/articles/{username}/{slug}",
+        "GET /api/articles/me",
+        "GET /api/articles/me/published",
+        "GET /api/articles/me/unpublished",
+        "GET /api/articles/me/all",
+        "PUT /api/articles/{id}/unpublish",
+        "GET /api/organizations/{organization_id_or_username}/articles",
+        "GET /api/videos"
+      ]
+    },
+    {
+      "term": "users",
+      "type": "tag",
+      "description": "API tag grouping for users operations",
+      "operations": [
+        "GET /api/articles/me",
+        "GET /api/articles/me/published",
+        "GET /api/articles/me/unpublished",
+        "GET /api/articles/me/all",
+        "GET /api/organizations/{organization_id_or_username}/users",
+        "PUT /api/users/{id}/suspend",
+        "PUT /api/users/{id}/limited",
+        "DELETE /api/users/{id}/limited",
+        "PUT /api/users/{id}/spam",
+        "DELETE /api/users/{id}/spam",
+        "PUT /api/users/{id}/trusted",
+        "DELETE /api/users/{id}/trusted",
+        "GET /api/users/me",
+        "GET /api/users/{id}",
+        "PUT /api/users/{id}/unpublish",
+        "POST /api/admin/users"
+      ]
+    },
+    {
+      "term": "segments",
+      "type": "tag",
+      "description": "API tag grouping for segments operations",
+      "operations": [
+        "GET /api/segments",
+        "POST /api/segments",
+        "GET /api/segments/{id}",
+        "DELETE /api/segments/{id}",
+        "GET /api/segments/{id}/users",
+        "PUT /api/segments/{id}/add_users",
+        "PUT /api/segments/{id}/remove_users"
+      ]
+    },
+    {
+      "term": "billboards",
+      "type": "tag",
+      "description": "API tag grouping for billboards operations",
+      "operations": [
+        "GET /api/billboards",
+        "POST /api/billboards",
+        "GET /api/billboards/{id}",
+        "PUT /api/billboards/{id}",
+        "PUT /api/billboards/{id}/unpublish"
+      ]
+    },
+    {
+      "term": "comments",
+      "type": "tag",
+      "description": "API tag grouping for comments operations",
+      "operations": [
+        "GET /api/comments",
+        "GET /api/comments/{id}"
+      ]
+    },
+    {
+      "term": "followed_tags",
+      "type": "tag",
+      "description": "API tag grouping for followed_tags operations",
+      "operations": [
+        "GET /api/follows/tags"
+      ]
+    },
+    {
+      "term": "tags",
+      "type": "tag",
+      "description": "API tag grouping for tags operations",
+      "operations": [
+        "GET /api/follows/tags",
+        "GET /api/tags"
+      ]
+    },
+    {
+      "term": "followers",
+      "type": "tag",
+      "description": "API tag grouping for followers operations",
+      "operations": [
+        "GET /api/followers/users"
+      ]
+    },
+    {
+      "term": "organizations",
+      "type": "tag",
+      "description": "API tag grouping for organizations operations",
+      "operations": [
+        "GET /api/organizations/{username}",
+        "GET /api/organizations/{organization_id_or_username}/users",
+        "GET /api/organizations/{organization_id_or_username}/articles",
+        "GET /api/organizations",
+        "POST /api/organizations",
+        "GET /api/organizations/{id}",
+        "PUT /api/organizations/{id}",
+        "DELETE /api/organizations/{id}"
+      ]
+    },
+    {
+      "term": "pages",
+      "type": "tag",
+      "description": "API tag grouping for pages operations",
+      "operations": [
+        "GET /api/pages",
+        "POST /api/pages",
+        "GET /api/pages/{id}",
+        "PUT /api/pages/{id}",
+        "DELETE /api/pages/{id}"
+      ]
+    },
+    {
+      "term": "podcast_episodes",
+      "type": "tag",
+      "description": "API tag grouping for podcast_episodes operations",
+      "operations": [
+        "GET /api/podcast_episodes"
+      ]
+    },
+    {
+      "term": "profile images",
+      "type": "tag",
+      "description": "API tag grouping for profile images operations",
+      "operations": [
+        "GET /api/profile_images/{username}"
+      ]
+    },
+    {
+      "term": "reactions",
+      "type": "tag",
+      "description": "API tag grouping for reactions operations",
+      "operations": [
+        "POST /api/reactions/toggle",
+        "POST /api/reactions"
+      ]
+    },
+    {
+      "term": "readinglist",
+      "type": "tag",
+      "description": "API tag grouping for readinglist operations",
+      "operations": [
+        "GET /api/readinglist"
+      ]
+    },
+    {
+      "term": "surveys",
+      "type": "tag",
+      "description": "API tag grouping for surveys operations",
+      "operations": [
+        "GET /api/surveys",
+        "GET /api/surveys/{id_or_slug}",
+        "GET /api/surveys/{id_or_slug}/poll_votes",
+        "GET /api/surveys/{id_or_slug}/poll_text_responses"
+      ]
+    },
+    {
+      "term": "trends",
+      "type": "tag",
+      "description": "API tag grouping for trends operations",
+      "operations": [
+        "GET /api/trends",
+        "GET /api/trends/{id_or_slug}",
+        "GET /api/trends/{trend_id_or_slug}/articles"
+      ]
+    },
+    {
+      "term": "videos",
+      "type": "tag",
+      "description": "API tag grouping for videos operations",
+      "operations": [
+        "GET /api/videos"
+      ]
+    },
+    {
+      "term": "ArticleFlareTag",
+      "type": "schema",
+      "description": "Flare tag of the article"
+    },
+    {
+      "term": "ArticleIndex",
+      "type": "schema",
+      "description": "Representation of an article or post returned in a list"
+    },
+    {
+      "term": "VideoArticle",
+      "type": "schema",
+      "description": "Representation of an Article with video"
+    },
+    {
+      "term": "Article",
+      "type": "schema",
+      "description": "Representation of an Article to be created/updated"
+    },
+    {
+      "term": "Organization",
+      "type": "schema",
+      "description": "Representation of an Organization"
+    },
+    {
+      "term": "FollowedTag",
+      "type": "schema",
+      "description": "Representation of a followed tag"
+    },
+    {
+      "term": "Tag",
+      "type": "schema",
+      "description": "Representation of a tag"
+    },
+    {
+      "term": "Page",
+      "type": "schema",
+      "description": "Representation of a page object"
+    },
+    {
+      "term": "PodcastEpisodeIndex",
+      "type": "schema",
+      "description": "Representation of a podcast episode returned in a list"
+    },
+    {
+      "term": "ProfileImage",
+      "type": "schema",
+      "description": "A profile image object"
+    },
+    {
+      "term": "SharedUser",
+      "type": "schema",
+      "description": "The resource creator"
+    },
+    {
+      "term": "SharedOrganization",
+      "type": "schema",
+      "description": "The organization the resource belongs to"
+    },
+    {
+      "term": "User",
+      "type": "schema",
+      "description": "The representation of a user returned in a list"
+    },
+    {
+      "term": "ExtendedUser",
+      "type": "schema",
+      "description": "The representation of a user"
+    },
+    {
+      "term": "MyUser",
+      "type": "schema",
+      "description": "The representation of a user when accessed by themselves"
+    },
+    {
+      "term": "SharedPodcast",
+      "type": "schema",
+      "description": "The podcast that the resource belongs to"
+    },
+    {
+      "term": "Comment",
+      "type": "schema",
+      "description": "A Comment on an Article or Podcast Episode"
+    },
+    {
+      "term": "UserInviteParam",
+      "type": "schema",
+      "description": "User invite parameters"
+    },
+    {
+      "term": "Billboard",
+      "type": "schema",
+      "description": "Billboard, aka Widget, ex. Display Ad"
+    },
+    {
+      "term": "Segment",
+      "type": "schema",
+      "description": "A manually managed audience segment"
+    },
+    {
+      "term": "SegmentUserIds",
+      "type": "schema",
+      "description": "Schema definition for SegmentUserIds"
+    },
+    {
+      "term": "AgentSessionIndex",
+      "type": "schema",
+      "description": "Representation of an agent session returned in a list or after creation"
+    },
+    {
+      "term": "AgentSessionShow",
+      "type": "schema",
+      "description": "Full representation of an agent session including messages and curation data"
+    },
+    {
+      "term": "PollOption",
+      "type": "schema",
+      "description": "A single option within a poll"
+    },
+    {
+      "term": "Poll",
+      "type": "schema",
+      "description": "A poll (question) belonging to a survey or article"
+    },
+    {
+      "term": "Survey",
+      "type": "schema",
+      "description": "Representation of a survey"
+    },
+    {
+      "term": "SurveyWithPolls",
+      "type": "schema",
+      "description": "Representation of a survey including its polls and poll options"
+    },
+    {
+      "term": "PollVote",
+      "type": "schema",
+      "description": "Representation of a single poll vote cast by a user"
+    },
+    {
+      "term": "PollTextResponse",
+      "type": "schema",
+      "description": "Representation of a free-text response to a text-input poll"
+    },
+    {
+      "term": "Trend",
+      "type": "schema",
+      "description": "Representation of a trend"
+    }
+  ]
+}
