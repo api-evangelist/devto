@@ -9,7 +9,7 @@ description: >-
   lists, and administering organizations. Authentication uses an API key passed
   via the api-key header, with public read access available without
   authentication.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/devto/refs/heads/main/apis.yml
 created: '2026-06-13'
@@ -31,7 +31,7 @@ apis:
       display ads on the DEV Community platform. The API supports both public
       read access and authenticated write operations via API key.
     image: >-
-      https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developers.forem.com/api/v1
     baseURL: https://dev.to/api
     tags:
