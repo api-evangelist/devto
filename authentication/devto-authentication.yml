@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.json, openapi/openapi.yaml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: api-key
+  type: apiKey
+  in: header
+  parameter: api-key
+  description: "API Key authentication.\n\nAuthentication for some endpoints, like write operations\
+    \ on the\nArticles API require a DEV API key.\n\nAll authenticated endpoints are CORS disabled,\
+    \ the API key is intended for non-browser scripts.\n\n### Getting an API key\n\nTo obtain\
+    \ one, please follow these steps:\n\n  - visit https://dev.to/settings/extensions\n  - in\
+    \ the \"DEV API Keys\" section create a new key by adding a\n  "
+  sources:
+  - openapi/openapi.json
+  - openapi/openapi.yaml
