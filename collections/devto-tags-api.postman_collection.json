@@ -1,0 +1,502 @@
+{
+  "item": [
+    {
+      "id": "1bf22bd9-9ad4-4e69-ab9c-510fe3b8172d",
+      "name": "tags",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9822c33a-e811-4fc7-bcfc-b68b329bff8a",
+          "name": "Followed Tags",
+          "request": {
+            "name": "Followed Tags",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of the tags they follow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "follows",
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ea08381-a899-4fbb-a34a-8f2e1ba58464",
+              "name": "A List of followed tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "follows",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2315,\n    \"name\": \"tag3\",\n    \"points\": 1\n  },\n  {\n    \"id\": 2316,\n    \"name\": \"tag4\",\n    \"points\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8d1c27d-c189-4200-9bec-46df09ccd301",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "follows",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a003b379-f455-415d-be2a-c064d4062689",
+          "name": "Tags",
+          "request": {
+            "name": "Tags",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of tags that can be used to tag articles.\n\nIt will return tags ordered by popularity.\n\nIt supports pagination, each page will contain 10 tags by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b15b622-ca81-45a9-b34d-124fc1c966de",
+              "name": "A List of all tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2353,\n    \"name\": \"tag5\",\n    \"bg_color_hex\": null,\n    \"text_color_hex\": null,\n    \"short_summary\": null\n  },\n  {\n    \"id\": 2354,\n    \"name\": \"tag6\",\n    \"bg_color_hex\": null,\n    \"text_color_hex\": null,\n    \"short_summary\": null\n  },\n  {\n    \"id\": 2355,\n    \"name\": \"tag7\",\n    \"bg_color_hex\": null,\n    \"text_color_hex\": null,\n    \"short_summary\": null\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6de43862-f77e-49ad-895a-2cbe34585f55",
+          "name": "Followed Tags",
+          "request": {
+            "name": "Followed Tags",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of the tags they follow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "follows",
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a6fe4f1-38bc-493a-ac04-47ff4fda6255",
+              "name": "A List of followed tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "follows",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 701,\n    \"name\": \"tag3\",\n    \"points\": 1\n  },\n  {\n    \"id\": 702,\n    \"name\": \"tag4\",\n    \"points\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd104fa5-aea7-4270-8918-2754734a4e42",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "follows",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02b7294a-10c3-4c4a-9915-e989af02a02f",
+          "name": "Tags",
+          "request": {
+            "name": "Tags",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of tags that can be used to tag articles.\n\nIt will return tags ordered by popularity.\n\nIt supports pagination, each page will contain 10 tags by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "855360a1-f638-403c-8c73-fd53619f5ae5",
+              "name": "A List of all tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 806,\n    \"name\": \"tag5\",\n    \"bg_color_hex\": null,\n    \"text_color_hex\": null\n  },\n  {\n    \"id\": 808,\n    \"name\": \"tag6\",\n    \"bg_color_hex\": null,\n    \"text_color_hex\": null\n  },\n  {\n    \"id\": 809,\n    \"name\": \"tag7\",\n    \"bg_color_hex\": null,\n    \"text_color_hex\": null\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "26155755-8d24-4b00-8934-098d2d170f43",
+    "name": "Forem API V1 agent_sessions tags API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

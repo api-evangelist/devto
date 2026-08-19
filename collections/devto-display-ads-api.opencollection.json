@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions display ads API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "display ads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "display ads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/display_ads"
+          },
+          "docs": "This endpoint allows the client to retrieve a list of all display ads."
+        },
+        {
+          "info": {
+            "name": "display ads",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/display_ads",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create a new display ad."
+        },
+        {
+          "info": {
+            "name": "display ad",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/display_ads/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The ID of the display ad."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single display ad, via its id."
+        },
+        {
+          "info": {
+            "name": "display ads",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/display_ads/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The ID of the display ad."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to update the attributes of a single display ad, via its id."
+        },
+        {
+          "info": {
+            "name": "unpublish",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/display_ads/:id/unpublish",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The ID of the display ad to unpublish."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to remove a display ad from rotation by un-publishing it."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

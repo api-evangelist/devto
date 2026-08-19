@@ -1,0 +1,282 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions organizations API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "An organization (by username)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations/:username",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single organization by their username"
+        },
+        {
+          "info": {
+            "name": "Organization's users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations/:organization_id_or_username/users",
+            "params": [
+              {
+                "name": "organization_id_or_username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Organization's Articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations/:organization_id_or_username/articles",
+            "params": [
+              {
+                "name": "organization_id_or_username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of Dev organizations.\n\n  It supports pagination, each page will contain 10 tags by default."
+        },
+        {
+          "info": {
+            "name": "Create an Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/organizations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create an organization with the provided parameters.\n        It requires a token from a user with `admin` privileges."
+        },
+        {
+          "info": {
+            "name": "An organization (by id)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single organization by their id"
+        },
+        {
+          "info": {
+            "name": "Update an organization by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/organizations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The ID of the organization to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to update an existing organization."
+        },
+        {
+          "info": {
+            "name": "Delete an Organization by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/api/organizations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the organization."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to delete a single organization, specified by id"
+        },
+        {
+          "info": {
+            "name": "An organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/organizations/:username",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single organization by their username"
+        },
+        {
+          "info": {
+            "name": "Organization's users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/organizations/:username/users",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Organization's Articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/organizations/:username/articles",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

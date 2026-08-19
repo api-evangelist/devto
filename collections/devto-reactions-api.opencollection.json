@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions reactions API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "reactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "toggle reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/reactions/toggle",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:\n        * \"Like\"ing an Article will create a new \"like\" Reaction from the user for that Articles\n        * \"Like\"ing that Article a second time will remove the \"like\" from the user"
+        },
+        {
+          "info": {
+            "name": "create reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/reactions",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User). For examples:\n        * \"Like\"ing an Article will create a new \"like\" Reaction from the user for that Articles\n        * \"Like\"ing that Article a second time will return the previous \"like\""
+        },
+        {
+          "info": {
+            "name": "toggle reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/reactions/toggle",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:\n        * \"Like\"ing an Article will create a new \"like\" Reaction from the user for that Articles\n        * \"Like\"ing that Article a second time will remove the \"like\" from the user"
+        },
+        {
+          "info": {
+            "name": "create reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/reactions",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reactable_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User). For examples:\n        * \"Like\"ing an Article will create a new \"like\" Reaction from the user for that Articles\n        * \"Like\"ing that Article a second time will return the previous \"like\""
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,728 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions articles API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Published articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "tag",
+                "value": "discuss",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles that contain the requested tag. Articles\nwill be ordered by descending popularity.This parameter can be used in conjuction with `top`."
+              },
+              {
+                "name": "tags",
+                "value": "javascript, css",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles with any of the comma-separated tags.\nArticles will be ordered by descending popularity."
+              },
+              {
+                "name": "tags_exclude",
+                "value": "node, java",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles that do _not_ contain _any_\nof comma-separated tags. Articles will be ordered by descending popularity."
+              },
+              {
+                "name": "username",
+                "value": "ben",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles belonging\n            to a User or Organization ordered by descending publication date.\n            If `state=all` the number of items returned will be `1000` instead of the default `30`.\n            This parameter can be used in conjuction with `state`."
+              },
+              {
+                "name": "state",
+                "value": "fresh",
+                "type": "query",
+                "description": "Using this parameter will allow the client to check which articles are fresh or rising.\n            If `state=fresh` the server will return fresh articles.\n            If `state=rising` the server will return rising articles.\n            This param can be used in conjuction with `username`, only if set to `all`."
+              },
+              {
+                "name": "top",
+                "value": "2",
+                "type": "query",
+                "description": "Using this parameter will allow the client to return the most popular articles\nin the last `N` days.\n`top` indicates the number of days since publication of the articles returned.\nThis param can be used in conjuction with `tag`."
+              },
+              {
+                "name": "collection_id",
+                "value": "99",
+                "type": "query",
+                "description": "Adding this will allow the client to return the list of articles\nbelonging to the requested collection, ordered by ascending publication date."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles.\n\n\"Articles\" are all the posts that users create on DEV that typically\nshow up in the feed. They can be a blog post, a discussion question,\na help thread etc. but is referred to as article within the code.\n\nBy default it will return featured, published articles ordered\nby descending popularity.\n\nIt supports pagination, each page will contain `30` articles by default."
+        },
+        {
+          "info": {
+            "name": "Publish article",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/articles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create a new article.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code."
+        },
+        {
+          "info": {
+            "name": "Published articles sorted by published date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/latest",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.\n\nIt supports pagination, each page will contain 30 articles by default."
+        },
+        {
+          "info": {
+            "name": "Published article by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single published article given its `id`."
+        },
+        {
+          "info": {
+            "name": "Update an article by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The ID of the user to unpublish."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to update an existing article.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code."
+        },
+        {
+          "info": {
+            "name": "Published article by path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/:username/:slug",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single published article given its `path`."
+        },
+        {
+          "info": {
+            "name": "User's articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's published articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me/published",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's unpublished articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me/unpublished",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nUnpublished articles will be in reverse chronological creation order.\n\nIt will return unpublished articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's all articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me/all",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nIt will return both published and unpublished articles with pagination.\n\nUnpublished articles will be at the top of the list in reverse chronological creation order. Published articles will f"
+        },
+        {
+          "info": {
+            "name": "Unpublish an article",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/articles/:id/unpublish",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the article to unpublish."
+              },
+              {
+                "name": "note",
+                "value": "Admin requested unpublishing all articles via API",
+                "type": "query",
+                "description": "Content for the note that's created along with unpublishing"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to unpublish an article.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThe article will be unpublished and will no longer be visible to the public. It will remain\nin the database and will set back to draft status on the author's posts dashboard. Any\nnotifications associated with the article will be deleted. Any comments on the article\nwill remain."
+        },
+        {
+          "info": {
+            "name": "Organization's Articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations/:organization_id_or_username/articles",
+            "params": [
+              {
+                "name": "organization_id_or_username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Articles with a video",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/videos",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default."
+        },
+        {
+          "info": {
+            "name": "Published articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "tag",
+                "value": "discuss",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles that contain the requested tag. Articles\nwill be ordered by descending popularity.This parameter can be used in conjuction with `top`."
+              },
+              {
+                "name": "tags",
+                "value": "javascript, css",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles with any of the comma-separated tags.\nArticles will be ordered by descending popularity."
+              },
+              {
+                "name": "tags_exclude",
+                "value": "node, java",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles that do _not_ contain _any_\nof comma-separated tags. Articles will be ordered by descending popularity."
+              },
+              {
+                "name": "username",
+                "value": "ben",
+                "type": "query",
+                "description": "Using this parameter will retrieve articles belonging\n            to a User or Organization ordered by descending publication date.\n            If `state=all` the number of items returned will be `1000` instead of the default `30`.\n            This parameter can be used in conjuction with `state`."
+              },
+              {
+                "name": "state",
+                "value": "fresh",
+                "type": "query",
+                "description": "Using this parameter will allow the client to check which articles are fresh or rising.\n            If `state=fresh` the server will return fresh articles.\n            If `state=rising` the server will return rising articles.\n            This param can be used in conjuction with `username`, only if set to `all`."
+              },
+              {
+                "name": "top",
+                "value": "2",
+                "type": "query",
+                "description": "Using this parameter will allow the client to return the most popular articles\nin the last `N` days.\n`top` indicates the number of days since publication of the articles returned.\nThis param can be used in conjuction with `tag`."
+              },
+              {
+                "name": "collection_id",
+                "value": "99",
+                "type": "query",
+                "description": "Adding this will allow the client to return the list of articles\nbelonging to the requested collection, ordered by ascending publication date."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles.\n\n\"Articles\" are all the posts that users create on DEV that typically\nshow up in the feed. They can be a blog post, a discussion question,\na help thread etc. but is referred to as article within the code.\n\nBy default it will return featured, published articles ordered\nby descending popularity.\n\nIt supports pagination, each page will contain `30` articles by default."
+        },
+        {
+          "info": {
+            "name": "Publish article",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/articles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create a new article.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code."
+        },
+        {
+          "info": {
+            "name": "Published articles sorted by published date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/latest",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.\n\nIt supports pagination, each page will contain 30 articles by default."
+        },
+        {
+          "info": {
+            "name": "Published article by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single published article given its `id`."
+        },
+        {
+          "info": {
+            "name": "Update an article by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "123",
+                "type": "path",
+                "description": "The ID of the user to unpublish."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to update an existing article.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code."
+        },
+        {
+          "info": {
+            "name": "Published article by path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/:username/:slug",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single published article given its `path`."
+        },
+        {
+          "info": {
+            "name": "User's articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's published articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me/published",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's unpublished articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me/unpublished",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nUnpublished articles will be in reverse chronological creation order.\n\nIt will return unpublished articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's all articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me/all",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nIt will return both published and unpublished articles with pagination.\n\nUnpublished articles will be at the top of the list in reverse chronological creation order. Published articles will f"
+        },
+        {
+          "info": {
+            "name": "Unpublish an article",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/articles/:id/unpublish",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the article to unpublish."
+              },
+              {
+                "name": "note",
+                "value": "Admin requested unpublishing all articles via API",
+                "type": "query",
+                "description": "Content for the note that's created along with unpublishing"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to unpublish an article.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThe article will be unpublished and will no longer be visible to the public. It will remain\nin the database and will set back to draft status on the author's posts dashboard. Any\nnotifications associated with the article will be deleted. Any comments on the article\nwill remain."
+        },
+        {
+          "info": {
+            "name": "Organization's Articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/organizations/:username/articles",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Articles with a video",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/videos",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions videos API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "videos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Articles with a video",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/videos",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default."
+        },
+        {
+          "info": {
+            "name": "Articles with a video",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/videos",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,126 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions comments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "comments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/comments",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "a_id",
+                "value": "321",
+                "type": "query",
+                "description": "Article identifier."
+              },
+              {
+                "name": "p_id",
+                "value": "321",
+                "type": "query",
+                "description": "Podcast Episode identifier."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.\n\nIt will return the all top level comments with their nested comments as threads. See the format specification for further details.\n\nIt supports pagination, each page will contain `50` top level comments (and as many child comments they have) by default.\n\nIf the page parameter is not passed, all comments of an article or podcast will be returned.\n"
+        },
+        {
+          "info": {
+            "name": "Comment by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/comments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "321",
+                "type": "path",
+                "description": "Comment identifier."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details."
+        },
+        {
+          "info": {
+            "name": "Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/comments",
+            "params": [
+              {
+                "name": "a_id",
+                "value": "321",
+                "type": "query",
+                "description": "Article identifier."
+              },
+              {
+                "name": "p_id",
+                "value": "321",
+                "type": "query",
+                "description": "Podcast Episode identifier."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.\n\nIt will return the all top level comments with their nested comments as threads. See the format specification for further details."
+        },
+        {
+          "info": {
+            "name": "Comment by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/comments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "321",
+                "type": "path",
+                "description": "Comment identifier."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

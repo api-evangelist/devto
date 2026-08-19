@@ -1,0 +1,384 @@
+{
+  "item": [
+    {
+      "id": "47a1003e-b450-4187-8b09-d6b45df14dcb",
+      "name": "podcast_episodes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48bd88b2-93cc-4f8a-9fe6-3b7f5abd1b1f",
+          "name": "Podcast Episodes",
+          "request": {
+            "name": "Podcast Episodes",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of podcast episodes.\n        \"Podcast episodes\" are episodes belonging to podcasts.\n        It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.\n        It supports pagination, each page will contain 30 articles by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "podcast_episodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "Using this parameter will retrieve episodes belonging to a specific podcast."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "716786fa-8c25-4032-9963-0d3ca4c17370",
+              "name": "A List of Podcast episodes filtered by username",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "podcast_episodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "username",
+                      "value": "codenewbie"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"podcast_episodes\",\n    \"class_name\": \"PodcastEpisode\",\n    \"id\": 42,\n    \"path\": \"/codenewbie/slug-2\",\n    \"title\": \"2\",\n    \"image_url\": \"/uploads/podcast/image/55/d8d761be-e588-4e8c-90af-5dbbebb3abfa.jpeg\",\n    \"podcast\": {\n      \"title\": \"Hennepin\",\n      \"slug\": \"codenewbie\",\n      \"image_url\": \"/uploads/podcast/image/55/d8d761be-e588-4e8c-90af-5dbbebb3abfa.jpeg\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed3f147a-264c-41f2-adfb-b18dc607d4b3",
+              "name": "Unknown Podcast username",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "podcast_episodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "username",
+                      "value": "codenewbie"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00ee74f4-24e6-448a-a417-77c7b1d24372",
+          "name": "Podcast Episodes",
+          "request": {
+            "name": "Podcast Episodes",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of podcast episodes.\n        \"Podcast episodes\" are episodes belonging to podcasts.\n        It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.\n        It supports pagination, each page will contain 30 articles by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "podcast_episodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "Using this parameter will retrieve episodes belonging to a specific podcast."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c6ff030-7b40-4af4-9b5c-5ccca659037b",
+              "name": "A List of Podcast episodes filtered by username",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "podcast_episodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "username",
+                      "value": "codenewbie"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"podcast_episodes\",\n    \"class_name\": \"PodcastEpisode\",\n    \"id\": 4,\n    \"path\": \"/codenewbie/slug-4\",\n    \"title\": \"5\",\n    \"image_url\": \"/uploads/podcast/image/8/624a3c09-8036-43e4-9187-4cbf6d3c1fd6.jpeg\",\n    \"podcast\": {\n      \"title\": \"Maudite\",\n      \"slug\": \"codenewbie\",\n      \"image_url\": \"/uploads/podcast/image/8/624a3c09-8036-43e4-9187-4cbf6d3c1fd6.jpeg\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d75846a-0a2a-48df-8f84-a39c41e3a409",
+              "name": "Unknown Podcast username",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "podcast_episodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "username",
+                      "value": "codenewbie"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5fd786d8-b791-48a3-89ef-6ee8d03e25a5",
+    "name": "Forem API V1 agent_sessions podcast_episodes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

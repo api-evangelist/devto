@@ -1,0 +1,251 @@
+{
+  "item": [
+    {
+      "id": "24e5ce08-9072-498b-b521-6e98f850b9da",
+      "name": "videos",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c46e7d1d-2358-43b4-86e3-1526d2ae7bc7",
+          "name": "Articles with a video",
+          "request": {
+            "name": "Articles with a video",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "24",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa708ebc-e003-4322-9978-53a67f4b18d1",
+              "name": "A List of all articles with videos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "24"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"video_article\",\n    \"id\": 2269,\n    \"path\": \"/username271/dulce-et-decorum-est32-1c75\",\n    \"cloudinary_video_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/thumbs-video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f-00001.png\",\n    \"video\": \"https://s3.amazonaws.com/dev-to-input-v0/video-upload__2d7dc29e39a40c7059572bca75bb646b\",\n    \"title\": \"Dulce et Decorum Est32\",\n    \"user_id\": 4320,\n    \"video_duration_in_minutes\": \"00:00\",\n    \"video_source_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f.m3u8\",\n    \"user\": {\n      \"name\": \"Layne \\\"Eldon\\\" \\\\:/ Satterfield\"\n    }\n  },\n  {\n    \"type_of\": \"video_article\",\n    \"id\": 2270,\n    \"path\": \"/username272/an-evil-cradling33-n2e\",\n    \"cloudinary_video_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/thumbs-video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f-00001.png\",\n    \"video\": \"https://s3.amazonaws.com/dev-to-input-v0/video-upload__2d7dc29e39a40c7059572bca75bb646b\",\n    \"title\": \"An Evil Cradling33\",\n    \"user_id\": 4321,\n    \"video_duration_in_minutes\": \"00:00\",\n    \"video_source_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f.m3u8\",\n    \"user\": {\n      \"name\": \"Foster \\\"Augustine\\\" \\\\:/ Cruickshank\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e9091c4-caa1-494c-b368-17bcd85073cc",
+          "name": "Articles with a video",
+          "request": {
+            "name": "Articles with a video",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of articles that are uploaded with a video.\n\nIt will only return published video articles ordered by descending popularity.\n\nIt supports pagination, each page will contain 24 articles by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "videos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "24",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8522055a-0c96-48d3-a809-ebbac95e1354",
+              "name": "A List of all articles with videos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "videos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "24"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"video_article\",\n    \"id\": 287,\n    \"path\": \"/username499/the-millstone201-1kgb\",\n    \"cloudinary_video_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/thumbs-video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f-00001.png\",\n    \"title\": \"The Millstone201\",\n    \"user_id\": 1452,\n    \"video_duration_in_minutes\": \"00:00\",\n    \"video_source_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f.m3u8\",\n    \"user\": {\n      \"name\": \"Edgardo \\\"Monroe\\\" \\\\:/ Gusikowski\"\n    }\n  },\n  {\n    \"type_of\": \"video_article\",\n    \"id\": 288,\n    \"path\": \"/username500/a-many-splendoured-thing202-4gnk\",\n    \"cloudinary_video_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/thumbs-video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f-00001.png\",\n    \"title\": \"A Many-Splendoured Thing202\",\n    \"user_id\": 1453,\n    \"video_duration_in_minutes\": \"00:00\",\n    \"video_source_url\": \"https://dw71fyauz7yz9.cloudfront.net/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f/video-upload__1e42eb0bab4abb3c63baeb5e8bdfe69f.m3u8\",\n    \"user\": {\n      \"name\": \"Arlena \\\"Catarina\\\" \\\\:/ Zulauf\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e3b7d484-86d2-4a8e-befa-7a23215b7905",
+    "name": "Forem API V1 agent_sessions videos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

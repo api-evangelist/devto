@@ -1,0 +1,582 @@
+{
+  "item": [
+    {
+      "id": "74608976-2870-444c-9d08-c5c2525afaf2",
+      "name": "agent_sessions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "954d40d8-4720-4439-bb0b-4dbcf090f5a9",
+          "name": "list the authenticated user's agent sessions",
+          "request": {
+            "name": "list the authenticated user's agent sessions",
+            "description": {
+              "content": "This endpoint allows the client to list their own agent sessions.\n\nAgent sessions are coding conversation transcripts uploaded from CLI tools like\n[Claude Code](https://github.com/anthropics/claude-code). Use the\n[Forem CLI plugin](https://github.com/forem/forem-cli-plugin) to upload sessions\nfrom the command line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "agent_sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26ec9d11-821a-4e26-896d-470d86de3a05",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 40,\n    \"slug\": \"session-a-jsq3q8\",\n    \"title\": \"Session A\",\n    \"tool_name\": \"claude_code\",\n    \"total_messages\": 2,\n    \"published\": false,\n    \"created_at\": \"2026-05-28T12:45:15-06:00\",\n    \"updated_at\": \"2026-05-28T12:45:15-06:00\",\n    \"url\": \"http://forem.test/agent_sessions/session-a-jsq3q8\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74d1c229-6f3f-46a5-9491-4159c53ec700",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fb73f23-bacb-405c-bfb6-1434bfc47897",
+          "name": "upload a new agent session",
+          "request": {
+            "name": "upload a new agent session",
+            "description": {
+              "content": "This endpoint allows the client to create a new agent session.\n\nSessions are created from pre-parsed and curated data (`curated_data` JSON) and\noptionally linked to an S3-stored raw file via `s3_key`. Use the presign endpoint\nto get an upload URL for the raw file first.\n\nUse the [Forem CLI plugin](https://github.com/forem/forem-cli-plugin) to upload\nsessions directly from the command line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "agent_sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"curated_data\": \"<string>\",\n  \"title\": \"<string>\",\n  \"s3_key\": \"<string>\",\n  \"tool_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "500abc57-bce2-4027-b1cb-ff5d529ca57e",
+              "name": "created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"curated_data\": \"<string>\",\n  \"title\": \"<string>\",\n  \"s3_key\": \"<string>\",\n  \"tool_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 41,\n  \"slug\": \"my-claude-session-jg1xld\",\n  \"title\": \"My Claude Session\",\n  \"tool_name\": \"claude_code\",\n  \"total_messages\": 2,\n  \"published\": false,\n  \"created_at\": \"2026-05-28T12:45:15-06:00\",\n  \"url\": \"http://forem.test/agent_sessions/my-claude-session-jg1xld\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7bcc3ba-78f3-4950-8828-59e057d034a7",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"curated_data\": \"<string>\",\n  \"title\": \"<string>\",\n  \"s3_key\": \"<string>\",\n  \"tool_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "69887b89-96b7-4cf9-9b20-7332a035440e",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"curated_data\": \"<string>\",\n  \"title\": \"<string>\",\n  \"s3_key\": \"<string>\",\n  \"tool_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Missing session content. Provide 'curated_data' or 's3_key'.\",\n  \"status\": 422\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e00aab22-18cf-4229-b235-f287152d0571",
+          "name": "show details for an agent session",
+          "request": {
+            "name": "show details for an agent session",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a single agent session by slug or ID.\nReturns the full session including messages, curated selections, and slices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "agent_sessions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) The slug or ID of the agent session."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7640625a-9e34-4a13-871d-7c8fce34a442",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The slug or ID of the agent session."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 42,\n  \"slug\": \"my-session-15rjsb\",\n  \"title\": \"My Session\",\n  \"tool_name\": \"claude_code\",\n  \"total_messages\": 2,\n  \"curated_count\": 2,\n  \"published\": false,\n  \"metadata\": {\n    \"tool_name\": \"claude_code\",\n    \"total_messages\": 2\n  },\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"index\": 0,\n      \"content\": [\n        {\n          \"text\": \"Hello\",\n          \"type\": \"text\"\n        }\n      ]\n    },\n    {\n      \"role\": \"assistant\",\n      \"index\": 1,\n      \"content\": [\n        {\n          \"text\": \"Hi there\",\n          \"type\": \"text\"\n        }\n      ]\n    }\n  ],\n  \"slices\": [],\n  \"created_at\": \"2026-05-28T12:45:15-06:00\",\n  \"updated_at\": \"2026-05-28T12:45:15-06:00\",\n  \"url\": \"http://forem.test/agent_sessions/my-session-15rjsb\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5706997e-de28-4be5-bc3f-558c8c631487",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The slug or ID of the agent session."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d10dff8-5d2f-459d-8df2-0acecf6905d5",
+              "name": "not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "agent_sessions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) The slug or ID of the agent session."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0c743774-8a9d-4c41-981f-563cef67ac81",
+    "name": "Forem API V1 agent_sessions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

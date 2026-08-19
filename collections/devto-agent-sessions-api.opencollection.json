@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "agent_sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "list the authenticated user's agent sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/agent_sessions"
+          },
+          "docs": "This endpoint allows the client to list their own agent sessions.\n\nAgent sessions are coding conversation transcripts uploaded from CLI tools like\n[Claude Code](https://github.com/anthropics/claude-code). Use the\n[Forem CLI plugin](https://github.com/forem/forem-cli-plugin) to upload sessions\nfrom the command line."
+        },
+        {
+          "info": {
+            "name": "upload a new agent session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/agent_sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create a new agent session.\n\nSessions are created from pre-parsed and curated data (`curated_data` JSON) and\noptionally linked to an S3-stored raw file via `s3_key`. Use the presign endpoint\nto get an upload URL for the raw file first.\n\nUse the [Forem CLI plugin](https://github.com/forem/forem-cli-plugin) to upload\nsessions directly from the command line."
+        },
+        {
+          "info": {
+            "name": "show details for an agent session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/agent_sessions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "my-session-abc123",
+                "type": "path",
+                "description": "The slug or ID of the agent session."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single agent session by slug or ID.\nReturns the full session including messages, curated selections, and slices."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

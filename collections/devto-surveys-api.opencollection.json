@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions surveys API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "surveys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List surveys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/surveys",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "active",
+                "value": "",
+                "type": "query",
+                "description": "Filter by active status. Omit to return all surveys."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of surveys.\n\nIt supports pagination and optional filtering by active status.\n\nInternal only. Admin authorization is required to access this endpoint."
+        },
+        {
+          "info": {
+            "name": "A survey with polls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/surveys/:id_or_slug",
+            "params": [
+              {
+                "name": "id_or_slug",
+                "value": "community-pulse-2026",
+                "type": "path",
+                "description": "The ID or slug of the survey."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single survey by ID or slug,\nincluding its nested polls and poll options.\n\nInternal only. Admin authorization is required to access this endpoint."
+        },
+        {
+          "info": {
+            "name": "Survey poll votes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/surveys/:id_or_slug/poll_votes",
+            "params": [
+              {
+                "name": "id_or_slug",
+                "value": "",
+                "type": "path",
+                "description": "The ID or slug of the survey."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "after",
+                "value": "42",
+                "type": "query",
+                "description": "Return only votes with an ID greater than this value."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve poll votes for a given survey.\nResults are paginated. Use the `after` parameter with the last seen vote ID\nfor cursor-based pagination.\n\nInternal only. Admin authorization is required to access this endpoint."
+        },
+        {
+          "info": {
+            "name": "Survey poll text responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/surveys/:id_or_slug/poll_text_responses",
+            "params": [
+              {
+                "name": "id_or_slug",
+                "value": "",
+                "type": "path",
+                "description": "The ID or slug of the survey."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "after",
+                "value": "42",
+                "type": "query",
+                "description": "Return only text responses with an ID greater than this value."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve text responses for a given survey.\nResults are paginated. Use the `after` parameter with the last seen response ID\nfor cursor-based pagination.\n\nInternal only. Admin authorization is required to access this endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions trends API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "trends",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Trends",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/trends",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of active trends.\n\nTrends represent topics or themes that are currently hot and heavily discussed in the community.\nIt will return trends ordered by score and recency.\n\nIt supports pagination, each page will contain 10 trends by default."
+        },
+        {
+          "info": {
+            "name": "A Trend",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/trends/:id_or_slug",
+            "params": [
+              {
+                "name": "id_or_slug",
+                "value": "ruby-3-4-release",
+                "type": "path",
+                "description": "The ID or slug of the trend to retrieve."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve details of a single trend using either its numeric ID or unique slug."
+        },
+        {
+          "info": {
+            "name": "Articles in a Trend",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/trends/:trend_id_or_slug/articles",
+            "params": [
+              {
+                "name": "trend_id_or_slug",
+                "value": "ruby-3-4-release",
+                "type": "path",
+                "description": "The ID or slug of the trend to retrieve articles for."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles belonging to a trend.\n\nArticles will be ordered by their proximity (distance) to the trend's centroid, then by article score.\nIt supports pagination, each page will contain 10 articles by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

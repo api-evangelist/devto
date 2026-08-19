@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions podcast_episodes API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "podcast_episodes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Podcast Episodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/podcast_episodes",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "username",
+                "value": "codenewbie",
+                "type": "query",
+                "description": "Using this parameter will retrieve episodes belonging to a specific podcast."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of podcast episodes.\n        \"Podcast episodes\" are episodes belonging to podcasts.\n        It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.\n        It supports pagination, each page will contain 30 articles by default."
+        },
+        {
+          "info": {
+            "name": "Podcast Episodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/podcast_episodes",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "username",
+                "value": "codenewbie",
+                "type": "query",
+                "description": "Using this parameter will retrieve episodes belonging to a specific podcast."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of podcast episodes.\n        \"Podcast episodes\" are episodes belonging to podcasts.\n        It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.\n        It supports pagination, each page will contain 30 articles by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions tags API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Followed Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/follows/tags"
+          },
+          "docs": "This endpoint allows the client to retrieve a list of the tags they follow."
+        },
+        {
+          "info": {
+            "name": "Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/tags",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of tags that can be used to tag articles.\n\nIt will return tags ordered by popularity.\n\nIt supports pagination, each page will contain 10 tags by default."
+        },
+        {
+          "info": {
+            "name": "Followed Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/follows/tags"
+          },
+          "docs": "This endpoint allows the client to retrieve a list of the tags they follow."
+        },
+        {
+          "info": {
+            "name": "Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/tags",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of tags that can be used to tag articles.\n\nIt will return tags ordered by popularity.\n\nIt supports pagination, each page will contain 10 tags by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

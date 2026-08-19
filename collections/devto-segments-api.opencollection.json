@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions segments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "segments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Manually managed audience segments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/segments",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of audience segments.\n\nAn audience segment is a group of users that can be targeted by a Billboard. This API only permits managing segments you create and maintain yourself.\n\nThe endpoint supports pagination, and each page will contain `30` segments by default."
+        },
+        {
+          "info": {
+            "name": "Create a manually managed audience segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/segments"
+          },
+          "docs": "This endpoint allows the client to create a new audience segment.\n\nAn audience segment is a group of users that can be targeted by a Billboard. This API only permits managing segments you create and maintain yourself."
+        },
+        {
+          "info": {
+            "name": "A manually managed audience segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/segments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single manually-managed audience segment specified by ID."
+        },
+        {
+          "info": {
+            "name": "Delete a manually managed audience segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/api/segments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to delete an audience segment specified by ID.\n\nAudience segments cannot be deleted if there are still any Billboards using them."
+        },
+        {
+          "info": {
+            "name": "Users in a manually managed audience segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/segments/:id/users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of the users in an audience segment specified by ID. The endpoint supports pagination, and each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Add users to a manually managed audience segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/segments/:id/add_users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to add users in bulk to an audience segment specified by ID.\n\nSuccesses are users that were included in the segment (even if they were already in it), and failures are users that could not be added to the segment."
+        },
+        {
+          "info": {
+            "name": "Remove users from a manually managed audience segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/segments/:id/remove_users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to remove users in bulk from an audience segment specified by ID.\n\nSuccesses are users that were removed; failures are users that weren't a part of the segment."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

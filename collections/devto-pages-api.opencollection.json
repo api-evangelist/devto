@@ -1,0 +1,200 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions pages API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "show details for all pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/pages"
+          },
+          "docs": "This endpoint allows the client to retrieve details for all Page objects."
+        },
+        {
+          "info": {
+            "name": "pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/pages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create a new page."
+        },
+        {
+          "info": {
+            "name": "show details for a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/pages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the page."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve details for a single Page object, specified by ID."
+        },
+        {
+          "info": {
+            "name": "update details for a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/pages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the page."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to retrieve details for a single Page object, specified by ID."
+        },
+        {
+          "info": {
+            "name": "remove a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/api/pages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the page."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to delete a single Page object, specified by ID."
+        },
+        {
+          "info": {
+            "name": "show details for all pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/pages"
+          },
+          "docs": "This endpoint allows the client to retrieve details for all Page objects."
+        },
+        {
+          "info": {
+            "name": "pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/pages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to create a new page."
+        },
+        {
+          "info": {
+            "name": "show details for a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/pages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the page."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve details for a single Page object, specified by ID."
+        },
+        {
+          "info": {
+            "name": "update details for a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/pages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the page."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to retrieve details for a single Page object, specified by ID."
+        },
+        {
+          "info": {
+            "name": "remove a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/pages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the page."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to delete a single Page object, specified by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions followers API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "followers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Followers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/followers/users",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "sort",
+                "value": "created_at",
+                "type": "query",
+                "description": "Default is 'created_at'. Specifies the sort order for the created_at param of the follow\n                                relationship. To sort by newest followers first (descending order) specify\n                                ?sort=-created_at."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of the followers they have.\n        \"Followers\" are users that are following other users on the website.\n        It supports pagination, each page will contain 80 followers by default."
+        },
+        {
+          "info": {
+            "name": "Followers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/followers/users",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              },
+              {
+                "name": "sort",
+                "value": "created_at",
+                "type": "query",
+                "description": "Default is 'created_at'. Specifies the sort order for the created_at param of the follow\n                                relationship. To sort by newest followers first (descending order) specify\n                                ?sort=-created_at."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of the followers they have.\n        \"Followers\" are users that are following other users on the website.\n        It supports pagination, each page will contain 80 followers by default."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

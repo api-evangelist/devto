@@ -1,0 +1,697 @@
+{
+  "item": [
+    {
+      "id": "a0ec8f27-99c4-45c1-8f3d-231cafe2484c",
+      "name": "comments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "362f602a-0ed0-47f9-9bd8-18afcd3e9749",
+          "name": "Comments",
+          "request": {
+            "name": "Comments",
+            "description": {
+              "content": "This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.\n\nIt will return the all top level comments with their nested comments as threads. See the format specification for further details.\n\nIt supports pagination, each page will contain `50` top level comments (and as many child comments they have) by default.\n\nIf the page parameter is not passed, all comments of an article or podcast will be returned.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "a_id",
+                  "value": "<string>",
+                  "description": "Article identifier."
+                },
+                {
+                  "disabled": false,
+                  "key": "p_id",
+                  "value": "<string>",
+                  "description": "Podcast Episode identifier."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "Page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8f6175b-8e4b-4dc0-85a4-2758aaab1256",
+              "name": "A List of Comments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "a_id",
+                      "value": "321"
+                    },
+                    {
+                      "key": "p_id",
+                      "value": "321"
+                    },
+                    {
+                      "key": "page",
+                      "value": "321"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"comment\",\n    \"id_code\": \"9e\",\n    \"created_at\": \"2026-05-28T18:45:23Z\",\n    \"body_html\": \"<p>Cronut direct trade thundercats. Sustainable ethical asymmetrical +1 pop-up flexitarian scenester. Pitchfork yuccie cronut kale chips austin health.</p>\\n\\n\",\n    \"user\": {\n      \"name\": \"Kayleen \\\"Silvana\\\" \\\\:/ Hoppe\",\n      \"username\": \"username127\",\n      \"twitter_username\": \"twitter127\",\n      \"github_username\": \"github127\",\n      \"user_id\": 4175,\n      \"website_url\": null,\n      \"profile_image\": \"/uploads/user/profile_image/4175/3f3a1ddd-ab70-45f5-8600-f4e42a293990.jpeg\",\n      \"profile_image_90\": \"/uploads/user/profile_image/4175/3f3a1ddd-ab70-45f5-8600-f4e42a293990.jpeg\"\n    },\n    \"children\": []\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d789e06a-c0e0-4cd0-9b36-93920019808d",
+              "name": "Resource Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "a_id",
+                      "value": "321"
+                    },
+                    {
+                      "key": "p_id",
+                      "value": "321"
+                    },
+                    {
+                      "key": "page",
+                      "value": "321"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80b6e5e0-c4ca-4701-a2b5-79ce5f06b92d",
+          "name": "Comment by id",
+          "request": {
+            "name": "Comment by id",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "comments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Comment identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b68288ca-bd20-4203-a909-d21430eeea28",
+              "name": "A List of the Comments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "comments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Comment identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"comment\",\n  \"id_code\": \"9g\",\n  \"created_at\": \"2026-05-28T18:45:24Z\",\n  \"body_html\": \"<p>Single-origin coffee tofu schlitz typewriter hashtag ennui pork belly. Roof literally gluten-free retro paleo dreamcatcher skateboard twee.</p>\\n\\n\",\n  \"user\": {\n    \"name\": \"Melodie \\\"Darla\\\" \\\\:/ Rice\",\n    \"username\": \"username131\",\n    \"twitter_username\": \"twitter131\",\n    \"github_username\": \"github131\",\n    \"user_id\": 4179,\n    \"website_url\": null,\n    \"profile_image\": \"/uploads/user/profile_image/4179/3971613f-4374-4827-981c-82d413278b46.jpeg\",\n    \"profile_image_90\": \"/uploads/user/profile_image/4179/3971613f-4374-4827-981c-82d413278b46.jpeg\"\n  },\n  \"children\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0909363e-a996-4cd4-9b6f-efe5663b6132",
+              "name": "Comment Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "comments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Comment identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8e05779-f06d-4342-af7a-1af805c68bfa",
+          "name": "Comments",
+          "request": {
+            "name": "Comments",
+            "description": {
+              "content": "This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.\n\nIt will return the all top level comments with their nested comments as threads. See the format specification for further details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "a_id",
+                  "value": "<string>",
+                  "description": "Article identifier."
+                },
+                {
+                  "disabled": false,
+                  "key": "p_id",
+                  "value": "<string>",
+                  "description": "Podcast Episode identifier."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "504c268e-97ef-4a18-a16a-1ee77515346c",
+              "name": "A List of Comments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "a_id",
+                      "value": "321"
+                    },
+                    {
+                      "key": "p_id",
+                      "value": "321"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"comment\",\n    \"id_code\": \"52\",\n    \"created_at\": \"2023-04-14T14:45:34Z\",\n    \"body_html\": \"<p>Pop-up salvia vhs gluten-free tilde cleanse. Gastropub offal next level. Gluten-free health stumptown kale chips wolf.</p>\\n\\n\",\n    \"user\": {\n      \"name\": \"Luigi \\\"Ryann\\\" \\\\:/ Wuckert\",\n      \"username\": \"username410\",\n      \"twitter_username\": \"twitter410\",\n      \"github_username\": \"github410\",\n      \"user_id\": 1332,\n      \"website_url\": null,\n      \"profile_image\": \"/uploads/user/profile_image/1332/241b2d6f-ec6d-4590-b57f-3a2ce673f9de.jpeg\",\n      \"profile_image_90\": \"/uploads/user/profile_image/1332/241b2d6f-ec6d-4590-b57f-3a2ce673f9de.jpeg\"\n    },\n    \"children\": []\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a53d759e-1f32-4b82-aff0-2a5d49141962",
+              "name": "Resource Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "a_id",
+                      "value": "321"
+                    },
+                    {
+                      "key": "p_id",
+                      "value": "321"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92a149cf-9d6d-47ec-9c4c-3e0c367985d2",
+          "name": "Comment by id",
+          "request": {
+            "name": "Comment by id",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "comments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Comment identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c91898f2-1bc0-4c07-a681-94618336861c",
+              "name": "A List of the Comments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Comment identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"comment\",\n  \"id_code\": \"54\",\n  \"created_at\": \"2023-04-14T14:45:35Z\",\n  \"body_html\": \"<p>Ramps tacos jean shorts humblebrag street bicycle rights paleo. Actually green juice chartreuse tattooed cliche. 8-bit bushwick diy aesthetic.</p>\\n\\n\",\n  \"user\": {\n    \"name\": \"Santos \\\"Broderick\\\" \\\\:/ Lemke\",\n    \"username\": \"username414\",\n    \"twitter_username\": \"twitter414\",\n    \"github_username\": \"github414\",\n    \"user_id\": 1339,\n    \"website_url\": null,\n    \"profile_image\": \"/uploads/user/profile_image/1339/08f5cd26-743e-4957-af23-540b7ded60d6.jpeg\",\n    \"profile_image_90\": \"/uploads/user/profile_image/1339/08f5cd26-743e-4957-af23-540b7ded60d6.jpeg\"\n  },\n  \"children\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1057c29b-a8d9-470c-9bfa-48797896bc4d",
+              "name": "Comment Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Comment identifier."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2a9ac818-0612-40c3-992d-c685210ce854",
+    "name": "Forem API V1 agent_sessions comments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "item": [
+    {
+      "id": "f48ad7be-7d01-4272-877b-201613cd6958",
+      "name": "trends",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e5944ca7-e0a6-45d8-9f75-460602f5b1c6",
+          "name": "Trends",
+          "request": {
+            "name": "Trends",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of active trends.\n\nTrends represent topics or themes that are currently hot and heavily discussed in the community.\nIt will return trends ordered by score and recency.\n\nIt supports pagination, each page will contain 10 trends by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "trends"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f69b81c6-76ba-48bf-9ee3-756e9a287282",
+              "name": "A List of Trends",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"trend\",\n    \"id\": 269,\n    \"name\": \"Ruby 3.4 release\",\n    \"slug\": \"ruby-3-4-release\",\n    \"description\": \"Discussions around the latest Ruby 3.4 features\",\n    \"key_questions\": [],\n    \"score\": 15.5,\n    \"articles_count\": 1,\n    \"cover_image\": null,\n    \"first_observed_at\": \"2026-05-28T18:45:30Z\",\n    \"last_observed_at\": \"2026-05-28T18:45:30Z\",\n    \"created_at\": \"2026-05-28T18:45:30Z\",\n    \"updated_at\": \"2026-05-28T18:45:30Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50b3e5cb-c184-47f3-974d-20ceaf4eebbf",
+          "name": "A Trend",
+          "request": {
+            "name": "A Trend",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details of a single trend using either its numeric ID or unique slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "trends",
+                ":id_or_slug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id_or_slug",
+                  "description": "(Required) The ID or slug of the trend to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "852ae9ea-aa39-44a6-9de1-9aadff4d4604",
+              "name": "A Trend",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "trends",
+                    ":id_or_slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the trend to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"trend\",\n  \"id\": 270,\n  \"name\": \"Ruby 3.4 release\",\n  \"slug\": \"ruby-3-4-release\",\n  \"description\": \"Discussions around the latest Ruby 3.4 features\",\n  \"key_questions\": [],\n  \"score\": 15.5,\n  \"articles_count\": 1,\n  \"cover_image\": null,\n  \"first_observed_at\": \"2026-05-28T18:45:30Z\",\n  \"last_observed_at\": \"2026-05-28T18:45:30Z\",\n  \"created_at\": \"2026-05-28T18:45:30Z\",\n  \"updated_at\": \"2026-05-28T18:45:30Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b456f1c4-d158-4162-a2d2-b9203c695ce4",
+              "name": "Trend Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "trends",
+                    ":id_or_slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the trend to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "890b72f6-75f0-46c5-b866-41cf74e3bebe",
+          "name": "Articles in a Trend",
+          "request": {
+            "name": "Articles in a Trend",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of published articles belonging to a trend.\n\nArticles will be ordered by their proximity (distance) to the trend's centroid, then by article score.\nIt supports pagination, each page will contain 10 articles by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "trends",
+                ":trend_id_or_slug",
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trend_id_or_slug",
+                  "description": "(Required) The ID or slug of the trend to retrieve articles for."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "87582489-da81-4e97-9322-69017806a9e4",
+              "name": "A List of Articles in the Trend",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "trends",
+                    ":trend_id_or_slug",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trend_id_or_slug",
+                      "description": "(Required) The ID or slug of the trend to retrieve articles for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"article\",\n    \"id\": 2267,\n    \"title\": \"Ruby 3.4 features deep dive\",\n    \"description\": \"Put a bird on it fashion axe salvia pickled selfies pinterest. Ennui heirloom swag vhs yuccie food...\",\n    \"readable_publish_date\": \"May 28\",\n    \"slug\": \"ruby-34-features-deep-dive-2a22\",\n    \"path\": \"/username218/ruby-34-features-deep-dive-2a22\",\n    \"url\": \"http://forem.test/username218/ruby-34-features-deep-dive-2a22\",\n    \"comments_count\": 0,\n    \"public_reactions_count\": 0,\n    \"collection_id\": null,\n    \"published_timestamp\": \"2026-05-28T18:45:30Z\",\n    \"language\": \"en\",\n    \"subforem_id\": null,\n    \"positive_reactions_count\": 0,\n    \"cover_image\": \"http://forem.test/assets/4-dcfcc4d8dd259bc0751c2de24b1cf244b181c789934368ca1cb471f0944b695d.png\",\n    \"social_image\": \"http://forem.test/assets/4-dcfcc4d8dd259bc0751c2de24b1cf244b181c789934368ca1cb471f0944b695d.png\",\n    \"canonical_url\": \"http://forem.test/username218/ruby-34-features-deep-dive-2a22\",\n    \"created_at\": \"2026-05-28T18:45:30Z\",\n    \"edited_at\": null,\n    \"crossposted_at\": null,\n    \"published_at\": \"2026-05-28T18:45:30Z\",\n    \"last_comment_at\": \"2026-05-28T18:45:30Z\",\n    \"reading_time_minutes\": 1,\n    \"tag_list\": [\n      \"javascript\",\n      \"html\",\n      \"discuss\"\n    ],\n    \"tags\": \"javascript, html, discuss\",\n    \"user\": {\n      \"name\": \"Jennie \\\"Trenton\\\" \\\\:/ Mitchell\",\n      \"username\": \"username218\",\n      \"twitter_username\": \"twitter218\",\n      \"github_username\": \"github218\",\n      \"user_id\": 4266,\n      \"website_url\": null,\n      \"profile_image\": \"/uploads/user/profile_image/4266/633ee7e9-0ce0-4b3b-ba3a-011971fde181.jpeg\",\n      \"profile_image_90\": \"/uploads/user/profile_image/4266/633ee7e9-0ce0-4b3b-ba3a-011971fde181.jpeg\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c42884f2-0323-468b-8dae-2576439b14b5",
+              "name": "Trend Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "trends",
+                    ":trend_id_or_slug",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trend_id_or_slug",
+                      "description": "(Required) The ID or slug of the trend to retrieve articles for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "003f1e23-3470-4e6e-9c4b-f5b9ebcb3009",
+    "name": "Forem API V1 agent_sessions trends API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

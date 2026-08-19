@@ -1,0 +1,564 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forem API V1 agent_sessions users API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "User's articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's published articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me/published",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's unpublished articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me/unpublished",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nUnpublished articles will be in reverse chronological creation order.\n\nIt will return unpublished articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's all articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/articles/me/all",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nIt will return both published and unpublished articles with pagination.\n\nUnpublished articles will be at the top of the list in reverse chronological creation order. Published articles will f"
+        },
+        {
+          "info": {
+            "name": "Organization's users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/organizations/:organization_id_or_username/users",
+            "params": [
+              {
+                "name": "organization_id_or_username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "Suspend a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/users/:id/suspend",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to suspend."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to suspend a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user will be assigned the 'suspended' role. Suspending a user will stop the\nuser from posting new posts and comments. It doesn't delete any of the user's content, just\nprevents them from creating new content while suspended. Users are not notified of their suspension\nin the UI, so if you want them to know about this, you must notify them."
+        },
+        {
+          "info": {
+            "name": "Add limited role for a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/users/:id/limited",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to limit."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to limit a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user will be assigned the 'limited' role. Limiting a user will limit notifications\ngenerated from new posts and comments. It doesn't delete any of the user's content or prevent them\nfrom generating new content while limited. Users are not notified of their limits\nin the UI, so if you want them to know about this, you must notify them."
+        },
+        {
+          "info": {
+            "name": "Remove limited for a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/api/users/:id/limited",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to un-limit."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to remove limits for a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user will be restored to 'general' status. Users are not notified\nof limits in the UI, so if you want them to know about this, you must\nnotify them."
+        },
+        {
+          "info": {
+            "name": "Add spam role for a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/users/:id/spam",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to assign the spam role."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to add the spam role to a user.\n\n          The user associated with the API key must have any 'admin' or 'moderator' role.\n\n          This specified user will be assigned the 'spam' role. Addding the spam role to a user will stop the\n          user from posting new posts and comments. It doesn't delete any of the user's content, just\n          prevents them from creating new content while having the spam role. Users are not notified of their spaminess\n          in"
+        },
+        {
+          "info": {
+            "name": "Remove spam role from a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/api/users/:id/spam",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to remove the spam role from."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to remove the spam role for a user.\n\n          The user associated with the API key must have any 'admin' or 'moderator' role.\n\n          This specified user will be restored to 'general' status. Users are not notified\n          of removing their spam role in the UI, so if you want them to know about this, you must\n          notify them."
+        },
+        {
+          "info": {
+            "name": "Add trusted role for a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/users/:id/trusted",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to assign the trusted role."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to add the trusted role to a user.\n          The user associated with the API key must have an 'admin' or 'moderator' role.\n          The specified user will be assigned the 'trusted' role. Adding the trusted role to a user\n          allows them to upvote and downvote posts and flag content that needs investigating by admins.\n          Users are notified of this change in the UI, and by email."
+        },
+        {
+          "info": {
+            "name": "Remove trusted role from a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dev.to/api/api/users/:id/trusted",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to remove the trusted role from."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to remove the trusted role for a user.\n          The user associated with the API key must have an 'admin' or 'moderator' role.\n          The specified user will be restored to 'general' status. Users are not notified\n          of removing their trusted role in the UI, so if you want them to know about this, you must\n          notify them."
+        },
+        {
+          "info": {
+            "name": "The authenticated user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/users/me"
+          },
+          "docs": "This endpoint allows the client to retrieve information about the authenticated user"
+        },
+        {
+          "info": {
+            "name": "A User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/api/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single user, either by id\nor by the user's username.\n\nFor complete documentation, see the v0 API docs: https://developers.forem.com/api/v0#tag/users/operation/getUser"
+        },
+        {
+          "info": {
+            "name": "Unpublish a User's Articles and Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/api/users/:id/unpublish",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to unpublish."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to unpublish all of the articles and\ncomments created by a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user's articles and comments will be unpublished and will no longer be\nvisible to the public. They will remain in the database and will set back to draft status\non the specified user's  dashboard. Any notifications associated with the specified user's\narticles and comments will be deleted.\n\nNote this endp"
+        },
+        {
+          "info": {
+            "name": "Invite a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/api/admin/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to trigger an invitation to the provided email address.\n\n        It requires a token from a user with `super_admin` privileges."
+        },
+        {
+          "info": {
+            "name": "User's articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's published articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me/published",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nPublished articles will be in reverse chronological publication order.\n\nIt will return published articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's unpublished articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me/unpublished",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nUnpublished articles will be in reverse chronological creation order.\n\nIt will return unpublished articles with pagination. By default a page will contain 30 articles."
+        },
+        {
+          "info": {
+            "name": "User's all articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/articles/me/all",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.\n\n\"Articles\" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.\n\nIt will return both published and unpublished articles with pagination.\n\nUnpublished articles will be at the top of the list in reverse chronological creation order. Published articles will f"
+        },
+        {
+          "info": {
+            "name": "Organization's users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/organizations/:username/users",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Pagination page"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default."
+        },
+        {
+          "info": {
+            "name": "The authenticated user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/users/me"
+          },
+          "docs": "This endpoint allows the client to retrieve information about the authenticated user"
+        },
+        {
+          "info": {
+            "name": "A User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dev.to/api/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to retrieve a single user, either by id\nor by the user's username.\n\nFor complete documentation, see the v0 API docs: https://developers.forem.com/api/v0#tag/users/operation/getUser"
+        },
+        {
+          "info": {
+            "name": "Unpublish a User's Articles and Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/users/:id/unpublish",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to unpublish."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to unpublish all of the articles and\ncomments created by a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user's articles and comments will be unpublished and will no longer be\nvisible to the public. They will remain in the database and will set back to draft status\non the specified user's  dashboard. Any notifications associated with the specified user's\narticles and comments will be deleted.\n\nNote this endp"
+        },
+        {
+          "info": {
+            "name": "Suspend a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dev.to/api/users/:id/suspend",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "The ID of the user to suspend."
+              }
+            ]
+          },
+          "docs": "This endpoint allows the client to suspend a user.\n\nThe user associated with the API key must have any 'admin' or 'moderator' role.\n\nThis specified user will be assigned the 'suspended' role. Suspending a user will stop the\nuser from posting new posts and comments. It doesn't delete any of the user's content, just\nprevents them from creating new content while suspended. Users are not notified of their suspension\nin the UI, so if you want them to know about this, you must notify them."
+        },
+        {
+          "info": {
+            "name": "Invite a User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dev.to/api/admin/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows the client to trigger an invitation to the provided email address.\n\n        It requires a token from a user with `super_admin` privileges."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1689 @@
+{
+  "item": [
+    {
+      "id": "7d45a5b1-e946-40d2-8fbc-25619a9d9b2e",
+      "name": "pages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e94379b0-84de-4a2e-9f02-bc98719bef7e",
+          "name": "show details for all pages",
+          "request": {
+            "name": "show details for all pages",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details for all Page objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "pages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eae5f081-988c-4b07-967e-91f6fe9bd5c7",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 47,\n    \"title\": \"Death Be Not Proud\",\n    \"slug\": \"satisfaction-design\",\n    \"description\": \"Quasi nesciunt dicta molestiae.\",\n    \"is_top_level_path\": false,\n    \"landing_page\": false,\n    \"body_html\": null,\n    \"body_json\": null,\n    \"body_markdown\": \"Quaerat dolorem velit qui.\",\n    \"processed_html\": \"<p>Quaerat dolorem velit qui.</p>\\n\\n\",\n    \"social_image\": {\n      \"url\": null\n    },\n    \"template\": \"contained\",\n    \"subforem_id\": null,\n    \"page_template_id\": null,\n    \"template_data\": {},\n    \"redirect_to_url\": null\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c48a1ade-dd2f-49b0-9e19-a2ff7136c936",
+          "name": "pages",
+          "request": {
+            "name": "pages",
+            "description": {
+              "content": "This endpoint allows the client to create a new page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "pages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc2a4207-356a-4a86-be6e-15c000bb0364",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 49,\n  \"title\": \"Example Page\",\n  \"slug\": \"example1\",\n  \"description\": \"a new page\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"# Hi, this is a New Page\\nYep, it's an a new page\",\n  \"processed_html\": \"<h1>\\n  <a name=\\\"hi-this-is-a-new-page\\\" href=\\\"#hi-this-is-a-new-page\\\">\\n  </a>\\n  Hi, this is a New Page\\n</h1>\\n\\n<p>Yep, it's an a new page</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\",\n  \"subforem_id\": null,\n  \"page_template_id\": null,\n  \"template_data\": {},\n  \"redirect_to_url\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a64d50c-88de-48c5-b963-b52ab5d3e33e",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "112a9f4d-25e6-4f4c-bf18-e50d53ef7b51",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": null,\n  \"title\": \"Example Page\",\n  \"slug\": \"example1\",\n  \"description\": \"a new page\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"# Hi, this is a New Page\\nYep, it's an a new page\",\n  \"processed_html\": null,\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"moon\",\n  \"subforem_id\": null,\n  \"page_template_id\": null,\n  \"template_data\": {},\n  \"redirect_to_url\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "48128780-f80b-41af-95a2-ebc43c57be9c",
+          "name": "show details for a page",
+          "request": {
+            "name": "show details for a page",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details for a single Page object, specified by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "pages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the page."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2cd09aed-a82a-4cc5-a2e5-c850a6d71b09",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 52,\n  \"title\": \"I Will Fear No Evil\",\n  \"slug\": \"agree_strict\",\n  \"description\": \"At qui et illum.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Aut quia eaque sapiente.\",\n  \"processed_html\": \"<p>Aut quia eaque sapiente.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\",\n  \"subforem_id\": null,\n  \"page_template_id\": null,\n  \"template_data\": {},\n  \"redirect_to_url\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "640c620f-75cd-430e-af17-f692db5ab5ac",
+          "name": "update details for a page",
+          "request": {
+            "name": "update details for a page",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details for a single Page object, specified by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "pages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the page."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dab1f7d4-a92b-4310-abd7-5752a648844a",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 53,\n  \"title\": \"New Title\",\n  \"slug\": \"rung-cutting\",\n  \"description\": \"Accusantium harum beatae quia.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Nostrum et modi explicabo.\",\n  \"processed_html\": \"<p>Nostrum et modi explicabo.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\",\n  \"subforem_id\": null,\n  \"page_template_id\": null,\n  \"template_data\": {},\n  \"redirect_to_url\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0bfcea6f-1ddc-4b71-941b-dc89b6f3e20f",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "00b45de1-bbc4-4b6b-b0a8-4ed396fee06b",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 55,\n  \"title\": \"Eyeless in Gaza\",\n  \"slug\": \"confuse-thirsty\",\n  \"description\": \"Dolore iure magnam ea.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Corporis magnam enim dolorem.\",\n  \"processed_html\": \"<p>Consequuntur pariatur delectus similique.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"moon\",\n  \"subforem_id\": null,\n  \"page_template_id\": null,\n  \"template_data\": {},\n  \"redirect_to_url\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c4030de-d4dd-4b88-a0c0-bea2da05aa7e",
+          "name": "remove a page",
+          "request": {
+            "name": "remove a page",
+            "description": {
+              "content": "This endpoint allows the client to delete a single Page object, specified by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "pages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the page."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88fa4489-6a4f-4667-93af-218fc56831c7",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 56,\n  \"title\": \"No Country for Old Men\",\n  \"slug\": \"message_judge\",\n  \"description\": \"Et et dolorum mollitia.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Libero iste blanditiis et.\",\n  \"processed_html\": \"<p>Libero iste blanditiis et.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\",\n  \"subforem_id\": null,\n  \"page_template_id\": null,\n  \"template_data\": {},\n  \"redirect_to_url\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c9593a2-e04d-41dd-942a-c8b139443afe",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd05a7b5-913d-4bae-8ccc-6e144ad35ff7",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"doubled_module\": {\n    \"const_name\": \"Page\",\n    \"object\": \"Page\"\n  },\n  \"__expired\": false,\n  \"name\": null,\n  \"__sending_message\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "050f25b8-5856-4f5a-a212-5cddf1c8a154",
+          "name": "show details for all pages",
+          "request": {
+            "name": "show details for all pages",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details for all Page objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efb5e80f-d076-451f-ae00-0b175e82aa63",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5,\n    \"title\": \"An Instant In The Wind\",\n    \"slug\": \"trivial_exaggerate\",\n    \"description\": \"Excepturi illum tenetur nisi.\",\n    \"is_top_level_path\": false,\n    \"landing_page\": false,\n    \"body_html\": null,\n    \"body_json\": null,\n    \"body_markdown\": \"Et voluptas cupiditate voluptatibus.\",\n    \"processed_html\": \"<p>Et voluptas cupiditate voluptatibus.</p>\\n\\n\",\n    \"social_image\": {\n      \"url\": null\n    },\n    \"template\": \"contained\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f04c48fb-0448-4c8b-bf69-68afdff32a0c",
+          "name": "pages",
+          "request": {
+            "name": "pages",
+            "description": {
+              "content": "This endpoint allows the client to create a new page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c2bd40e-f24f-46b5-8c86-4f1cdc53a84d",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7,\n  \"title\": \"Example Page\",\n  \"slug\": \"example1\",\n  \"description\": \"a new page\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"# Hi, this is a New Page\\nYep, it's an a new page\",\n  \"processed_html\": \"<h1>\\n  <a name=\\\"hi-this-is-a-new-page\\\" href=\\\"#hi-this-is-a-new-page\\\">\\n  </a>\\n  Hi, this is a New Page\\n</h1>\\n\\n<p>Yep, it's an a new page</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15bee8b5-fead-4bcf-ac4f-c2b0fc4b6c09",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7acc2f71-b8aa-465b-a5a0-2902b9264c96",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"template\": \"contained\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": null,\n  \"title\": \"Example Page\",\n  \"slug\": \"example1\",\n  \"description\": \"a new page\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"# Hi, this is a New Page\\nYep, it's an a new page\",\n  \"processed_html\": null,\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"moon\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "986184cb-d406-4083-a558-79f52f43edbf",
+          "name": "show details for a page",
+          "request": {
+            "name": "show details for a page",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details for a single Page object, specified by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the page."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe709dcd-9849-40bf-82ab-abcf3e274afd",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 10,\n  \"title\": \"A Swiftly Tilting Planet\",\n  \"slug\": \"corn-laser\",\n  \"description\": \"Inventore ad qui dolore.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"In sit sit voluptas.\",\n  \"processed_html\": \"<p>In sit sit voluptas.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "077e7d12-fc1c-41c7-aea5-2fc7234df29a",
+          "name": "update details for a page",
+          "request": {
+            "name": "update details for a page",
+            "description": {
+              "content": "This endpoint allows the client to retrieve details for a single Page object, specified by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the page."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65641574-5a60-40b4-84e3-e2c9aa5ddbc7",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 11,\n  \"title\": \"New Title\",\n  \"slug\": \"authority-figure\",\n  \"description\": \"Et odio nostrum dolorem.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Consequatur ex soluta libero.\",\n  \"processed_html\": \"<p>Consequatur ex soluta libero.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08aca61e-f339-474b-ac3f-d3b71f483047",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1e3eb7f-aaa3-4670-8415-bba7f6d4dd3a",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"contained\",\n  \"body_markdown\": \"<string>\",\n  \"body_json\": \"<string>\",\n  \"is_top_level_path\": \"<boolean>\",\n  \"social_image\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 13,\n  \"title\": \"Little Hands Clapping\",\n  \"slug\": \"horizon_nursery\",\n  \"description\": \"Vel tenetur aspernatur mollitia.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Omnis quia eaque aliquam.\",\n  \"processed_html\": \"<p>Consequatur sit illum voluptas.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"moon\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e54e051c-4f87-4c52-a2a5-250699de4a7d",
+          "name": "remove a page",
+          "request": {
+            "name": "remove a page",
+            "description": {
+              "content": "This endpoint allows the client to delete a single Page object, specified by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pages",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the page."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22d97d68-80c3-4763-9e4e-55ecece2d9db",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 14,\n  \"title\": \"The Skull Beneath the Skin\",\n  \"slug\": \"appointment-provision\",\n  \"description\": \"Et error fuga natus.\",\n  \"is_top_level_path\": false,\n  \"landing_page\": false,\n  \"body_html\": null,\n  \"body_json\": null,\n  \"body_markdown\": \"Quo quibusdam nisi numquam.\",\n  \"processed_html\": \"<p>Quo quibusdam nisi numquam.</p>\\n\\n\",\n  \"social_image\": {\n    \"url\": null\n  },\n  \"template\": \"contained\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bc69eb2-fa48-461c-a787-d75881c69c86",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbfc04e1-bc70-4be1-a4bc-f17c8b6dff2e",
+              "name": "unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the page."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"doubled_module\": {\n    \"const_name\": \"Page\",\n    \"object\": \"Page\"\n  },\n  \"__expired\": false,\n  \"name\": null,\n  \"__sending_message\": null\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6d12f806-9283-4dd9-8a64-0899b75c128d",
+    "name": "Forem API V1 agent_sessions pages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

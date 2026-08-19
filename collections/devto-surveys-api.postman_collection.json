@@ -1,0 +1,918 @@
+{
+  "item": [
+    {
+      "id": "95c7a679-5e4a-46ba-bf7c-22af20f34a54",
+      "name": "surveys",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89c835d4-6183-4fab-89a5-1aeab62d16f9",
+          "name": "List surveys",
+          "request": {
+            "name": "List surveys",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of surveys.\n\nIt supports pagination and optional filtering by active status.\n\nInternal only. Admin authorization is required to access this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "surveys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "active",
+                  "value": "<boolean>",
+                  "description": "Filter by active status. Omit to return all surveys."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a702888-f771-4d17-a1d4-f719ba3cc03c",
+              "name": "A list of surveys",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"survey\",\n    \"id\": 43,\n    \"title\": \"dolores\",\n    \"slug\": \"dolores-2875c66f\",\n    \"active\": true,\n    \"display_title\": true,\n    \"allow_resubmission\": false,\n    \"survey_type_of\": \"community_pulse\",\n    \"created_at\": \"2026-05-28T18:45:29Z\",\n    \"updated_at\": \"2026-05-28T18:45:29Z\"\n  },\n  {\n    \"type_of\": \"survey\",\n    \"id\": 44,\n    \"title\": \"autem\",\n    \"slug\": \"autem-1c9b1a12\",\n    \"active\": true,\n    \"display_title\": true,\n    \"allow_resubmission\": false,\n    \"survey_type_of\": \"community_pulse\",\n    \"created_at\": \"2026-05-28T18:45:29Z\",\n    \"updated_at\": \"2026-05-28T18:45:29Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4cf81bb9-4dcd-4505-b06d-78fe9eb7d8a9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f76321de-5c0d-460d-9736-6963583e7ac5",
+          "name": "A survey with polls",
+          "request": {
+            "name": "A survey with polls",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a single survey by ID or slug,\nincluding its nested polls and poll options.\n\nInternal only. Admin authorization is required to access this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "surveys",
+                ":id_or_slug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id_or_slug",
+                  "description": "(Required) The ID or slug of the survey."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75fde7fe-727e-4942-9e52-cd9c8e105f1c",
+              "name": "A survey with nested polls and options",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"survey\",\n  \"id\": 45,\n  \"title\": \"Test Survey\",\n  \"slug\": \"test-survey-1b83c27b\",\n  \"active\": true,\n  \"display_title\": true,\n  \"allow_resubmission\": false,\n  \"survey_type_of\": \"community_pulse\",\n  \"created_at\": \"2026-05-28T18:45:29Z\",\n  \"updated_at\": \"2026-05-28T18:45:29Z\",\n  \"polls\": [\n    {\n      \"type_of\": \"poll\",\n      \"id\": 51,\n      \"prompt_markdown\": \"What do you think?\",\n      \"prompt_html\": \"What do you think?\\n\",\n      \"position\": 0,\n      \"poll_votes_count\": 0,\n      \"poll_skips_count\": 0,\n      \"poll_options_count\": 4,\n      \"scale_min\": null,\n      \"scale_max\": null,\n      \"poll_type_of\": \"single_choice\",\n      \"created_at\": \"2026-05-28T18:45:29Z\",\n      \"updated_at\": \"2026-05-28T18:45:29Z\",\n      \"poll_options\": [\n        {\n          \"type_of\": \"poll_option\",\n          \"id\": 178,\n          \"markdown\": \"2\",\n          \"processed_html\": \"2\\n\",\n          \"position\": 0,\n          \"poll_votes_count\": 0,\n          \"supplementary_text\": null\n        },\n        {\n          \"type_of\": \"poll_option\",\n          \"id\": 179,\n          \"markdown\": \"4\",\n          \"processed_html\": \"4\\n\",\n          \"position\": 1,\n          \"poll_votes_count\": 0,\n          \"supplementary_text\": null\n        },\n        {\n          \"type_of\": \"poll_option\",\n          \"id\": 180,\n          \"markdown\": \"2\",\n          \"processed_html\": \"2\\n\",\n          \"position\": 2,\n          \"poll_votes_count\": 0,\n          \"supplementary_text\": null\n        },\n        {\n          \"type_of\": \"poll_option\",\n          \"id\": 181,\n          \"markdown\": \"1\",\n          \"processed_html\": \"1\\n\",\n          \"position\": 3,\n          \"poll_votes_count\": 0,\n          \"supplementary_text\": null\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbd98eb4-7e15-4a38-9845-f0a2f8042fb6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b7fa30d-aa54-4469-9c88-ad5ae8f2422f",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "956bbad0-04f1-4a70-b8f2-29084b1b8b42",
+          "name": "Survey poll votes",
+          "request": {
+            "name": "Survey poll votes",
+            "description": {
+              "content": "This endpoint allows the client to retrieve poll votes for a given survey.\nResults are paginated. Use the `after` parameter with the last seen vote ID\nfor cursor-based pagination.\n\nInternal only. Admin authorization is required to access this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "surveys",
+                ":id_or_slug",
+                "poll_votes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<integer>",
+                  "description": "Return only votes with an ID greater than this value."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id_or_slug",
+                  "description": "(Required) The ID or slug of the survey."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b209086d-1020-494e-9524-bb2c2af2b61d",
+              "name": "Poll votes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug",
+                    "poll_votes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "after",
+                      "value": "42"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"poll_vote\",\n    \"id\": 28,\n    \"poll_id\": 54,\n    \"poll_option_id\": 190,\n    \"user_id\": 4252,\n    \"session_start\": 0,\n    \"user_email\": \"person204@example.com\",\n    \"created_at\": \"2026-05-28T18:45:29Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d80bb9f-ec22-4f5d-97da-2c2f54ac13c7",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug",
+                    "poll_votes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "after",
+                      "value": "42"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "20736b6e-cc77-4d98-84ec-913a771287dc",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug",
+                    "poll_votes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "after",
+                      "value": "42"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f6f439a-0898-48ed-99bd-8b11590ff4dd",
+          "name": "Survey poll text responses",
+          "request": {
+            "name": "Survey poll text responses",
+            "description": {
+              "content": "This endpoint allows the client to retrieve text responses for a given survey.\nResults are paginated. Use the `after` parameter with the last seen response ID\nfor cursor-based pagination.\n\nInternal only. Admin authorization is required to access this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "surveys",
+                ":id_or_slug",
+                "poll_text_responses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<integer>",
+                  "description": "Return only text responses with an ID greater than this value."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id_or_slug",
+                  "description": "(Required) The ID or slug of the survey."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d55a0b96-b6b7-4366-815e-aa08080c8d09",
+              "name": "Poll text responses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug",
+                    "poll_text_responses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "after",
+                      "value": "42"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"poll_text_response\",\n    \"id\": 12,\n    \"poll_id\": 57,\n    \"user_id\": 4258,\n    \"text_content\": \"Great survey!\",\n    \"session_start\": 0,\n    \"user_email\": \"person210@example.com\",\n    \"created_at\": \"2026-05-28T18:45:30Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "98f966c1-5024-4213-9c74-94b1eeaf538b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug",
+                    "poll_text_responses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "after",
+                      "value": "42"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc489394-589b-4333-ad59-332c8d75b41b",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "surveys",
+                    ":id_or_slug",
+                    "poll_text_responses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "after",
+                      "value": "42"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id_or_slug",
+                      "description": "(Required) The ID or slug of the survey."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e4df404b-7333-44e9-a45b-c4c2f7b8a932",
+    "name": "Forem API V1 agent_sessions surveys API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

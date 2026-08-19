@@ -1,0 +1,390 @@
+{
+  "item": [
+    {
+      "id": "d5417a9a-11d3-4160-9d47-eac5ec6af1f1",
+      "name": "followers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae0ba958-a974-4aeb-90a0-aa9218ae635c",
+          "name": "Followers",
+          "request": {
+            "name": "Followers",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of the followers they have.\n        \"Followers\" are users that are following other users on the website.\n        It supports pagination, each page will contain 80 followers by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "followers",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Default is 'created_at'. Specifies the sort order for the created_at param of the follow\n                                relationship. To sort by newest followers first (descending order) specify\n                                ?sort=-created_at."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98f545a8-532e-474c-beb4-59a3671ff741",
+              "name": "A List of followers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "followers",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "created_at"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"user_follower\",\n    \"id\": 91,\n    \"created_at\": \"2026-05-28T18:45:24Z\",\n    \"user_id\": 4186,\n    \"name\": \"Duane \\\"Douglass\\\" \\\\:/ Muller\",\n    \"path\": \"/username138\",\n    \"username\": \"username138\",\n    \"profile_image\": \"/uploads/user/profile_image/4186/c74aadc6-5b29-4f73-b23b-6908a8e9f105.jpeg\"\n  },\n  {\n    \"type_of\": \"user_follower\",\n    \"id\": 90,\n    \"created_at\": \"2026-05-28T18:45:24Z\",\n    \"user_id\": 4184,\n    \"name\": \"Nicki \\\"Alysa\\\" \\\\:/ Heathcote\",\n    \"path\": \"/username136\",\n    \"username\": \"username136\",\n    \"profile_image\": \"/uploads/user/profile_image/4184/5d771299-1520-4435-8380-e9a7697c7c8c.jpeg\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83f59f24-330e-4911-bcbf-31741030c752",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "followers",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "created_at"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39e660be-2a0c-43f6-8464-03901bb94d41",
+          "name": "Followers",
+          "request": {
+            "name": "Followers",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of the followers they have.\n        \"Followers\" are users that are following other users on the website.\n        It supports pagination, each page will contain 80 followers by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "followers",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Default is 'created_at'. Specifies the sort order for the created_at param of the follow\n                                relationship. To sort by newest followers first (descending order) specify\n                                ?sort=-created_at."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb609ae7-0a43-472a-9f12-1892673237b3",
+              "name": "A List of followers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "followers",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "created_at"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"user_follower\",\n    \"id\": 72,\n    \"created_at\": \"2023-04-14T14:45:36Z\",\n    \"user_id\": 1375,\n    \"name\": \"Taylor \\\"Chrystal\\\" \\\\:/ Pfannerstill\",\n    \"path\": \"/username435\",\n    \"username\": \"username435\",\n    \"profile_image\": \"/uploads/user/profile_image/1375/11fa0607-0d22-4c3c-b339-490ff1e25e8d.jpeg\"\n  },\n  {\n    \"type_of\": \"user_follower\",\n    \"id\": 71,\n    \"created_at\": \"2023-04-14T14:45:36Z\",\n    \"user_id\": 1372,\n    \"name\": \"Carisa \\\"Thurman\\\" \\\\:/ Senger\",\n    \"path\": \"/username433\",\n    \"username\": \"username433\",\n    \"profile_image\": \"/uploads/user/profile_image/1372/bb3c148a-71d4-467d-b25f-ddeb78a6ed63.jpeg\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e319c0d9-8dae-43be-b6ce-5aa8ac8ea00c",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "followers",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "created_at"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f2282542-285c-4aee-8528-8a69e5300acc",
+    "name": "Forem API V1 agent_sessions followers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}

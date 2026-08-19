@@ -1,0 +1,1989 @@
+{
+  "item": [
+    {
+      "id": "22d9eebf-b196-40a4-909c-938d26dc948b",
+      "name": "organizations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0ac0873-afb8-4d02-aa50-763e30f75f13",
+          "name": "An organization (by username)",
+          "request": {
+            "name": "An organization (by username)",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a single organization by their username",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations",
+                ":username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac0608de-6294-464a-8f9d-d99c80505ae3",
+              "name": "An Organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"organization\",\n  \"id\": 568,\n  \"username\": \"org12\",\n  \"name\": \"Bartoletti-Dicki\",\n  \"summary\": \"Tattooed gastropub cleanse tofu small batch franzen farm-to-table retro. Flannel whatever mustache hella pug shabby chic master.\",\n  \"twitter_username\": \"org4787\",\n  \"github_username\": \"org1607\",\n  \"url\": \"http://torp.test/zack_sauer\",\n  \"location\": null,\n  \"tech_stack\": null,\n  \"tag_line\": null,\n  \"story\": null,\n  \"joined_at\": \"2026-05-28T18:45:24Z\",\n  \"profile_image\": \"/uploads/organization/profile_image/568/37584a82-a0bf-41f8-9807-871b71df211c.png\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86eb29dc-b9d6-4cd8-9573-3b791c36cb52",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "664d156d-6d5b-4c73-abe6-9a01f764baee",
+          "name": "Organization's users",
+          "request": {
+            "name": "Organization's users",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations",
+                ":organization_id_or_username",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id_or_username",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8c7641e-9c05-4db4-84b1-8ca22c74acc4",
+              "name": "An Organization's users (with ID)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":organization_id_or_username",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id_or_username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"user\",\n    \"id\": 4199,\n    \"username\": \"username151\",\n    \"name\": \"Maria \\\"Mario\\\" \\\\:/ Pfeffer\",\n    \"twitter_username\": \"twitter151\",\n    \"github_username\": \"github151\",\n    \"summary\": null,\n    \"location\": null,\n    \"website_url\": null,\n    \"joined_at\": \"May 28, 2026\",\n    \"profile_image\": \"/uploads/user/profile_image/4199/a36085cc-b1c4-4228-a351-a650ba7f4d44.jpeg\"\n  },\n  {\n    \"type_of\": \"user\",\n    \"id\": 4200,\n    \"username\": \"username152\",\n    \"name\": \"Tiara \\\"Ebony\\\" \\\\:/ Watsica\",\n    \"twitter_username\": \"twitter152\",\n    \"github_username\": \"github152\",\n    \"summary\": null,\n    \"location\": null,\n    \"website_url\": null,\n    \"joined_at\": \"May 28, 2026\",\n    \"profile_image\": \"/uploads/user/profile_image/4200/48796775-4796-4190-ae77-5eb3d3819e6d.jpeg\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78798812-26b4-4d70-88a6-3ae6f50eb8e1",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":organization_id_or_username",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id_or_username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a631c878-5315-42ba-9b34-0f2faae3a6a0",
+          "name": "Organization's Articles",
+          "request": {
+            "name": "Organization's Articles",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations",
+                ":organization_id_or_username",
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization_id_or_username",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88f25520-7aa4-474e-be55-c831d184f619",
+              "name": "An Organization's Articles (with ID)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":organization_id_or_username",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id_or_username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"article\",\n    \"id\": 2258,\n    \"title\": \"Whats Become of Waring26\",\n    \"description\": \"Intelligentsia wes anderson pitchfork. Ramps single-origin coffee park kombucha vhs thundercats....\",\n    \"readable_publish_date\": \"May 28\",\n    \"slug\": \"whats-become-of-waring26-1010\",\n    \"path\": \"/org18/whats-become-of-waring26-1010\",\n    \"url\": \"http://forem.test/org18/whats-become-of-waring26-1010\",\n    \"comments_count\": 0,\n    \"public_reactions_count\": 0,\n    \"collection_id\": null,\n    \"published_timestamp\": \"2026-05-28T18:45:25Z\",\n    \"language\": \"en\",\n    \"subforem_id\": null,\n    \"positive_reactions_count\": 0,\n    \"cover_image\": \"http://forem.test/assets/38-3b0c46cc0d5367229799d282c99b2c42f33501201cac1ceb5c643f9ee11f06c6.png\",\n    \"social_image\": \"http://forem.test/assets/38-3b0c46cc0d5367229799d282c99b2c42f33501201cac1ceb5c643f9ee11f06c6.png\",\n    \"canonical_url\": \"http://forem.test/org18/whats-become-of-waring26-1010\",\n    \"created_at\": \"2026-05-28T18:45:25Z\",\n    \"edited_at\": null,\n    \"crossposted_at\": null,\n    \"published_at\": \"2026-05-28T18:45:25Z\",\n    \"last_comment_at\": \"2026-05-28T18:45:25Z\",\n    \"reading_time_minutes\": 1,\n    \"tag_list\": [\n      \"javascript\",\n      \"html\",\n      \"discuss\"\n    ],\n    \"tags\": \"javascript, html, discuss\",\n    \"user\": {\n      \"name\": \"Jeremy \\\"Arlena\\\" \\\\:/ Hintz\",\n      \"username\": \"username162\",\n      \"twitter_username\": \"twitter162\",\n      \"github_username\": \"github162\",\n      \"user_id\": 4210,\n      \"website_url\": null,\n      \"profile_image\": \"/uploads/user/profile_image/4210/cd03365d-5604-4d37-a2e1-62a537710192.jpeg\",\n      \"profile_image_90\": \"/uploads/user/profile_image/4210/cd03365d-5604-4d37-a2e1-62a537710192.jpeg\"\n    },\n    \"organization\": {\n      \"name\": \"Marquardt-Von\",\n      \"username\": \"org18\",\n      \"slug\": \"org18\",\n      \"profile_image\": \"/uploads/organization/profile_image/574/a6c694a7-f32f-45cc-974f-5aa18eca3eac.png\",\n      \"profile_image_90\": \"/uploads/organization/profile_image/574/a6c694a7-f32f-45cc-974f-5aa18eca3eac.png\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb099a9b-fbff-4ddc-bde7-800a62b1dc38",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":organization_id_or_username",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization_id_or_username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6e50e18-20a2-45fc-95a8-a479e1525dbb",
+          "name": "Organizations",
+          "request": {
+            "name": "Organizations",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of Dev organizations.\n\n  It supports pagination, each page will contain 10 tags by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42737b96-85bb-4180-8ebb-4935fcd15121",
+              "name": "A list of all organizations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 576,\n    \"name\": \"Kuphal Inc\",\n    \"profile_image\": {\n      \"url\": \"/uploads/organization/profile_image/576/0c9dc328-e6c9-4dba-af45-700d5196da17.png\"\n    },\n    \"slug\": \"org20\",\n    \"summary\": \"Keffiyeh synth hashtag cold-pressed stumptown readymade. Microdosing drinking semiotics salvia gluten-free synth slow-carb tousled. Try-hard selvage ha\",\n    \"tag_line\": null,\n    \"url\": \"http://sipes.test/janiece_greenholt\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18b906d6-3fa1-4a63-9193-4a1370694c68",
+          "name": "Create an Organization",
+          "request": {
+            "name": "Create an Organization",
+            "description": {
+              "content": "This endpoint allows the client to create an organization with the provided parameters.\n        It requires a token from a user with `admin` privileges.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c361fa93-2b31-4a31-be62-bbf8ce7b17c3",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 579,\n  \"name\": \"New Test Org\",\n  \"profile_image\": \"uploads/organization/profile_image/1/400x400.jpg\",\n  \"slug\": \"org10001\",\n  \"summary\": \"a newly created test org\",\n  \"tag_line\": \"a test org's tagline\",\n  \"url\": \"https://testorg.io\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d327ef20-8f4c-4221-966c-50484d46acca",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "105d9b4c-e28f-4b60-9e71-3c404ccf4fb7",
+              "name": "Unprocessable Entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Validation failed: Name can't be blank, Profile image can't be blank, Slug can't be blank\",\n  \"status\": 422\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cac15a00-a7c5-49cf-bf61-416c60517714",
+          "name": "An organization (by id)",
+          "request": {
+            "name": "An organization (by id)",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a single organization by their id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9577714-852c-428b-ad73-2f1226d19d6f",
+              "name": "An Organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"organization\",\n  \"id\": 577,\n  \"username\": \"org21\",\n  \"name\": \"Emmerich, Schamberger and Hand\",\n  \"summary\": \"Keffiyeh tote bag craft beer. Park jean shorts helvetica butcher.\",\n  \"twitter_username\": \"org8161\",\n  \"github_username\": \"org5019\",\n  \"url\": \"http://sanford-hintz.test/jose\",\n  \"location\": null,\n  \"tech_stack\": null,\n  \"tag_line\": null,\n  \"story\": null,\n  \"joined_at\": \"2026-05-28T18:45:26Z\",\n  \"profile_image\": \"/uploads/organization/profile_image/577/4516eda0-ba9a-43f5-80d0-bae770795069.png\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12b0c3dd-f586-413b-a4cf-c21656757d28",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0375ba01-07c4-41e9-a935-fda204c3d0e6",
+          "name": "Update an organization by id",
+          "request": {
+            "name": "Update an organization by id",
+            "description": {
+              "content": "This endpoint allows the client to update an existing organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the organization to update."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3a23802b-6795-4c7d-8bd3-73aca00a833a",
+              "name": "An Organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the organization to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 580,\n  \"name\": \"Mosciski, Moore and Moen\",\n  \"profile_image\": \"/uploads/organization/profile_image/580/7cb3619e-86f9-465a-b7af-588b0f007fd1.png\",\n  \"slug\": \"org23\",\n  \"summary\": \"An updated summary for the organization.\",\n  \"tag_line\": null,\n  \"url\": \"http://will.example/lenita_gleason\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7eed9062-5c62-4ab9-bcc5-ee524b33cd7f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the organization to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c03ed50-99b0-4a1a-8087-bf6dfdbef708",
+              "name": "organization Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the organization to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "534d9a44-58f3-480e-a6eb-a4538ea9cacc",
+              "name": "Unprocessable Entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the organization to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type_of\": \"<string>\",\n  \"username\": \"<string>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"twitter_username\": \"<string>\",\n  \"github_username\": \"<string>\",\n  \"url\": \"<string>\",\n  \"location\": \"<string>\",\n  \"joined_at\": \"<string>\",\n  \"tech_stack\": \"<string>\",\n  \"tag_line\": \"<string>\",\n  \"story\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"param is missing or the value is empty: organization\",\n  \"status\": 422\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99cc505a-3388-413a-bdfe-867bf0409de0",
+          "name": "Delete an Organization by id",
+          "request": {
+            "name": "Delete an Organization by id",
+            "description": {
+              "content": "This endpoint allows the client to delete a single organization, specified by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "organizations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) The ID of the organization."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6df781f1-70a4-4ca6-a1d9-4bea27db107a",
+              "name": "successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"deletion scheduled for organization with ID 584\",\n  \"status\": 200\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5537619f-301d-4d74-bd94-0321a5e37973",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "organizations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) The ID of the organization."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized\",\n  \"status\": 401\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5c97aba-2a1b-46ba-a2e9-e17bc43a6fc4",
+          "name": "An organization",
+          "request": {
+            "name": "An organization",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a single organization by their username",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f05cdfb-2c54-4014-b568-c6e626ce885b",
+              "name": "An Organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type_of\": \"organization\",\n  \"id\": 323,\n  \"username\": \"org77\",\n  \"name\": \"Skiles-Frami\",\n  \"summary\": \"Franzen seitan mustache cred. Gluten-free flannel gastropub hoodie vinegar wolf mixtape.\",\n  \"twitter_username\": \"org26\",\n  \"github_username\": \"org5524\",\n  \"url\": \"http://jacobs.com/assunta.rau\",\n  \"location\": null,\n  \"tech_stack\": null,\n  \"tag_line\": null,\n  \"story\": null,\n  \"joined_at\": \"2023-04-14T14:45:37Z\",\n  \"profile_image\": \"/uploads/organization/profile_image/323/d1677329-759a-44e1-866e-c5be50e9593b.png\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d0e4778-d28e-4ba0-a5de-9595627357f2",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b834c0c-db60-454c-99b1-20cd6eb5e5ed",
+          "name": "Organization's users",
+          "request": {
+            "name": "Organization's users",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of users belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":username",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9de9eefe-3968-46d8-847d-b29996d8c86c",
+              "name": "An Organization's users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":username",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"user\",\n    \"id\": 1390,\n    \"username\": \"username445\",\n    \"name\": \"Ute \\\"Doreen\\\" \\\\:/ Tillman\",\n    \"twitter_username\": \"twitter445\",\n    \"github_username\": \"github445\",\n    \"summary\": null,\n    \"location\": null,\n    \"website_url\": null,\n    \"joined_at\": \"Apr 14, 2023\",\n    \"profile_image\": \"/uploads/user/profile_image/1390/7b885cdf-c1c6-481a-a6d8-19f0404da87a.jpeg\"\n  },\n  {\n    \"type_of\": \"user\",\n    \"id\": 1391,\n    \"username\": \"username446\",\n    \"name\": \"Abraham \\\"Colton\\\" \\\\:/ Ritchie\",\n    \"twitter_username\": \"twitter446\",\n    \"github_username\": \"github446\",\n    \"summary\": null,\n    \"location\": null,\n    \"website_url\": null,\n    \"joined_at\": \"Apr 14, 2023\",\n    \"profile_image\": \"/uploads/user/profile_image/1391/273ffa06-dc97-4b84-ba4c-43d24efb55e5.jpeg\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c0bda50-d749-4e94-a91d-d6cafacfb78e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":username",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55536070-1e39-4ad5-bd23-5aa899ea77b4",
+          "name": "Organization's Articles",
+          "request": {
+            "name": "Organization's Articles",
+            "description": {
+              "content": "This endpoint allows the client to retrieve a list of Articles belonging to the organization\n\nIt supports pagination, each page will contain `30` users by default.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":username",
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Pagination page"
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "30",
+                  "description": "Page size (the number of items to return per page). The default maximum value can be overridden by \"API_PER_PAGE_MAX\" environment variable."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53cd0024-783d-47a1-b5d1-a9d3e2ea8807",
+              "name": "An Organization's Articles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":username",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"type_of\": \"article\",\n    \"id\": 276,\n    \"title\": \"Down to a Sunless Sea195\",\n    \"description\": \"Scenester occupy swag. Yr godard single-origin coffee biodiesel beard artisan. Wes anderson yolo...\",\n    \"readable_publish_date\": \"Apr 14\",\n    \"slug\": \"down-to-a-sunless-sea195-51d4\",\n    \"path\": \"/org81/down-to-a-sunless-sea195-51d4\",\n    \"url\": \"http://localhost:3000/org81/down-to-a-sunless-sea195-51d4\",\n    \"comments_count\": 0,\n    \"public_reactions_count\": 0,\n    \"collection_id\": null,\n    \"published_timestamp\": \"2023-04-14T14:45:38Z\",\n    \"positive_reactions_count\": 0,\n    \"cover_image\": \"http://localhost:3000/assets/38-3b0c46cc0d5367229799d282c99b2c42f33501201cac1ceb5c643f9ee11f06c6.png\",\n    \"social_image\": \"http://localhost:3000/assets/38-3b0c46cc0d5367229799d282c99b2c42f33501201cac1ceb5c643f9ee11f06c6.png\",\n    \"canonical_url\": \"http://localhost:3000/org81/down-to-a-sunless-sea195-51d4\",\n    \"created_at\": \"2023-04-14T14:45:38Z\",\n    \"edited_at\": null,\n    \"crossposted_at\": null,\n    \"published_at\": \"2023-04-14T14:45:38Z\",\n    \"last_comment_at\": \"2023-04-14T14:45:38Z\",\n    \"reading_time_minutes\": 1,\n    \"tag_list\": [\n      \"javascript\",\n      \"html\",\n      \"discuss\"\n    ],\n    \"tags\": \"javascript, html, discuss\",\n    \"user\": {\n      \"name\": \"Annabell \\\"Tyron\\\" \\\\:/ West\",\n      \"username\": \"username453\",\n      \"twitter_username\": \"twitter453\",\n      \"github_username\": \"github453\",\n      \"user_id\": 1399,\n      \"website_url\": null,\n      \"profile_image\": \"/uploads/user/profile_image/1399/15f1c715-4e10-4f57-9cca-7a2071dfdf23.jpeg\",\n      \"profile_image_90\": \"/uploads/user/profile_image/1399/15f1c715-4e10-4f57-9cca-7a2071dfdf23.jpeg\"\n    },\n    \"organization\": {\n      \"name\": \"Schuster LLC\",\n      \"username\": \"org81\",\n      \"slug\": \"org81\",\n      \"profile_image\": \"/uploads/organization/profile_image/334/824e9ec6-b41c-4824-87e8-ae7721868787.png\",\n      \"profile_image_90\": \"/uploads/organization/profile_image/334/824e9ec6-b41c-4824-87e8-ae7721868787.png\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8139090-fe8e-4e27-9c0e-e9063dba3803",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":username",
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "30"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"not found\",\n  \"status\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dev.to/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d8ad41f7-ead8-49b7-8087-2ba1cb440a3c",
+    "name": "Forem API V1 agent_sessions organizations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format.",
+      "type": "text/plain"
+    }
+  }
+}
