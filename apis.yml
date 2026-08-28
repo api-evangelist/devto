@@ -9,6 +9,18 @@ description: >-
   lists, and administering organizations. Authentication uses an API key passed
   via the api-key header, with public read access available without
   authentication.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
