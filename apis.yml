@@ -60,7 +60,8 @@ apis:
   description: The agent_sessions API from DEV Community — 2 operation(s) for agent_sessions.
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
-  tags: []
+  tags:
+  - Agent Sessions
   tags_raw:
   - agent_sessions
   properties:
@@ -88,7 +89,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - billboards
+  - Billboards
   tags_raw:
   - billboards
   properties:
@@ -116,7 +117,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - display ads
+  - Display Ads
   tags_raw:
   - display ads
   properties:
@@ -129,7 +130,8 @@ apis:
   description: The followed_tags API from DEV Community — 2 operation(s) for followed_tags.
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
-  tags: []
+  tags:
+  - FollowedTags
   tags_raw:
   - followed_tags
   properties:
@@ -143,7 +145,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - followers
+  - Followers
   tags_raw:
   - followers
   properties:
@@ -184,7 +186,8 @@ apis:
   description: The podcast_episodes API from DEV Community — 2 operation(s) for podcast_episodes.
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
-  tags: []
+  tags:
+  - PodcastEpisodes
   tags_raw:
   - podcast_episodes
   properties:
@@ -198,7 +201,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - profile images
+  - ProfileImages
   tags_raw:
   - profile images
   properties:
@@ -212,7 +215,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - reactions
+  - Reactions
   tags_raw:
   - reactions
   properties:
@@ -226,7 +229,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - readinglist
+  - ReadingList
   tags_raw:
   - readinglist
   properties:
@@ -254,7 +257,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - surveys
+  - Surveys
   tags_raw:
   - surveys
   properties:
@@ -282,7 +285,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - trends
+  - Trends
   tags_raw:
   - trends
   properties:
