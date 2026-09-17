@@ -224,20 +224,6 @@ apis:
     url: openapi/devto-reactions-api-openapi.yml
   - type: Documentation
     url: https://developers.forem.com/api/v1
-- aid: devto:devto-readinglist-api
-  name: DEV Community readinglist API
-  description: The readinglist API from DEV Community — 2 operation(s) for readinglist.
-  humanURL: https://developers.forem.com/api/v1
-  baseURL: https://dev.to/api
-  tags:
-  - ReadingList
-  tags_raw:
-  - readinglist
-  properties:
-  - type: OpenAPI
-    url: openapi/devto-readinglist-api-openapi.yml
-  - type: Documentation
-    url: https://developers.forem.com/api/v1
 - aid: devto:devto-segments-api
   name: DEV Community segments API
   description: The segments API from DEV Community — 5 operation(s) for segments.
@@ -320,6 +306,18 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/devto-videos-api-openapi.yml
+  - type: Documentation
+    url: https://developers.forem.com/api/v1
+- aid: devto:devto-reading-list-api
+  name: DEV Community Reading List API
+  description: The Reading List API from DEV Community — 2 operation(s) for reading list.
+  humanURL: https://developers.forem.com/api/v1
+  baseURL: https://dev.to/api
+  tags:
+  - Reading List
+  properties:
+  - type: OpenAPI
+    url: openapi/devto-reading-list-api-openapi.yml
   - type: Documentation
     url: https://developers.forem.com/api/v1
 common:
