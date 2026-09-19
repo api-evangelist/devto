@@ -132,7 +132,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - FollowedTags
+  - Followed Tags
   tags_raw:
   - followed_tags
   properties:
@@ -188,7 +188,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - PodcastEpisodes
+  - Podcast Episodes
   tags_raw:
   - podcast_episodes
   properties:
@@ -300,7 +300,7 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
-  - Videos
+  - Video
   tags_raw:
   - videos
   properties:
@@ -314,6 +314,8 @@ apis:
   humanURL: https://developers.forem.com/api/v1
   baseURL: https://dev.to/api
   tags:
+  - ReadingList
+  tags_raw:
   - Reading List
   properties:
   - type: OpenAPI
