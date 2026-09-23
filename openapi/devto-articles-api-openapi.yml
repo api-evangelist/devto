@@ -1,21 +1,21 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions articles API
+  title: Devto Articles API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Operations tagged articles across 2 of this provider''s published API definitions: openapi.json, openapi.yaml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: articles
+- name: Articles
 paths:
   /api/articles:
     post:
       summary: Publish article
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to create a new article.
 
 
@@ -91,7 +91,7 @@ paths:
       summary: Published articles
       security: []
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of articles.
 
 
@@ -238,12 +238,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/latest:
     get:
       summary: Published articles sorted by published date
       security: []
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.
 
 
@@ -388,12 +391,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/{id}:
     get:
       summary: Published article by id
       security: []
       tags:
-      - articles
+      - Articles
       description: This endpoint allows the client to retrieve a single published article given its `id`.
       operationId: getArticleById
       parameters:
@@ -470,7 +476,7 @@ paths:
     put:
       summary: Update an article by id
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to update an existing article.
 
 
@@ -563,12 +569,15 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Article'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/{username}/{slug}:
     get:
       summary: Published article by path
       security: []
       tags:
-      - articles
+      - Articles
       description: This endpoint allows the client to retrieve a single published article given its `path`.
       operationId: getArticleByPath
       parameters:
@@ -647,11 +656,14 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/me:
     get:
       summary: User's articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.
 
 
@@ -683,11 +695,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/me/published:
     get:
       summary: User's published articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.
 
 
@@ -719,11 +734,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/me/unpublished:
     get:
       summary: User's unpublished articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.
 
 
@@ -755,11 +773,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/me/all:
     get:
       summary: User's all articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.
 
 
@@ -794,11 +815,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/articles/{id}/unpublish:
     put:
       summary: Unpublish an article
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to unpublish an article.
 
 
@@ -847,11 +871,14 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/organizations/{organization_id_or_username}/articles:
     get:
       summary: Organization's Articles
       tags:
-      - articles
+      - Articles
       security: []
       description: 'This endpoint allows the client to retrieve a list of Articles belonging to the organization
 
@@ -927,11 +954,14 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/videos:
     get:
       summary: Articles with a video
       tags:
-      - articles
+      - Articles
       security: []
       description: 'This endpoint allows the client to retrieve a list of articles that are uploaded with a video.
 
@@ -976,11 +1006,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/VideoArticle'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles:
     post:
       summary: Publish article
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to create a new article.
 
 
@@ -1054,7 +1087,7 @@ paths:
       summary: Published articles
       security: []
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of articles.
 
 
@@ -1199,12 +1232,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/latest:
     get:
       summary: Published articles sorted by published date
       security: []
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.
 
 
@@ -1343,12 +1379,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ArticleIndex'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/{id}:
     get:
       summary: Published article by id
       security: []
       tags:
-      - articles
+      - Articles
       description: This endpoint allows the client to retrieve a single published article given its `id`.
       operationId: getArticleById
       parameters:
@@ -1423,7 +1462,7 @@ paths:
     put:
       summary: Update an article by id
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to update an existing article.
 
 
@@ -1509,12 +1548,15 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Article'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/{username}/{slug}:
     get:
       summary: Published article by path
       security: []
       tags:
-      - articles
+      - Articles
       description: This endpoint allows the client to retrieve a single published article given its `path`.
       operationId: getArticleByPath
       parameters:
@@ -1591,11 +1633,14 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/me:
     get:
       summary: User's articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.
 
 
@@ -1627,11 +1672,14 @@ paths:
               example:
                 error: unauthorized
                 status: 401
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/me/published:
     get:
       summary: User's published articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.
 
 
@@ -1663,11 +1711,14 @@ paths:
               example:
                 error: unauthorized
                 status: 401
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/me/unpublished:
     get:
       summary: User's unpublished articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.
 
 
@@ -1699,11 +1750,14 @@ paths:
               example:
                 error: unauthorized
                 status: 401
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/me/all:
     get:
       summary: User's all articles
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to retrieve a list of all articles on behalf of an authenticated user.
 
 
@@ -1738,11 +1792,14 @@ paths:
               example:
                 error: unauthorized
                 status: 401
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /articles/{id}/unpublish:
     put:
       summary: Unpublish an article
       tags:
-      - articles
+      - Articles
       description: 'This endpoint allows the client to unpublish an article.
 
 
@@ -1791,11 +1848,14 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /organizations/{username}/articles:
     get:
       summary: Organization's Articles
       tags:
-      - articles
+      - Articles
       security: []
       description: 'This endpoint allows the client to retrieve a list of Articles belonging to the organization
 
@@ -1869,11 +1929,14 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /videos:
     get:
       summary: Articles with a video
       tags:
-      - articles
+      - Articles
       security: []
       description: 'This endpoint allows the client to retrieve a list of articles that are uploaded with a video.
 
@@ -1916,8 +1979,22 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/VideoArticle'
+    servers:
+    - url: https://dev.to/api
+      description: Production server
 components:
   parameters:
+    perPageParam30to1000:
+      in: query
+      name: per_page
+      required: false
+      description: Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 1000
+        default: 30
     perPageParam24to1000:
       in: query
       name: per_page
@@ -1939,18 +2016,57 @@ components:
         format: int32
         minimum: 1
         default: 1
-    perPageParam30to1000:
-      in: query
-      name: per_page
-      required: false
-      description: Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
-      schema:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 1000
-        default: 30
   schemas:
+    Article:
+      description: Representation of an Article to be created/updated
+      type: object
+      properties:
+        article:
+          type: object
+          properties:
+            title:
+              type: string
+            body_markdown:
+              type: string
+            published:
+              type: boolean
+              default: false
+            series:
+              type:
+              - string
+              - 'null'
+            main_image:
+              type:
+              - string
+              - 'null'
+            canonical_url:
+              type:
+              - string
+              - 'null'
+            description:
+              type: string
+            tags:
+              type: string
+            organization_id:
+              type:
+              - integer
+              - 'null'
+    ArticleFlareTag:
+      description: Flare tag of the article
+      type: object
+      properties:
+        name:
+          type: string
+        bg_color_hex:
+          description: Background color (hexadecimal)
+          type:
+          - string
+          - 'null'
+        text_color_hex:
+          description: Text color (hexadecimal)
+          type:
+          - string
+          - 'null'
     SharedOrganization:
       description: The organization the resource belongs to
       type: object
@@ -1969,78 +2085,6 @@ components:
           description: Profile image (90x90)
           type: string
           format: url
-    ArticleFlareTag:
-      description: Flare tag of the article
-      type: object
-      properties:
-        name:
-          type: string
-        bg_color_hex:
-          description: Background color (hexadecimal)
-          type: string
-          nullable: true
-        text_color_hex:
-          description: Text color (hexadecimal)
-          type: string
-          nullable: true
-    Article:
-      description: Representation of an Article to be created/updated
-      type: object
-      properties:
-        article:
-          type: object
-          properties:
-            title:
-              type: string
-            body_markdown:
-              type: string
-            published:
-              type: boolean
-              default: false
-            series:
-              type: string
-              nullable: true
-            main_image:
-              type: string
-              nullable: true
-            canonical_url:
-              type: string
-              nullable: true
-            description:
-              type: string
-            tags:
-              type: string
-            organization_id:
-              type: integer
-              nullable: true
-    VideoArticle:
-      description: Representation of an Article with video
-      type: object
-      properties:
-        type_of:
-          type: string
-        id:
-          type: integer
-          format: int64
-        path:
-          type: string
-        cloudinary_video_url:
-          type: string
-        title:
-          type: string
-        user_id:
-          type: integer
-          format: int64
-        video_duration_in_minutes:
-          type: string
-        video_source_url:
-          type: string
-        user:
-          description: Author of the article
-          type: object
-          properties:
-            name:
-              type: string
     SharedUser:
       description: The resource creator
       type: object
@@ -2050,15 +2094,18 @@ components:
         username:
           type: string
         twitter_username:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         github_username:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         website_url:
-          type: string
+          type:
+          - string
+          - 'null'
           format: url
-          nullable: true
         profile_image:
           description: Profile image (640x640)
           type: string
@@ -2079,9 +2126,10 @@ components:
         description:
           type: string
         cover_image:
-          type: string
+          type:
+          - string
+          - 'null'
           format: url
-          nullable: true
         readable_publish_date:
           type: string
         social_image:
@@ -2114,13 +2162,15 @@ components:
           type: string
           format: date-time
         edited_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         crossposted_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         published_at:
           type: string
           format: date-time
@@ -2166,9 +2216,40 @@ components:
       - published_timestamp
       - user
       - reading_time_minutes
+    VideoArticle:
+      description: Representation of an Article with video
+      type: object
+      properties:
+        type_of:
+          type: string
+        id:
+          type: integer
+          format: int64
+        path:
+          type: string
+        cloudinary_video_url:
+          type: string
+        title:
+          type: string
+        user_id:
+          type: integer
+          format: int64
+        video_duration_in_minutes:
+          type: string
+        video_source_url:
+          type: string
+        user:
+          description: Author of the article
+          type: object
+          properties:
+            name:
+              type: string
   securitySchemes:
     api-key:
       type: apiKey
       name: api-key
       in: header
       description: "API Key authentication.\n\nAuthentication for some endpoints, like write operations on the\nArticles API require a DEV API key.\n\nAll authenticated endpoints are CORS disabled, the API key is intended for non-browser scripts.\n\n### Getting an API key\n\nTo obtain one, please follow these steps:\n\n  - visit https://dev.to/settings/extensions\n  - in the \"DEV API Keys\" section create a new key by adding a\n    description and clicking on \"Generate API Key\"\n\n    ![obtain a DEV API Key](https://user-images.githubusercontent.com/37842/172718105-bd93664e-76e0-477d-99c4-265dda0b06c5.png)\n\n  - You'll see the newly generated key in the same view\n    ![generated DEV API Key](https://user-images.githubusercontent.com/37842/172718151-e7fe26a0-9937-42e8-96c6-333acdab9e49.png)"
+x-refined-from:
+- openapi.json
+- openapi.yaml

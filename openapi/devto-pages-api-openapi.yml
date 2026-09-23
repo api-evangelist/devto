@@ -1,22 +1,22 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions pages API
+  title: Devto Pages API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Operations tagged pages across 2 of this provider''s published API definitions: openapi.json, openapi.yaml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: pages
+- name: Pages
 paths:
   /api/pages:
     get:
       summary: show details for all pages
       security: []
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to retrieve details for all Page objects.
       responses:
         '200':
@@ -48,10 +48,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Page'
+      operationId: getApiPages
+      x-operation-id-source: derived
     post:
       summary: pages
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to create a new page.
       parameters: []
       responses:
@@ -145,12 +147,17 @@ paths:
                   - txt
                   default: contained
                   description: Controls what kind of layout the page is rendered in
+      operationId: postApiPages
+      x-operation-id-source: derived
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/pages/{id}:
     get:
       summary: show details for a page
       security: []
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to retrieve details for a single Page object, specified by ID.
       parameters:
       - name: id
@@ -190,10 +197,12 @@ paths:
                 redirect_to_url: null
               schema:
                 $ref: '#/components/schemas/Page'
+      operationId: getApiPagesById
+      x-operation-id-source: derived
     put:
       summary: update details for a page
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to retrieve details for a single Page object, specified by ID.
       parameters:
       - name: id
@@ -270,10 +279,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Page'
+      operationId: putApiPagesById
+      x-operation-id-source: derived
     delete:
       summary: remove a page
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to delete a single Page object, specified by ID.
       parameters:
       - name: id
@@ -331,12 +342,17 @@ paths:
                 __expired: false
                 name: null
                 __sending_message: null
+      operationId: deleteApiPagesById
+      x-operation-id-source: derived
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /pages:
     get:
       summary: show details for all pages
       security: []
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to retrieve details for all Page objects.
       responses:
         '200':
@@ -364,10 +380,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Page_2'
+      operationId: getPages
+      x-operation-id-source: derived
     post:
       summary: pages
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to create a new page.
       parameters: []
       responses:
@@ -451,12 +469,17 @@ paths:
                   - json
                   default: contained
                   description: Controls what kind of layout the page is rendered in
+      operationId: postPages
+      x-operation-id-source: derived
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /pages/{id}:
     get:
       summary: show details for a page
       security: []
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to retrieve details for a single Page object, specified by ID.
       parameters:
       - name: id
@@ -492,10 +515,12 @@ paths:
                 template: contained
               schema:
                 $ref: '#/components/schemas/Page_2'
+      operationId: getPagesById
+      x-operation-id-source: derived
     put:
       summary: update details for a page
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to retrieve details for a single Page object, specified by ID.
       parameters:
       - name: id
@@ -564,10 +589,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Page_2'
+      operationId: putPagesById
+      x-operation-id-source: derived
     delete:
       summary: remove a page
       tags:
-      - pages
+      - Pages
       description: This endpoint allows the client to delete a single Page object, specified by ID.
       parameters:
       - name: id
@@ -621,49 +648,13 @@ paths:
                 __expired: false
                 name: null
                 __sending_message: null
+      operationId: deletePagesById
+      x-operation-id-source: derived
+    servers:
+    - url: https://dev.to/api
+      description: Production server
 components:
   schemas:
-    Page_2:
-      description: Representation of a page object
-      type: object
-      properties:
-        title:
-          type: string
-          description: Title of the page
-        slug:
-          type: string
-          description: Used to link to this page in URLs, must be unique and URL-safe
-        description:
-          type: string
-          description: For internal use, helps similar pages from one another
-        body_markdown:
-          type: string
-          description: The text (in markdown) of the ad (required)
-          nullable: true
-        body_json:
-          type: string
-          description: For JSON pages, the JSON body
-          nullable: true
-        is_top_level_path:
-          type: boolean
-          description: If true, the page is available at '/{slug}' instead of '/page/{slug}', use with caution
-        social_image:
-          type: object
-          nullable: true
-        template:
-          type: string
-          enum:
-          - contained
-          - full_within_layout
-          - nav_bar_included
-          - json
-          default: contained
-          description: Controls what kind of layout the page is rendered in
-      required:
-      - title
-      - slug
-      - description
-      - template
     Page:
       description: Representation of a page object
       type: object
@@ -678,19 +669,22 @@ components:
           type: string
           description: For internal use, helps similar pages from one another
         body_markdown:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The text (in markdown) of the ad (required)
-          nullable: true
         body_json:
-          type: string
+          type:
+          - string
+          - 'null'
           description: For JSON pages, the JSON body
-          nullable: true
         is_top_level_path:
           type: boolean
           description: If true, the page is available at '/{slug}' instead of '/page/{slug}', use with caution
         social_image:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
         template:
           type: string
           enum:
@@ -707,9 +701,56 @@ components:
       - slug
       - description
       - template
+    Page_2:
+      description: Representation of a page object
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of the page
+        slug:
+          type: string
+          description: Used to link to this page in URLs, must be unique and URL-safe
+        description:
+          type: string
+          description: For internal use, helps similar pages from one another
+        body_markdown:
+          type:
+          - string
+          - 'null'
+          description: The text (in markdown) of the ad (required)
+        body_json:
+          type:
+          - string
+          - 'null'
+          description: For JSON pages, the JSON body
+        is_top_level_path:
+          type: boolean
+          description: If true, the page is available at '/{slug}' instead of '/page/{slug}', use with caution
+        social_image:
+          type:
+          - object
+          - 'null'
+        template:
+          type: string
+          enum:
+          - contained
+          - full_within_layout
+          - nav_bar_included
+          - json
+          default: contained
+          description: Controls what kind of layout the page is rendered in
+      required:
+      - title
+      - slug
+      - description
+      - template
   securitySchemes:
     api-key:
       type: apiKey
       name: api-key
       in: header
       description: "API Key authentication.\n\nAuthentication for some endpoints, like write operations on the\nArticles API require a DEV API key.\n\nAll authenticated endpoints are CORS disabled, the API key is intended for non-browser scripts.\n\n### Getting an API key\n\nTo obtain one, please follow these steps:\n\n  - visit https://dev.to/settings/extensions\n  - in the \"DEV API Keys\" section create a new key by adding a\n    description and clicking on \"Generate API Key\"\n\n    ![obtain a DEV API Key](https://user-images.githubusercontent.com/37842/172718105-bd93664e-76e0-477d-99c4-265dda0b06c5.png)\n\n  - You'll see the newly generated key in the same view\n    ![generated DEV API Key](https://user-images.githubusercontent.com/37842/172718151-e7fe26a0-9937-42e8-96c6-333acdab9e49.png)"
+x-refined-from:
+- openapi.json
+- openapi.yaml

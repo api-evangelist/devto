@@ -1,22 +1,33 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions trends API
+  title: Forem API V1 Trends API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Access Forem articles, users and other resources via API.
+
+    For a real-world example of Forem in action, check out DEV.
+
+    All endpoints can be accessed with the ''api-key'' header and a accept header, but
+
+    some of them are accessible publicly without authentication.
+
+
+    Dates and date times, unless otherwise specified, must be in
+
+    the RFC 3339 format.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: trends
+- name: Trends
 paths:
   /api/trends:
     get:
       summary: Trends
       security: []
       tags:
-      - trends
+      - Trends
       description: 'This endpoint allows the client to retrieve a list of active trends.
 
 
@@ -58,7 +69,7 @@ paths:
       summary: A Trend
       security: []
       tags:
-      - trends
+      - Trends
       description: This endpoint allows the client to retrieve details of a single trend using either its numeric ID or unique slug.
       operationId: getTrend
       parameters:
@@ -104,7 +115,7 @@ paths:
       summary: Articles in a Trend
       security: []
       tags:
-      - trends
+      - Trends
       description: 'This endpoint allows the client to retrieve a list of published articles belonging to a trend.
 
 
@@ -178,7 +189,45 @@ paths:
                 error: not found
                 status: 404
 components:
+  parameters:
+    pageParam:
+      in: query
+      name: page
+      required: false
+      description: Pagination page
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 1
+    perPageParam10to1000:
+      in: query
+      name: per_page
+      required: false
+      description: Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 1000
+        default: 10
   schemas:
+    ArticleFlareTag:
+      description: Flare tag of the article
+      type: object
+      properties:
+        name:
+          type: string
+        bg_color_hex:
+          description: Background color (hexadecimal)
+          type:
+          - string
+          - 'null'
+        text_color_hex:
+          description: Text color (hexadecimal)
+          type:
+          - string
+          - 'null'
     SharedOrganization:
       description: The organization the resource belongs to
       type: object
@@ -197,20 +246,62 @@ components:
           description: Profile image (90x90)
           type: string
           format: url
-    ArticleFlareTag:
-      description: Flare tag of the article
+    Trend:
+      description: Representation of a trend
       type: object
       properties:
+        type_of:
+          type: string
+        id:
+          type: integer
+          format: int64
         name:
           type: string
-        bg_color_hex:
-          description: Background color (hexadecimal)
+        slug:
           type: string
-          nullable: true
-        text_color_hex:
-          description: Text color (hexadecimal)
+        description:
+          type:
+          - string
+          - 'null'
+        key_questions:
+          type: array
+          items:
+            type: string
+        score:
+          type: number
+          format: float
+        articles_count:
+          type: integer
+          format: int32
+        cover_image:
+          type:
+          - string
+          - 'null'
+          format: url
+        first_observed_at:
           type: string
-          nullable: true
+          format: date-time
+        last_observed_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+      - type_of
+      - id
+      - name
+      - slug
+      - key_questions
+      - score
+      - articles_count
+      - first_observed_at
+      - last_observed_at
+      - created_at
+      - updated_at
     SharedUser:
       description: The resource creator
       type: object
@@ -220,15 +311,18 @@ components:
         username:
           type: string
         twitter_username:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         github_username:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         website_url:
-          type: string
+          type:
+          - string
+          - 'null'
           format: url
-          nullable: true
         profile_image:
           description: Profile image (640x640)
           type: string
@@ -249,9 +343,10 @@ components:
         description:
           type: string
         cover_image:
-          type: string
+          type:
+          - string
+          - 'null'
           format: url
-          nullable: true
         readable_publish_date:
           type: string
         social_image:
@@ -284,13 +379,15 @@ components:
           type: string
           format: date-time
         edited_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         crossposted_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         published_at:
           type: string
           format: date-time
@@ -336,82 +433,6 @@ components:
       - published_timestamp
       - user
       - reading_time_minutes
-    Trend:
-      description: Representation of a trend
-      type: object
-      properties:
-        type_of:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        slug:
-          type: string
-        description:
-          type: string
-          nullable: true
-        key_questions:
-          type: array
-          items:
-            type: string
-        score:
-          type: number
-          format: float
-        articles_count:
-          type: integer
-          format: int32
-        cover_image:
-          type: string
-          format: url
-          nullable: true
-        first_observed_at:
-          type: string
-          format: date-time
-        last_observed_at:
-          type: string
-          format: date-time
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-      required:
-      - type_of
-      - id
-      - name
-      - slug
-      - key_questions
-      - score
-      - articles_count
-      - first_observed_at
-      - last_observed_at
-      - created_at
-      - updated_at
-  parameters:
-    pageParam:
-      in: query
-      name: page
-      required: false
-      description: Pagination page
-      schema:
-        type: integer
-        format: int32
-        minimum: 1
-        default: 1
-    perPageParam10to1000:
-      in: query
-      name: per_page
-      required: false
-      description: Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
-      schema:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 1000
-        default: 10
   securitySchemes:
     api-key:
       type: apiKey

@@ -1,29 +1,40 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions API
+  title: Forem API V1 Agent Sessions API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Access Forem articles, users and other resources via API.
+
+    For a real-world example of Forem in action, check out DEV.
+
+    All endpoints can be accessed with the ''api-key'' header and a accept header, but
+
+    some of them are accessible publicly without authentication.
+
+
+    Dates and date times, unless otherwise specified, must be in
+
+    the RFC 3339 format.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: agent_sessions
+- name: Agent Sessions
 paths:
   /api/agent_sessions:
     get:
       summary: list the authenticated user's agent sessions
       tags:
-      - agent_sessions
+      - Agent Sessions
       description: 'This endpoint allows the client to list their own agent sessions.
 
 
         Agent sessions are coding conversation transcripts uploaded from CLI tools like
 
-        [Claude Code](https://github.com/anthropics/claude-code). Use the
+        Claude Code. Use the
 
-        [Forem CLI plugin](https://github.com/forem/forem-cli-plugin) to upload sessions
+        Forem CLI plugin to upload sessions
 
         from the command line.'
       operationId: getAgentSessions
@@ -56,7 +67,7 @@ paths:
     post:
       summary: upload a new agent session
       tags:
-      - agent_sessions
+      - Agent Sessions
       description: 'This endpoint allows the client to create a new agent session.
 
 
@@ -67,7 +78,7 @@ paths:
         to get an upload URL for the raw file first.
 
 
-        Use the [Forem CLI plugin](https://github.com/forem/forem-cli-plugin) to upload
+        Use the Forem CLI plugin to upload
 
         sessions directly from the command line.'
       operationId: createAgentSession
@@ -133,7 +144,7 @@ paths:
     get:
       summary: show details for an agent session
       tags:
-      - agent_sessions
+      - Agent Sessions
       description: 'This endpoint allows the client to retrieve a single agent session by slug or ID.
 
         Returns the full session including messages, curated selections, and slices.'
@@ -219,8 +230,9 @@ components:
         published:
           type: boolean
         metadata:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
           description: Session metadata (tool-specific)
         messages:
           type: array

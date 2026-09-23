@@ -1,21 +1,32 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions display ads API
+  title: Forem API V1 display ads API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Access Forem articles, users and other resources via API.
+
+    For a real-world example of Forem in action, check out DEV.
+
+    All endpoints can be accessed with the ''api-key'' header and a accept header, but
+
+    some of them are accessible publicly without authentication.
+
+
+    Dates and date times, unless otherwise specified, must be in
+
+    the RFC 3339 format.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: display ads
+- name: Display Ads
 paths:
   /display_ads:
     get:
       summary: display ads
       tags:
-      - display ads
+      - Display Ads
       description: This endpoint allows the client to retrieve a list of all display ads.
       responses:
         '200':
@@ -34,10 +45,12 @@ paths:
               example:
                 error: unauthorized
                 status: 401
+      operationId: getDisplayAds
+      x-operation-id-source: derived
     post:
       summary: display ads
       tags:
-      - display ads
+      - Display Ads
       description: This endpoint allows the client to create a new display ad.
       parameters: []
       responses:
@@ -113,11 +126,13 @@ paths:
               type: object
               items:
                 $ref: '#/components/schemas/DisplayAd'
+      operationId: postDisplayAds
+      x-operation-id-source: derived
   /display_ads/{id}:
     get:
       summary: display ad
       tags:
-      - display ads
+      - Display Ads
       description: This endpoint allows the client to retrieve a single display ad, via its id.
       parameters:
       - name: id
@@ -169,10 +184,12 @@ paths:
               example:
                 error: not found
                 status: 404
+      operationId: getDisplayAdsById
+      x-operation-id-source: derived
     put:
       summary: display ads
       tags:
-      - display ads
+      - Display Ads
       description: This endpoint allows the client to update the attributes of a single display ad, via its id.
       parameters:
       - name: id
@@ -235,11 +252,13 @@ paths:
               type: object
               items:
                 $ref: '#/components/schemas/DisplayAd'
+      operationId: putDisplayAdsById
+      x-operation-id-source: derived
   /display_ads/{id}/unpublish:
     put:
       summary: unpublish
       tags:
-      - display ads
+      - Display Ads
       description: This endpoint allows the client to remove a display ad from rotation by un-publishing it.
       parameters:
       - name: id
@@ -268,6 +287,8 @@ paths:
               example:
                 error: not found
                 status: 404
+      operationId: putDisplayAdsByIdUnpublish
+      x-operation-id-source: derived
 components:
   schemas:
     DisplayAd:
@@ -290,13 +311,15 @@ components:
           type: boolean
           description: Ad must be both published and approved to be in rotation
         organization_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           description: Identifies the organization to which the ad belongs
-          nullable: true
         creator_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           description: Identifies the user who created the ad.
-          nullable: true
         placement_area:
           type: string
           enum:
@@ -313,8 +336,9 @@ components:
           type: string
           description: Tags on which this ad can be displayed (blank is all/any tags)
         article_exclude_ids:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Articles this ad should *not* appear on (blank means no articles are disallowed, and this ad can appear next to any/all articles). Comma-separated list of integer Article IDs
         audience_segment_type:
           type: string

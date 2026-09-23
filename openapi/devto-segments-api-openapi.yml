@@ -1,21 +1,32 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions segments API
+  title: Forem API V1 Segments API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Access Forem articles, users and other resources via API.
+
+    For a real-world example of Forem in action, check out DEV.
+
+    All endpoints can be accessed with the ''api-key'' header and a accept header, but
+
+    some of them are accessible publicly without authentication.
+
+
+    Dates and date times, unless otherwise specified, must be in
+
+    the RFC 3339 format.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: segments
+- name: Segments
 paths:
   /api/segments:
     get:
       summary: Manually managed audience segments
       tags:
-      - segments
+      - Segments
       description: 'This endpoint allows the client to retrieve a list of audience segments.
 
 
@@ -58,7 +69,7 @@ paths:
     post:
       summary: Create a manually managed audience segment
       tags:
-      - segments
+      - Segments
       description: 'This endpoint allows the client to create a new audience segment.
 
 
@@ -86,7 +97,7 @@ paths:
     get:
       summary: A manually managed audience segment
       tags:
-      - segments
+      - Segments
       description: This endpoint allows the client to retrieve a single manually-managed audience segment specified by ID.
       operationId: getSegment
       parameters:
@@ -130,7 +141,7 @@ paths:
     delete:
       summary: Delete a manually managed audience segment
       tags:
-      - segments
+      - Segments
       description: 'This endpoint allows the client to delete an audience segment specified by ID.
 
 
@@ -179,7 +190,7 @@ paths:
     get:
       summary: Users in a manually managed audience segment
       tags:
-      - segments
+      - Segments
       description: This endpoint allows the client to retrieve a list of the users in an audience segment specified by ID. The endpoint supports pagination, and each page will contain `30` users by default.
       operationId: getUsersInSegment
       parameters:
@@ -252,7 +263,7 @@ paths:
     put:
       summary: Add users to a manually managed audience segment
       tags:
-      - segments
+      - Segments
       description: 'This endpoint allows the client to add users in bulk to an audience segment specified by ID.
 
 
@@ -307,7 +318,7 @@ paths:
     put:
       summary: Remove users from a manually managed audience segment
       tags:
-      - segments
+      - Segments
       description: 'This endpoint allows the client to remove users in bulk from an audience segment specified by ID.
 
 
@@ -376,6 +387,14 @@ components:
         user_count:
           type: integer
           description: The current number of users in the segment
+    SegmentUserIds:
+      type: object
+      properties:
+        user_ids:
+          type: array
+          items:
+            type: integer
+          maxItems: 10000
     User:
       description: The representation of a user returned in a list
       type: object
@@ -390,30 +409,25 @@ components:
         name:
           type: string
         summary:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         twitter_username:
           type: string
         github_username:
           type: string
         website_url:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         location:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         joined_at:
           type: string
         profile_image:
           type: string
-    SegmentUserIds:
-      type: object
-      properties:
-        user_ids:
-          type: array
-          items:
-            type: integer
-          maxItems: 10000
   parameters:
     perPageParam30to1000:
       in: query

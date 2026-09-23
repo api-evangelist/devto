@@ -1,22 +1,22 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Forem API V1 agent_sessions comments API
+  title: Devto Comments API
   version: 1.0.0
-  description: "Access Forem articles, users and other resources via API.\n        For a real-world example of Forem in action, check out [DEV](https://www.dev.to).\n        All endpoints can be accessed with the 'api-key' header and a accept header, but\n        some of them are accessible publicly without authentication.\n\n        Dates and date times, unless otherwise specified, must be in\n        the [RFC 3339](https://tools.ietf.org/html/rfc3339) format."
+  description: 'Operations tagged comments across 2 of this provider''s published API definitions: openapi.json, openapi.yaml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://dev.to/api
   description: Production server
 security:
 - api-key: []
 tags:
-- name: comments
+- name: Comments
 paths:
   /api/comments:
     get:
       summary: Comments
       security: []
       tags:
-      - comments
+      - Comments
       description: 'This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.
 
 
@@ -26,9 +26,7 @@ paths:
         It supports pagination, each page will contain `50` top level comments (and as many child comments they have) by default.
 
 
-        If the page parameter is not passed, all comments of an article or podcast will be returned.
-
-        '
+        If the page parameter is not passed, all comments of an article or podcast will be returned.'
       operationId: getCommentsByArticleId
       parameters:
       - $ref: '#/components/parameters/pageParam'
@@ -88,13 +86,22 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /api/comments/{id}:
     get:
       summary: Comment by id
       security: []
       tags:
-      - comments
-      description: "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details."
+      - Comments
+      description: 'This endpoint allows the client to retrieve a comment as well as his descendants comments.
+
+
+        It will return the required comment (the root) with its nested descendants as a thread.
+
+
+        See the format specification for further details.'
       operationId: getCommentById
       parameters:
       - name: id
@@ -134,12 +141,15 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /comments:
     get:
       summary: Comments
       security: []
       tags:
-      - comments
+      - Comments
       description: 'This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.
 
 
@@ -194,13 +204,22 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
   /comments/{id}:
     get:
       summary: Comment by id
       security: []
       tags:
-      - comments
-      description: "This endpoint allows the client to retrieve a comment as well as his descendants comments.\n\n  It will return the required comment (the root) with its nested descendants as a thread.\n\n  See the format specification for further details."
+      - Comments
+      description: 'This endpoint allows the client to retrieve a comment as well as his descendants comments.
+
+
+        It will return the required comment (the root) with its nested descendants as a thread.
+
+
+        See the format specification for further details.'
       operationId: getCommentById
       parameters:
       - name: id
@@ -240,7 +259,32 @@ paths:
               example:
                 error: not found
                 status: 404
+    servers:
+    - url: https://dev.to/api
+      description: Production server
 components:
+  parameters:
+    perPageParam30to1000:
+      in: query
+      name: per_page
+      required: false
+      description: Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 1000
+        default: 30
+    pageParam:
+      in: query
+      name: page
+      required: false
+      description: Pagination page
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 1
   schemas:
     Comment:
       description: A Comment on an Article or Podcast Episode
@@ -257,31 +301,12 @@ components:
           description: Podcast image url
           type: string
           format: url
-  parameters:
-    pageParam:
-      in: query
-      name: page
-      required: false
-      description: Pagination page
-      schema:
-        type: integer
-        format: int32
-        minimum: 1
-        default: 1
-    perPageParam30to1000:
-      in: query
-      name: per_page
-      required: false
-      description: Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
-      schema:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 1000
-        default: 30
   securitySchemes:
     api-key:
       type: apiKey
       name: api-key
       in: header
       description: "API Key authentication.\n\nAuthentication for some endpoints, like write operations on the\nArticles API require a DEV API key.\n\nAll authenticated endpoints are CORS disabled, the API key is intended for non-browser scripts.\n\n### Getting an API key\n\nTo obtain one, please follow these steps:\n\n  - visit https://dev.to/settings/extensions\n  - in the \"DEV API Keys\" section create a new key by adding a\n    description and clicking on \"Generate API Key\"\n\n    ![obtain a DEV API Key](https://user-images.githubusercontent.com/37842/172718105-bd93664e-76e0-477d-99c4-265dda0b06c5.png)\n\n  - You'll see the newly generated key in the same view\n    ![generated DEV API Key](https://user-images.githubusercontent.com/37842/172718151-e7fe26a0-9937-42e8-96c6-333acdab9e49.png)"
+x-refined-from:
+- openapi.json
+- openapi.yaml
